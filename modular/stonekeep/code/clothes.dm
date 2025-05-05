@@ -432,6 +432,8 @@
 /obj/item/clothing/head/crown/serpcrown/surplus
 	icon = 'icons/roguetown/clothing/head.dmi'
 	mob_overlay_icon = 'icons/roguetown/clothing/onmob/head.dmi'
+	desc = "A replacement crown for the Monarch, every bit as valid as proof of sovereignity as the original."
+
 
 //................ Padded Coif edit............... //
 /obj/item/clothing/neck/coif/cloth
@@ -670,6 +672,7 @@
 //................ Steel cuirass ............... //
 /obj/item/clothing/armor/cuirass
 	icon_state = "cuirasse"
+	item_state = "cuirass"
 
 //................ Silk Jacket ............... //
 /obj/item/clothing/armor/leather/jacket/niteman
@@ -1044,6 +1047,10 @@
 /obj/item/clothing/armor/brigandine/coatplates
 	desc = "A heavy armor made of smaller overlapping plates. \
 			It is said to have been invented by the most famous Haiduk khan Möngke, but as with most tales, no one knows for sure."
+
+
+/obj/item/clothing/shirt/robe/magus
+	sleeved = 'modular/stonekeep/icons/onmob/sleeves.dmi'
 
 
 // ==============================	GLOVES	====================================

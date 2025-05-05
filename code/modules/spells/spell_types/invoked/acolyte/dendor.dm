@@ -116,7 +116,12 @@
 	playsound(get_turf(user), 'sound/vo/smokedrag.ogg', 100, TRUE)
 	visible_message("<FONT COLOR='green'>[usr] soothes the beastblood with Dendor's whisper.</FONT><BR>")
 	for(var/mob/living/simple_animal/hostile/retaliate/B in oview(2))
+		if(!B.ai_controller)
+			continue
 		if((B.mob_biotypes & MOB_UNDEAD))
+			continue
+		if(!prob(B.dendor_taming_chance))
+			to_chat(user, span_warning("The [B.name] resists your soothing!"))
 			continue
 		var/datum/component/obeys_commands/commands = B.GetComponent(/datum/component/obeys_commands)
 		if(!commands)

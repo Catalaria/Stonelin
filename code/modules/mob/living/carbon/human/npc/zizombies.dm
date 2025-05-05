@@ -116,7 +116,7 @@
 		if(headdy)
 			headdy.icon = 'icons/roguetown/mob/monster/zizombie.dmi'
 			headdy.icon_state = "[src.dna.species.id]_head"
-			headdy.headprice = 5
+			headdy.headprice = rand(15,40)
 	src.grant_language(/datum/language/common)
 	var/obj/item/organ/eyes/eyes = src.getorganslot(ORGAN_SLOT_EYES)
 	if(eyes)
@@ -175,10 +175,14 @@
 
 /datum/component/rot/corpse/zizombie/process()
 	var/amt2add = 10 //1 second
+	var/time_elapsed = last_process ? (world.time - last_process)/10 : 1
 	if(last_process)
 		amt2add = ((world.time - last_process)/10) * amt2add
 	last_process = world.time
 	amount += amt2add
+	if(has_world_trait(/datum/world_trait/pestra_mercy))
+		amount -= 5 * time_elapsed
+
 	var/mob/living/carbon/C = parent
 	if(!C)
 		qdel(src)

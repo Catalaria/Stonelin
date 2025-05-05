@@ -192,7 +192,7 @@ Spawn in the bog area.
 	H.cmode_music = 'modular/stonekeep/kaizoku/sound/combat/combat_emperor.ogg'
 	if(H.dna.species.id == "human")	// safeguard if its unlocked for more abyssariads later
 		H.skin_tone = SKIN_COLOR_TROPICALDRY
-	H.hairstyle = /datum/sprite_accessory/hair/kaizoku
+	H.set_hair_style(/datum/sprite_accessory/hair/kaizoku)
 
 
 
@@ -224,7 +224,6 @@ Spawn in the bog area.
 	name = "The Heartfelt Lord"
 	shared_wave_type = list(/datum/migrant_wave/grenzelhoft_visit,/datum/migrant_wave/zybantine_wave,/datum/migrant_wave/heartfelt)
 	can_roll = FALSE
-	downgrade_wave = /datum/migrant_wave/heartfelt_smallest
 	roles = list(
 		/datum/migrant_role/sk/heartfelt/lord = 1,
 		/datum/migrant_role/sk/heartfelt/bodyguard = 1,

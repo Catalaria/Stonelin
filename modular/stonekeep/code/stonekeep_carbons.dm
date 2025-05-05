@@ -144,8 +144,8 @@
 	flee_in_pain = FALSE
 	wander = TRUE
 	ambushable = FALSE
-	hair_color = "#1f1d1d"
-	hairstyle = "Forsaken"
+	set_hair_color("#1f1d1d")
+	set_hair_style(/datum/sprite_accessory/hair/head/forsaken_aas)
 
 /mob/living/carbon/human/species/orc/skilled/configure_mind()
 	if(!mind)
@@ -183,7 +183,7 @@
 	if(prob(20))
 		cloak = /obj/item/clothing/cloak/raincloak/brown
 	if(prob(50))
-		shoes = /obj/item/clothing/shoes/boots/furlinedanklets
+		shoes = /obj/item/clothing/shoes/boots/furlinedboots
 	if(prob(20))
 		head = /obj/item/clothing/head/helmet/leather
 

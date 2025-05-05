@@ -93,6 +93,15 @@
 		/obj/structure/punji_sticks = 50
 		)
 
+/obj/effect/spawner/map_spawner/fiftyfifty_hidden_beartrap
+	icon = 'modular/stonekeep/icons/misc.dmi'
+	icon_state = "danger"
+	probby = 50
+	spawned = list(
+		/obj/item/restraints/legcuffs/beartrap/armed/camouflage
+		)
+
+
 
 /*	..................  Kitchen Mess Spawner  ................... */
 /obj/effect/spawner/map_spawner/kitchenmess
@@ -286,7 +295,7 @@
 		/obj/item/neuFarm/seed/turnip = 10,
 		/obj/item/neuFarm/seed/apple = 10,
 		/obj/item/neuFarm/seed/onion = 10,
-		/obj/item/neuFarm/seed/berryrogue = 15,
+		/obj/item/neuFarm/seed/berry = 15,
 		/obj/item/neuFarm/seed/westleach = 10,
 		/obj/item/neuFarm/seed/sunflower = 10,
 		/obj/item/neuFarm/seed/swampleaf = 5,
@@ -307,7 +316,7 @@
 
 /obj/effect/spawner/map_spawner/seeds/uncommon
 	spawned = list(
-		/obj/item/neuFarm/seed/berryrogue = 40,
+		/obj/item/neuFarm/seed/berry = 40,
 		/obj/item/neuFarm/seed/westleach = 25,
 		/obj/item/neuFarm/seed/swampleaf = 15,
 		/obj/item/neuFarm/seed/pear = 15,

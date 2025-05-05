@@ -74,7 +74,7 @@
 	id = "cleanplus"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/clean_plus
 	effectedstats = list(STATKEY_LCK = 1)
-	duration = 20 MINUTES
+	duration = 15 MINUTES
 
 /datum/status_effect/buff/clean_plus/on_apply()
 	. = ..()
@@ -505,14 +505,14 @@
 /datum/status_effect/bardicbuff/on_apply()
 	if(owner.mind?.has_antag_datum(/datum/antagonist)) // Check if antag datum present
 		if(owner.mind?.isactuallygood()) // Then check if they're actually a "good" antag (purishep, prisoner)
-			for(var/S in effectedstats)
-				owner.change_stat(S, effectedstats[S])
+			for(var/stat in effectedstats)
+				owner.set_stat_modifier("[id]", stat, effectedstats[stat])
 			return TRUE
 		else // Otherwise, no buff
 			return FALSE
 	else // All non antags get the buffs
-		for(var/S in effectedstats)
-			owner.change_stat(S, effectedstats[S])
+		for(var/stat in effectedstats)
+			owner.set_stat_modifier("[id]", stat, effectedstats[stat])
 		return TRUE
 
 // SKELETON BARD BUFF ALERT
@@ -787,6 +787,18 @@
 	desc = "Gazing Noc helps me think."
 	icon_state = "buff"
 
+/datum/status_effect/buff/nocblessed
+	id = "nocblessed"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/nocblessed
+	effectedstats = list("intelligence" = 3, "perception" = 2)
+	duration = 300 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/nocblessed
+	name = "Blessed by Noc"
+	desc = "I have been blessed by Noc since i was born, with his help i can see and think better than anyone."
+	icon_state = "intelligence"
+
+
 /datum/status_effect/buff/seelie_drugs
 	id = "seelie drugs"
 	alert_type = /atom/movable/screen/alert/status_effect/buff/druqks
@@ -833,3 +845,89 @@
 /atom/movable/screen/alert/status_effect/buff/lux_drank
 	name = "Invigorated"
 	desc = "I have supped on the finest of delicacies: life!"
+
+// STONEKEEP EDIT BELOW
+
+// ---------------------- RARE RING (STR) ----------------------------
+/datum/status_effect/buff/goldstrengh
+	id = "goldstrengh"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/goldstrengh
+	effectedstats = list(STATKEY_STR = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/goldstrengh
+	name = "Divine strengh"
+	desc = span_nicegreen("a new strengh flows through me.")
+	icon_state = "goldring"
+
+// ---------------------- RARE RING (SPD) ----------------------------
+/datum/status_effect/buff/goldspeed
+	id = "goldspeed"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/goldspeed
+	effectedstats = list(STATKEY_SPD = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/goldspeed
+	name = "Divine speed"
+	desc = span_nicegreen("a new speed flows through me.")
+	icon_state = "goldring"
+
+// ---------------------- RARE RING (END) ----------------------------
+/datum/status_effect/buff/goldend
+	id = "goldend"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/goldend
+	effectedstats = list(STATKEY_END = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/goldend
+	name = "Divine endurance"
+	desc = span_nicegreen("a new endurance flows through me.")
+	icon_state = "goldring"
+
+// ---------------------- RARE RING (LUCK) ----------------------------
+/datum/status_effect/buff/goldluck
+	id = "goldluck"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/goldluck
+	effectedstats = list(STATKEY_LCK = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/goldluck
+	name = "Divine luck"
+	desc = span_nicegreen("a new fortune flows through me.")
+	icon_state = "goldring"
+
+// ---------------------- RARE RING (CONSTITUTION) ----------------------------
+/datum/status_effect/buff/goldconst
+	id = "goldconst"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/goldconst
+	effectedstats = list(STATKEY_CON = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/goldconst
+	name = "Divine constitution"
+	desc = span_nicegreen("a new durability flows through me.")
+	icon_state = "goldring"
+
+// ---------------------- RARE RING (PERCEPTION) ----------------------------
+/datum/status_effect/buff/goldper
+	id = "goldper"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/goldper
+	effectedstats = list(STATKEY_PER = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/goldper
+	name = "Divine perception"
+	desc = span_nicegreen("a new vision flows through me.")
+	icon_state = "goldring"
+
+// ---------------------- RARE RING (INT) ----------------------------
+/datum/status_effect/buff/goldint
+	id = "goldint"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/goldint
+	effectedstats = list(STATKEY_INT = 1)
+	duration = 240 MINUTES
+
+/atom/movable/screen/alert/status_effect/buff/goldint
+	name = "Divine intelligence"
+	desc = span_nicegreen("a new mental clarity flows through me.")
+	icon_state = "goldring"

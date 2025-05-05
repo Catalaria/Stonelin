@@ -229,7 +229,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 	if(!stat && istype(O, /obj/item/reagent_containers/glass))
 		if(stat == DEAD)
 			return
-		if(udder)
+		if(udder && user.used_intent.type == INTENT_FILL)
 			changeNext_move(20) // milking sound length
 			udder.milkAnimal(O, user)
 			return TRUE
@@ -626,6 +626,7 @@ GLOBAL_VAR_INIT(farm_animals, FALSE)
 		var/childspawn = pickweight(childtype)
 		var/turf/target = get_turf(loc)
 		if(target)
+			GLOB.vanderlin_round_stats[STATS_ANIMALS_BRED]++
 			return new childspawn(target)
 //			visible_message("<span class='warning'>[src] finally gives birth.</span>")
 //			playsound(src, 'sound/foley/gross.ogg', 100, FALSE)

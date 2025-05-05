@@ -83,14 +83,14 @@
 	penfactor = AP_SWORD_CHOP
 	damfactor = 1.1
 	swingdelay = 1
-	misscost = 8
+	misscost = 7
 	item_damage_type = "slash"
 
 /datum/intent/sword/chop/long
 	damfactor = 1.1
 	chargetime = 1.2
 	swingdelay = 1.5
-	misscost = 12
+	misscost = 10
 	warnie = "mobwarning"
 	item_damage_type = "slash"
 
@@ -196,6 +196,7 @@
 	max_blade_int = 200
 	max_integrity = INTEGRITY_STRONG
 	wdefense = GOOD_PARRY
+	smeltresult = /obj/item/ingot/iron
 
 /obj/item/weapon/sword/short
 	force = DAMAGE_SHORTSWORD
@@ -926,6 +927,7 @@
 	desc = ""
 	force = 2
 	force_wielded = 5
+	throwforce = 2
 	max_integrity = 240
 	sellprice = 1
 	smeltresult = /obj/item/ingot/tin //the truth comes out

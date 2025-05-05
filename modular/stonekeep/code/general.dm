@@ -26,7 +26,7 @@
 	add_overlay(mutable_appearance(icon, "bathtub_bathing", ABOVE_MOB_LAYER, GAME_PLANE_UPPER))
 
 
-
+/* cant be arsed to refactor this shit, upstream did a whole soap thing that well use instead fuckit)
 // -------------- SOAP -----------------
 /obj/item/soap
 	name = "soap"
@@ -91,7 +91,7 @@
 		uses -= 1
 		if(uses == 0)
 			qdel(src)
-
+*/
 
 // =================================================================================
 /*------\
@@ -121,6 +121,12 @@
 /obj/item/paper/reminder_about_dwarfs
 	name = "note about steel deliveries"
 	info = "Makers! The northern dwarves delivery of steele is much delayed this yil. Make do or go get it from them, the Guild cannot do more to solve this."
+
+
+/obj/item/paper/note_about_malum
+	name = "a missive from the oracle"
+	info = "Bad omens cloud the mountains. Malum has been desecrated, and bad fortune might befall us if the source is not found and purified."
+
 
 
 /obj/item/paper/note_about_tollhouse
@@ -290,8 +296,9 @@
 /obj/item/flashlight/flare/torch/weather_act_on(weather_trait, severity)
 	if(weather_trait != PARTICLEWEATHER_RAIN)
 		return
-	if(openflame)
-		extinguish()
+	if(!openflame)
+		return
+	extinguish()
 
 /obj/machinery/light/fueled/firebowl/standing/weather_act_on(weather_trait, severity)
 	if(weather_trait != PARTICLEWEATHER_RAIN)
@@ -1292,3 +1299,8 @@
 
 /obj/item/storage/keyring/garrison
 	keys = list(/obj/item/key/manor, /obj/item/key/garrison, /obj/item/key/walls)
+
+
+/datum/alch_grind_recipe/manabloom
+	valid_input = /obj/item/reagent_containers/food/snacks/produce/manabloom
+	valid_outputs = list(/obj/item/reagent_containers/powder/manabloom = 1)
