@@ -1,11 +1,6 @@
 // =================================================================
 // ========================		CRAFTING	========================
 
-
-
-//Kaizoku Smithing content. I humbly ask for help; A way in which only people with the trait "Kaizoku", being the ones able to make Kaizoku weapons and armor. In another hand,
-//they cannot make most (exceptions; the objects that have no abyssariad alternative) armors and weapons.
-
 //'armor'
 /datum/anvil_recipe/armor/nanbando
 	name = "Abyssal half-plate (+Bar x3) {Nanbando-sode}"

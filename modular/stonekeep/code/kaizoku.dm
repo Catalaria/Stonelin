@@ -549,21 +549,19 @@ get_accent_list()
 /obj/item/organ/tongue/kitsune
 	name = "changeling tongue"
 	desc = "The tongue that inwardly bends the moldable changeling skull into a glasgow smile, or other shapes depending on their branch."
-	icon = 'icons/obj/surgery.dmi'
-//	icon_state = "eldritch"		no suchs sprite exists MONOTODO
+	icon = 'modular/stonekeep/kaizoku/icons/misc/surgery.dmi'
+	icon_state = "eldritch"
 	slot = ORGAN_SLOT_TONGUE
-	var/tongue_type = "eldritch"
-	var/can_wag = TRUE
-	var/wagging = FALSE
 	zone = BODY_ZONE_PRECISE_MOUTH
 	slot = ORGAN_SLOT_TONGUE
 
-
 /obj/item/organ/eyes/rogue/tengu
 	name = "tengu eyes"
-	desc = ""
-	eye_icon_state = "eyes_closed"
-	icon_state = "eyes_closed"
+	eye_icon_state = "tengu_eye"
+	icon = 'modular/stonekeep/kaizoku/icons/misc/surgery.dmi'
+	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/misc/surgery_mob.dmi'
+	icon_state = "tengu_eye"
+
 
 
 

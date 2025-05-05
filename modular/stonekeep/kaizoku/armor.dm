@@ -971,7 +971,7 @@
 	body_parts_covered = HEAD|HAIR|EARS|MOUTH
 	flags_inv = HIDEEARS|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR //it is not hiding facial hair when put on the neck. No idea how to fix.
 	slot_flags = ITEM_SLOT_NECK|ITEM_SLOT_HEAD
-	alternate_worn_layer = MASK_LAYER
+	alternate_worn_layer = MOUTH_LAYER
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/head.dmi'
 

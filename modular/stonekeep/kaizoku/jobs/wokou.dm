@@ -90,10 +90,6 @@
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 			to_chat(H, span_warning( "<span class='info'>Hailing from the arid heart of the island, I am a 'Dustwalker'. I left my horse behind to try my luck among the sailing allies, but my trusted bow remains with me.</span>"))
 
-
-
-
-
 		if("Shuhen (Militia)")  //No protective helmet, full face protection + neck from a full menpo - still does not protect the head. Their weapon also functions to work the field, but since that can be done by hand nowadays, is no balance issue now.
 			H.set_blindness(0)
 			armor = /obj/item/clothing/armor/plate/mirror/iron
