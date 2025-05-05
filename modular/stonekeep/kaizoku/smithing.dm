@@ -304,7 +304,7 @@
 	name = "Foldable hood {Karuta zukin}"
 	recipe_name = "a Karuta Zukin"
 	req_bar = /obj/item/ingot/steel
-	created_item = /obj/item/clothing/neck/chaincoif/karuta_zukin
+	created_item = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
 
 /datum/anvil_recipe/armor/ihood
 	name = "Chainmail hood"//coifs aren't made in duos anymore since they can be smelted for material
@@ -481,7 +481,7 @@
 	recipe_name = "a Kunai"
 	appro_skill = /datum/skill/craft/weaponsmithing
 	req_bar = /obj/item/ingot/iron
-	created_item = /obj/item/weapon/huntingknife/kunai
+	created_item = /obj/item/weapon/knife/dagger/kunai
 	craftdiff = 1
 
 /datum/anvil_recipe/weapons/tanto

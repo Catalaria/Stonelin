@@ -1687,19 +1687,19 @@
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/neck.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/neck.dmi'
 
-/obj/item/clothing/neck/chaincoif/karuta_zukin/random/Initialize()
+/obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/random/Initialize()
 	. = ..()
 	color = pick("#a32121", "#8747b1", "#3d3a36", "#414143", "#685542", "#428138", "#264d26", "#537bc6", "#b5b004", "#249589", "#ffffff", "#bd6606", "#962e5c")
 
-/obj/item/clothing/neck/chaincoif/karuta_zukin/military/Initialize()
+/obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/military/Initialize()
 	. = ..()
 	color = pick("#534b40", "#685542", "#264d26")
 
-/obj/item/clothing/neck/chaincoif/karuta_zukin/kabukimono/Initialize()
+/obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/kabukimono/Initialize()
 	. = ..()
 	color = "#9b874f"
 
-/obj/item/clothing/neck/chaincoif/karuta_zukin/AdjustClothes(mob/user)
+/obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/AdjustClothes(mob/user)
 	if(loc == user)
 		if(adjustable == CAN_CADJUST)
 			adjustable = CADJUSTED

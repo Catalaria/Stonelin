@@ -24,7 +24,7 @@ Still working on this. But let's update some other things first.
 	cmode_music = 'sound/music/cmode/combat_guard.ogg'
 
 /datum/outfit/job/sk/pilgrim/kaizoku/votary
-	allowed_patrons = ALL_ABYSSANCTUM
+	allowed_patrons = ALL_ABYSSANCTUM_DOCTRINE
 
 /datum/outfit/job/sk/pilgrim/kaizoku/votary/pre_equip(mob/living/carbon/human/H)
 	..()

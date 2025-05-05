@@ -42,7 +42,7 @@
 	beltl = /obj/item/storage/belt/pouch/coins/mid
 	ring = /obj/item/clothing/ring/silver
 	cloak = /obj/item/clothing/cloak/odoshisohei
-	neck = /obj/item/clothing/neck/chaincoif/karuta_zukin/random
+	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin/random
 	gloves = /obj/item/clothing/gloves/chain/kikko
 	r_hand = /obj/item/weapon/polearm/halberd/bisento
 	if(H.mind)

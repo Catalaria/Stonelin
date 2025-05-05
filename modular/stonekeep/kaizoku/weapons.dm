@@ -674,7 +674,7 @@
 // =================================================================
 // ========================		KNIFE	============================
 
-/obj/item/weapon/huntingknife/kunai //Practically a villager knife with more utility. It helps others to climb walls.
+/obj/item/weapon/knife/dagger/kunai //Practically a villager knife with more utility. It helps others to climb walls.
 	name = "kunai"
 	desc = "A simple stabbing weapon made of iron which originated as a masonry or gardening tool, useful for climbing walls in similar ways to pitons."
 	icon = 'modular/stonekeep/kaizoku/icons/weapons/32.dmi'

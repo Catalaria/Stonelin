@@ -103,4 +103,4 @@
 	)
 	storyteller = /datum/storyteller/abyssor
 
-#define ALL_ABYSSANCTUM list(/datum/patron/abyssanctum/purifier, /datum/patron/abyssanctum/curator, /datum/patron/abyssanctum/tideweaver)
+#define ALL_ABYSSANCTUM_DOCTRINE list(/datum/patron/abyssanctum/purifier, /datum/patron/abyssanctum/curator, /datum/patron/abyssanctum/tideweaver)
