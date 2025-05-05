@@ -57,7 +57,6 @@
 
 /obj/item/clothing/armor/leather/jacket/eastsuit
 	icon_state = "eastsuit1"
-	item_state = "eastsuit1"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/iconsprites.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites_sleeves.dmi'
@@ -81,7 +80,6 @@
 	name = "susohiki attire"
 	desc = "Charmful, delicate and ornamented robe, worn by geishas and foglander performers of all kinds."
 	icon_state = "eastsuit4"
-	item_state = "eastsuit4"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/iconsprites.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites_sleeves.dmi'
@@ -92,7 +90,6 @@
 	color = null
 	alternate_worn_layer = CLOAK_BEHIND_LAYER
 	icon_state = "eastcloak1"
-	item_state = "eastcloak1"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/iconsprites.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites_sleeves.dmi'
@@ -107,7 +104,6 @@
 	alternate_worn_layer = CLOAK_BEHIND_LAYER
 	color = null
 	icon_state = "eastcloak2"
-	item_state = "eastcloak2"
 	sleevetype = "shirt"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/iconsprites.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
@@ -117,7 +113,6 @@
 	name = "black gloves"
 	desc = "Sleek gloves for swordsmen that covers the hands and wrist."
 	icon_state = "eastgloves1"
-	item_state = "eastgloves1"
 	break_sound = 'sound/foley/cloth_rip.ogg'
 	drop_sound = 'sound/foley/dropsound/cloth_drop.ogg'
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/iconsprites.dmi'
@@ -129,15 +124,14 @@
 	name = "abyssanctum armwrappers"
 	desc = "Thick leather wraps that extends to cover one arm, while keeping the other covering only the wrist. Symbol of a purifier on duty for recognization ease."
 	icon_state = "eastgloves2"
-	item_state = "eastgloves2"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/iconsprites.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
 
-/obj/item/clothing/head/takuhatsugasa/easthat //dmi issue
+/obj/item/clothing/head/takuhatsugasa/easthat
 	name = "worn bamboo hat"
 	desc = "A bamboo hat damaged by time. However, it is slightly protective."
-	item_state = "easthat"
+	icon_state = = "easthat"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/iconsprites.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
 	sewrepair = TRUE
@@ -166,7 +160,6 @@
 /obj/item/ammo_holder/cscabbard
 	name = "iron chokuto scabbard"
 	icon_state = "simplescab0"
-	item_state = "simplescab"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/32.dmi'
 	desc = "Sturdy scabbard for batting away blows, made in lacquered iron and leather to endure fierce impacts."
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK
@@ -188,7 +181,6 @@
 /obj/item/ammo_holder/cscabbard/scscabbard
 	name = "steel chokuto scabbard"
 	icon_state = "steelscab0"
-	item_state = "steelscab"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/32.dmi'
 	desc = "Sturdy scabbard for batting away blows, made in lacquered steel and leather to endure fierce impacts."
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK
@@ -199,7 +191,6 @@
 /obj/item/ammo_holder/cscabbard/dcscabbard
 	name = "decorated chokuto scabbard"
 	icon_state = "goldscab0"
-	item_state = "goldscab"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/32.dmi'
 	desc = "Ornate scabbard for batting away blows, made in lacquered steel and leather to endure fierce impacts."
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_BACK
@@ -233,7 +224,6 @@
 	name = "raised sandals"
 	desc = "A pair of wooden and leather sandals that raise you off the ground." //no mobsprites
 	icon_state = "eastsandals"
-	item_state = "eastsandals"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/iconsprites.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
 	sleeved = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
