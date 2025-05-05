@@ -443,7 +443,7 @@ get_accent_list()
 
 /obj/item/organ/tail/kitsune
 	name = "Fox Tails"
-	accessory_type = /datum/sprite_accessory/tails/human/onetail
+	accessory_type = /datum/sprite_accessory/tail/onetail
 
 /datum/customizer/organ/tail/kitsune
 	customizer_choices = list(/datum/customizer_choice/organ/tail/kitsune)
@@ -451,11 +451,11 @@ get_accent_list()
 /datum/customizer_choice/organ/tail/kitsune
 	name = "Fox Tails"
 	organ_type = /obj/item/organ/tail/kitsune
-	sprite_accessories = list(/datum/sprite_accessory/tails/human/onetail,
-							/datum/sprite_accessory/tails/human/twotails,
-							/datum/sprite_accessory/tails/human/threetails)
+	sprite_accessories = list(/datum/sprite_accessory/tail/onetail,
+							/datum/sprite_accessory/tail/twotails,
+							/datum/sprite_accessory/tail/threetails)
 
-/datum/sprite_accessory/tails/human/onetail
+/datum/sprite_accessory/tail/onetail
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Fox tail"
 	icon_state = "onetail"
@@ -463,7 +463,7 @@ get_accent_list()
 	gender = NEUTER
 	color_key_defaults = list(KEY_HAIR_COLOR)
 
-/datum/sprite_accessory/tails/human/twotails
+/datum/sprite_accessory/tail/twotails
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Two Foxtails"
 	icon_state = "twotails"
@@ -471,7 +471,7 @@ get_accent_list()
 	gender = NEUTER
 	color_key_defaults = list(KEY_HAIR_COLOR)
 
-/datum/sprite_accessory/tails/human/threetails
+/datum/sprite_accessory/tail/threetails
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Three Foxtails"
 	icon_state = "threetails"
@@ -535,9 +535,9 @@ get_accent_list()
 /obj/item/organ/tail/wings
 	name = "Wings"
 	desc = "Wings, like those of zads, but enormous in size. Belonging to a Skylancer, most likely."
-	accessory_type = /datum/sprite_accessory/tails/human/tengu
+	accessory_type = /datum/sprite_accessory/tail/tengu
 
-/datum/sprite_accessory/tails/human/tengu
+/datum/sprite_accessory/tail/tengu
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Tengu wings"
 	icon_state = "tenguv"
@@ -552,7 +552,7 @@ get_accent_list()
 /datum/customizer_choice/organ/tail/tengu
 	name = "Skylancer wings"
 	organ_type = /obj/item/organ/tail/wings
-	sprite_accessories = list(/datum/sprite_accessory/tails/human/tengu)
+	sprite_accessories = list(/datum/sprite_accessory/tail/tengu)
 
 // TENGU EARS
 
@@ -583,10 +583,10 @@ get_accent_list()
 /obj/item/organ/tail/kappa
 	name = "Turtle Shell"
 	desc = "The hard back of an Undine."
-	accessory_type = /datum/sprite_accessory/tails/human/kappa
+	accessory_type = /datum/sprite_accessory/tail/kappa
 
 //TODO: Customizable shell color
-/datum/sprite_accessory/tails/human/kappa
+/datum/sprite_accessory/tail/kappa
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Undine shell"
 	icon_state = "kappav"
@@ -611,7 +611,7 @@ get_accent_list()
 /datum/customizer_choice/organ/tail/kappa
 	name = "Undine shell"
 	organ_type = /obj/item/organ/tail/kappa
-	sprite_accessories = list(/datum/sprite_accessory/tails/human/kappa)
+	sprite_accessories = list(/datum/sprite_accessory/tail/kappa)
 
 // KAPPA EARS
 

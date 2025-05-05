@@ -1,3 +1,6 @@
+/*
+Still working on this. But let's update some other things first.
+
 /datum/advclass/pilgrim/stonekeep/kaizoku/votary
 	name = "Votary"
 	tutorial = "The sea accepts many devotions, and here, you are the few votaries of Abyssanctum to aid in protecting the nation \
@@ -70,3 +73,4 @@
 	H.verbs += list(/mob/living/carbon/human/proc/devotionreport, /mob/living/carbon/human/proc/clericpray)
 	C.grant_spells(H)
 
+*/
