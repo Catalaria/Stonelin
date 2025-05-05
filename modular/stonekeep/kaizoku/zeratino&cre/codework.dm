@@ -131,7 +131,7 @@
 /obj/item/clothing/head/takuhatsugasa/easthat
 	name = "worn bamboo hat"
 	desc = "A bamboo hat damaged by time. However, it is slightly protective."
-	icon_state = = "easthat"
+	icon_state = "easthat"
 	icon = 'modular/stonekeep/kaizoku/zeratino&cre/iconsprites.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/zeratino&cre/mobsprites.dmi'
 	sewrepair = TRUE
