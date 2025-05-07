@@ -1,27 +1,28 @@
 /datum/job/stonekeep/inquisitor
 	title = "Inquisitor"
-	flag = SK_INQUISITOR
-	department_flag = CHURCHMEN
-	faction = FACTION_STATION
+	flag = INQUISITOR
+	department_flag = TEMPLE
+	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
 
 	allowed_races = list(
 		"Humen"
 	)
-	allowed_sexes = list(MALE)
+	allowed_sexes = list(MALE, FEMALE)
 
-	tutorial = "A recent arrival from Grenzelhoft, you are a member of the secretive lodges that have held to the service of Psydon since the Apotheosis War. You have been sent by your leader, the Holy Bishop, to assign the local Priest in combatting the increasing number of heretics and monsters infiltrating these lands."
+	tutorial = "A recent arrival from Grenzelhoft, the Inquisitor is a member of the secretive lodges that have held to the service of the Forgotten God since the Apotheosis War. They have formed an alliance with the local Priest against the increasing number of heretics and monsters infiltrating the town."
 	whitelist_req = FALSE
 
-	outfit = /datum/outfit/job/stonekeep/inquisitor
-	display_order = INQUISITOR_ORDER
+	outfit = /datum/outfit/job/roguetown/inquisitor
+	advclass_cat_rolls = list(CTAG_INQUISITOR = 20)	//Handles class selection.
+	display_order = JDO_INQUISITOR
 	min_pq = 0
 	bypass_lastclass = TRUE
+	can_have_apprentices = FALSE
 	is_foreigner = TRUE
-	cmode_music = 'sound/music/cmode/church/CombatInquisitor.ogg'
 
-/datum/job/stonekeep/inquisitor/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
+/datum/job/roguetown/inquisitor/after_spawn(mob/living/L, mob/M, latejoin = TRUE)
 	..()
 	if(!L.mind)
 		return
@@ -30,27 +31,37 @@
 	var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 	L.mind.add_antag_datum(new_antag)
 
-/datum/outfit/job/stonekeep/inquisitor
-	name = "Inquisitor"
-	jobtype = /datum/job/stonekeep/inquisitor
-	allowed_patrons = list(/datum/patron/psydon)
+	if(ishuman(L))
+		var/mob/living/carbon/human/H = L
+		H.advsetup = 1
+		H.invisibility = INVISIBILITY_MAXIMUM
+		H.become_blind("advsetup")
 
-/datum/outfit/job/stonekeep/inquisitor/pre_equip(mob/living/carbon/human/H)
+/datum/outfit/job/roguetown/inquisitor // Shared by all subclasses
+	name = "Inquisitor"
+	jobtype = /datum/job/roguetown/inquisitor
+	backpack_contents = list(/obj/item/keyring/inquisitor = 1, /obj/item/storage/belt/rogue/pouch/coins/rich = 1)
+
+/datum/advclass/inquisitor/grenz
+	name = "Grenzelhoft Lodge"
+	tutorial = "The most traditional lodge and the one that defines the image of 'witch hunters' today, the Eastern Lodge allied itself with House Grenz early on in the Imperiate's founding, and provides assistance to their brutal campaigns."
+	outfit = /datum/outfit/job/roguetown/inquisitor/grenz
+
+	category_tags = list(CTAG_INQUISITOR)
+	allowed_sexes = list(MALE)
+
+/datum/outfit/job/roguetown/inquisitor/grenz/pre_equip(mob/living/carbon/human/H)
 	..()
-	shirt = /obj/item/clothing/armor/gambeson/heavy/dark
-	belt = /obj/item/storage/belt/leather/black
-	shoes = /obj/item/clothing/shoes/nobleboot
-	pants = /obj/item/clothing/pants/trou/leather
+	shirt = /obj/item/clothing/suit/roguetown/armor/gambeson/heavy/dark
+	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
+	pants = /obj/item/clothing/under/roguetown/trou/leather
 	cloak = /obj/item/clothing/cloak/cape/puritan
-	head = /obj/item/clothing/head/helmet/leather/inquisitor
-	gloves = /obj/item/clothing/gloves/angle
-	wrists = /obj/item/clothing/neck/psycross/silver
-	backr = /obj/item/storage/backpack/satchel
-	backl = /obj/item/weapon/sword/long/forgotten
-	beltl = /obj/item/flashlight/flare/torch/lantern
-	neck = /obj/item/clothing/neck/bevor
-	armor = /obj/item/clothing/armor/leather/splint
-	backpack_contents = list(/obj/item/storage/keyring/inquisitor = 1)
+	head = /obj/item/clothing/head/roguetown/helmet/leather/inquisitor
+	backl = /obj/item/rogueweapon/sword/long/forgotten
+	neck = /obj/item/clothing/neck/roguetown/bevor
+	belt = /obj/item/storage/belt/rogue/leather/black
+	backr = /obj/item/storage/backpack/rogue/satchel
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/splint
 	var/prev_real_name = H.real_name
 	var/prev_name = H.name
 	var/honorary = "Ritter"
@@ -60,41 +71,439 @@
 	H.name = "[honorary] [prev_name]"
 	H.confession_points = 10 // Starting with 10 points
 	H.purchase_history = list() // Initialize as an empty list to track purchases
+
 	if(H.mind)
-		H.mind?.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/firearms, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-		H.change_stat("intelligence", 2)
+		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/firearms, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
 		H.change_stat("strength", 1)
+		H.change_stat("intelligence", 2)
 		H.change_stat("perception", 2)
 		H.change_stat("speed", 2)
 		H.change_stat("endurance", 1)
 		if(!H.has_language(/datum/language/oldpsydonic))
 			H.grant_language(/datum/language/oldpsydonic)
+			to_chat(H, "<span class='info'>I can speak Old Psydonic with ,m before my speech.</span>")
+		if(!H.has_language(/datum/language/handcant))
+			H.grant_language(/datum/language/handcant)
+			to_chat(H, "<span class='info'>I can sign Hand Cant with ,y before my speech.</span>")
 		if(H.mind.has_antag_datum(/datum/antagonist))
 			return
 		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
 		H.mind.add_antag_datum(new_antag)
-		H.set_patron(/datum/patron/psydon)
+		if(H.patron != /datum/patron/forgotten)
+			H.set_patron(/datum/patron/forgotten)
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
 	H.verbs |= /mob/living/carbon/human/proc/torture_victim
-	H.verbs |= /mob/living/carbon/human/proc/faith_test
-	to_chat(H,span_info("\
-		-I can speak Old Psydonic with ,m before my speech.\n\
-		-Your fraternal order and the blessed Imperiate have dispatched you to this island for grave import. Imperial spies have uncovered plots by cultists, sub-humens and monsters to overthrow the powers of Rockhill. Stop them at all costs.\n\
-		-You've also been gaven 10 favors to use at the mail machines, you can get more favor by sending signed confessions to your brothers. Spend your favors wisely.")
-		)
-	H.mind?.teach_crafting_recipe(/datum/crafting_recipe/roguetown/confessional)
+
+/datum/advclass/inquisitor/zyba
+	name = "Zybantine Lodge"
+	tutorial = "The Western Lodge houses the sorcerous cabal of the Magi, who claim to draw their magic from a mythical Torch of Knowledge. They spend their lives jealousy guarding arcane secrets and hunting down rogue spellcasters."
+	outfit = /datum/outfit/job/roguetown/inquisitor/zyba
+
+	category_tags = list(CTAG_INQUISITOR)
+	allowed_sexes = list(MALE)
+
+/datum/outfit/job/roguetown/inquisitor/zyba/pre_equip(mob/living/carbon/human/H)
+	..()
+	shoes = /obj/item/clothing/shoes/roguetown/nobleboot
+	shirt = /obj/item/clothing/suit/roguetown/armor/chainmail/iron
+	armor = /obj/item/clothing/suit/roguetown/shirt/robe/magus
+	belt = /obj/item/storage/belt/rogue/leather/plaquegold
+	wrists = /obj/item/clothing/neck/roguetown/psycross/silver
+	backr = /obj/item/storage/backpack/rogue/satchel
+	var/prev_real_name = H.real_name
+	var/prev_name = H.name
+	var/honorary = "Magus"
+	H.real_name = "[honorary] [prev_real_name]"
+	H.name = "[honorary] [prev_name]"
+	H.confession_points = 10 // Starting with 10 points
+	H.purchase_history = list() // Initialize as an empty list to track purchases
+
+	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/magic/arcane, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+	H.change_stat("intelligence", 3)
+	H.change_stat("perception", 1)
+	H.change_stat("speed", 1)
+	H.mind.adjust_spellpoints(4)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/self/learnspell)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/targeted/touch/prestidigitation)
+	H.mind.AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/knock)
+	if(!H.has_language(/datum/language/zybantine))
+		H.grant_language(/datum/language/zybantine)
+		to_chat(H, "<span class='info'>I can speak Zybean with ,z before my speech.</span>")
+	if(!H.has_language(/datum/language/handcant))
+		H.grant_language(/datum/language/handcant)
+		to_chat(H, "<span class='info'>I can sign Hand Cant with ,y before my speech.</span>")
+	if(H.mind.has_antag_datum(/datum/antagonist))
+		return
+	var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
+	H.mind.add_antag_datum(new_antag)
+	if(H.patron != /datum/patron/forgotten)
+		H.set_patron(/datum/patron/forgotten)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
+	H.verbs |= /mob/living/carbon/human/proc/torture_victim
+	if(H.age == AGE_OLD) // Seniors trade physical prowess for better magic.
+		H.mind.adjust_skillrank(/datum/skill/magic/arcane, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/alchemy, 1, TRUE)
+		H.mind.adjust_spellpoints(1)
+		H.change_stat("intelligence", 1)
+	else // Younger Zybantu Inquisitors are half-casters, with decent knife skill and dodge expert to defend themselves
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+		H.change_stat("speed", 1)
+		ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+
+/datum/advclass/inquisitor/amz
+	name = "Issan Lodge"
+	tutorial = "A lodge on the mysterious Isle of Issa, home of the humen warrior-women known as Amazons. Curiously, they worship the Forgotten God alongside the Divine Pantheon, and the lodge focuses on travelling Grimoria in search of holy artifacts."
+	outfit = /datum/outfit/job/roguetown/inquisitor/amz
+
+	category_tags = list(CTAG_INQUISITOR)
+	allowed_sexes = list(FEMALE)
+
+/datum/outfit/job/roguetown/inquisitor/amz/pre_equip(mob/living/carbon/human/H)
+	..()
+	head = /obj/item/clothing/head/roguetown/feather
+	armor = /obj/item/clothing/suit/roguetown/armor/amazon_chainkini
+	backl = /obj/item/rogueweapon/polearm/halberd
+	shoes = /obj/item/clothing/shoes/roguetown/gladiator
+	cloak = /obj/item/clothing/cloak/raincloak/furcloak/brown
+	belt = /obj/item/storage/belt/rogue/leather/plaquesilver
+	neck = /obj/item/clothing/neck/roguetown/psycross/silver
+	wrists = /obj/item/clothing/wrists/roguetown/bracers
+	backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
+	beltr = /obj/item/quiver/arrows
+
+	var/prev_real_name = H.real_name
+	var/prev_name = H.name
+	var/honorary = "Basilea"
+	H.real_name = "[honorary] [prev_real_name]"
+	H.name = "[honorary] [prev_name]"
+	H.confession_points = 10 // Starting with 10 points
+	H.purchase_history = list() // Initialize as an empty list to track purchases
+
+	H.mind.adjust_skillrank(/datum/skill/combat/polearms, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 3, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+	H.mind.adjust_skillrank(/datum/skill/craft/tanning, 1, TRUE)
+	H.change_stat("intelligence", 1)
+	H.change_stat("strength", 3)
+	H.change_stat("perception", 2)
+	H.change_stat("speed", 1)
+	H.change_stat("endurance", 2)
+	if(!H.has_language(/datum/language/handcant))
+		H.grant_language(/datum/language/handcant)
+		to_chat(H, "<span class='info'>I can sign Hand Cant with ,y before my speech.</span>")
+	if(H.mind.has_antag_datum(/datum/antagonist))
+		return
+	var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
+	H.mind.add_antag_datum(new_antag)
+	if(H.patron != /datum/patron/forgotten)
+		H.set_patron(/datum/patron/forgotten)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
+	H.verbs |= /mob/living/carbon/human/proc/torture_victim
+
+/datum/advclass/inquisitor/heart
+	name = "Heartfelt Lodge"
+	tutorial = "An obscure sect of the Inquisition, the lodge of the island of Heartfelt has changed significantly since its alliance with the Abyssanctum. Combining stealth techniques foreign and domestic, they strike fear into any evil traversing the seas."
+	outfit = /datum/outfit/job/roguetown/inquisitor/heart
+
+	category_tags = list(CTAG_INQUISITOR)
+	allowed_sexes = list(MALE, FEMALE)
+
+/datum/outfit/job/roguetown/inquisitor/heart/pre_equip(mob/living/carbon/human/H)
+	..()
+	shirt = /obj/item/clothing/suit/roguetown/shirt/looseshirt/shinobi
+	shoes = /obj/item/clothing/shoes/roguetown/boots/jikatabi/shinobi
+	pants = /obj/item/clothing/under/roguetown/trou/leather/shinobizubon
+	cloak = /obj/item/clothing/cloak/cape/stealth
+	head = /obj/item/clothing/head/roguetown/helmet/leather/hood_ominous/stealth
+	neck = /obj/item/clothing/neck/roguetown/gorget
+	wrists = /obj/item/clothing/neck/roguetown/psycross/silver
+	belt = /obj/item/storage/belt/rogue/kaizoku/leather/daisho
+	backr = /obj/item/clothing/shoes/roguetown/boots/jikatabi/shinobi
+	beltr = /obj/item/rogueweapon/flail/kusarigama/silver
+	armor = /obj/item/clothing/suit/roguetown/armor/leather/stealth
+	var/prev_real_name = H.real_name
+	var/prev_name = H.name
+	var/honorary = "Capelao"
+	if(H.gender == FEMALE)
+		honorary = "Capela"
+	H.real_name = "[honorary] [prev_real_name]"
+	H.name = "[honorary] [prev_name]"
+	H.confession_points = 10 // Starting with 10 points
+	H.purchase_history = list() // Initialize as an empty list to track purchases
+
+	if(H.mind)
+		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 5, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/swimming, 4, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/traps, 2, TRUE)
+		H.mind.adjust_skillrank(/datum/skill/craft/engineering, 2, TRUE)
+		H.change_stat("intelligence", 2)
+		H.change_stat("perception", 2)
+		H.change_stat("speed", 3)
+		H.change_stat("endurance", 1)
+		if(!H.has_language(/datum/language/handcant))
+			H.grant_language(/datum/language/handcant)
+			to_chat(H, "<span class='info'>I can sign Hand Cant with ,y before my speech.</span>")
+		if(H.mind.has_antag_datum(/datum/antagonist))
+			return
+		var/datum/antagonist/new_antag = new /datum/antagonist/purishep()
+		H.mind.add_antag_datum(new_antag)
+		if(H.patron != /datum/patron/forgotten)
+			H.set_patron(/datum/patron/forgotten)
+	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_STEELHEARTED, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KNOWBANDITS, TRAIT_GENERIC)
+	ADD_TRAIT(H, TRAIT_KAIZOKU, TRAIT_GENERIC)
+	to_chat(H, "<span class='info'I am an Islander, and I respectively have the culture of one.</span>")
+	H.verbs |= /mob/living/carbon/human/proc/torture_victim
+
+/mob/living/carbon/human/proc/torture_victim()
+	set name = "ExtractConfession"
+	set category = "Inquisition"
+
+	var/obj/item/grabbing/I = get_active_held_item()
+	var/mob/living/carbon/human/H
+	if(istype(I))
+		if(ishuman(I.grabbed))
+			H = I.grabbed
+			/*if(H == src)
+				to_chat(src, "<span class='warning'>I already torture myself.</span>")
+				return
+			*/
+			var/painpercent = H.get_complex_pain() / (H.STAEND * 10)
+			painpercent = painpercent * 100
+			var/mob/living/carbon/C = H
+			if(C.add_stress(/datum/stressevent/tortured))
+				if(!H.stat)
+					say(pick("CONFESS!",
+								"TELL ME YOUR SECRETS!",
+								"SPEAK!",
+								"YOU WILL SPEAK!",
+								"TELL ME!",
+								"THE PAIN HAS ONLY BEGUN, CONFESS!"), spans = list("torture"))
+					testing(painpercent)
+					if((painpercent > 40) || (!H.cmode))
+						H.emote("painscream")
+						testing("Confession time, [painpercent] pain.")
+						H.confession_time(src)
+						return
+			to_chat(src, "<span class='warning'>Not ready to speak yet.</span>")
+
+/mob/living/carbon/human/proc/confession_time(mob/living/carbon/human/user)
+	if(istype(src.buckled, /obj/structure/fluff/walldeco/chains)) // If the victim is on hanging chains, they cannot resist.
+		confess_sins(resist=FALSE, user=user)
+		return
+	var/timerid = addtimer(CALLBACK(src, PROC_REF(confess_sins), FALSE, user), 6 SECONDS, TIMER_STOPPABLE)
+	var/responsey = alert(src, "Resist torture? (1 TRI)","Time for Pain","Yes","No")
+	testing("Sent resist request to [src].")
+	testing(" User is [user]. confession_time")
+	if(SStimer.timer_id_dict[timerid])
+		deltimer(timerid)
+	else
+		to_chat(src, "<span class='warning'>Too late...</span>")
+		testing("Torture timer ran out.")
+		return
+	if(responsey == "No")
+		testing("[src] gave into torture.")
+		confess_sins(resist=FALSE, user=user)
+	if(responsey == "Yes")
+		adjust_triumphs(-1)
+		testing("[src] resisted torture.")
+		confess_sins(resist=TRUE, user=user)
+
+/mob/living/carbon/human/proc/confess_sins(resist, mob/living/carbon/human/user, torture=TRUE)
+	var/static/list/innocent_lines = list(
+		"I DON'T KNOW!",
+		"STOP THE PAIN!!",
+		"I DON'T DESERVE THIS!",
+		"THE PAIN!",
+		"I HAVE NOTHING TO SAY...!",
+		"WHY ME?!",
+	)
+	if(!resist)
+		var/list/confessions = list()
+		var/antag_type = null
+		testing(" User is [user]. confess_sins")
+		for(var/datum/antagonist/antag in mind?.antag_datums)
+			if(length(antag.confess_lines))
+				confessions = antag.confess_lines
+				antag_type = antag.name
+				testing("Antag type: [antag_type]")
+				break // Only need one antag type
+		if(length(patron.confess_lines) && !length(confessions)) // The antag confession lines take precedence over the heretic lines. If there are antag lines, the heretic ones will not show.
+			confessions = patron.confess_lines
+			testing("Patron type: [patron.name]")
+			antag_type = patron.name
+		if(length(confessions))
+			if(torture == TRUE) // Only scream your confession if it's due to torture.
+				say(pick(confessions), spans = list("torture"))
+			if(user.is_holding_item_of_type(/obj/item/paper/confession)) // This code is to process gettin a signed confession through torture.
+				testing("User is holding a confession.")
+				var/obj/item/paper/confession/held_confession = user.is_holding_item_of_type(/obj/item/paper/confession)
+				if(!held_confession.signed) // Check to see if the confession is already signed.
+					held_confession.signed = real_name
+					held_confession.bad_type = "AN EVILDOER" // In case new antags are added with confession lines but have yet to be added here.
+					switch(antag_type)
+						if("Bandit")
+							held_confession.bad_type = "AN OUTLAW OF THE THIEF-LORD"
+							held_confession.antag = antag_type
+						if("Matthios")
+							held_confession.bad_type = "AN OUTLAW OF THE THIEF-LORD"
+							held_confession.antag = "worshiper of" + antag_type
+						if("Maniac")
+							held_confession.bad_type = "A MANIAC IMMUNE TO PAIN"
+							held_confession.antag = antag_type
+						if("Assassin")
+							held_confession.bad_type = "A DEATH CULTIST"
+							held_confession.antag = antag_type
+						if("Zizoid Lackey")
+							held_confession.bad_type = "A SERVANT OF THE FORBIDDEN ONE"
+							held_confession.antag = antag_type
+						if("Zizoid Cultist")
+							held_confession.bad_type = "A SERVANT OF THE FORBIDDEN ONE"
+							held_confession.antag = antag_type
+						if("Zizo")
+							held_confession.bad_type = "A SERVANT OF THE FORBIDDEN ONE"
+							held_confession.antag = "worshiper of" + antag_type
+						if("Werewolf")
+							held_confession.bad_type = "A BEARER OF DENDOR'S CURSE"
+							held_confession.antag = antag_type
+						if("Vampire")
+							held_confession.bad_type = "A SCION OF KAINE"
+							held_confession.antag = antag_type
+						if("Vampire Lord")
+							held_confession.bad_type = "THE BLOOD-LORD OF ENIGMA"
+						if("Graggar")
+							held_confession.bad_type = "A FOLLOWER OF THE DARK SUN"
+							held_confession.antag = "worshiper of" + antag_type
+						if("Peasant Rebel")
+							return // Inquisitors don't care about peasant revolts targeting the King of Rockhill.
+						if("Science")
+							held_confession.bad_type = "A DAMNED ANTI-THEIST"
+							held_confession.antag = "worshiper of nothing"
+					held_confession.info = "THE GUILTY PARTY ADMITS THEIR SINFUL NATURE AS <font color='red'>[held_confession.bad_type]</font>. THEY WILL SERVE ANY PUNISHMENT OR SERVICE AS REQUIRED BY THE ORDER OF THE PSYCROSS UNDER PENALTY OF DEATH.<br/><br/>SIGNED,<br/><font color='red'><i>[held_confession.signed]</i></font>"
+					held_confession.update_icon_state()
+					return
+	say(pick(innocent_lines), spans = list("torture"))
+	return
+
+/**
+ * Handles periodic mailing to all living Inquisitors
+ * Sends mail every 30 minutes with Order updates
+ */
+/datum/controller/subsystem/processing/roguemachine
+    var/next_inquisitor_mail = 0 // Tracks when next mail should be sent
+
+/datum/controller/subsystem/processing/roguemachine/fire(resumed = 0)
+    . = ..()
+    // Check if it's time to send inquisitor mail
+    if(world.time >= next_inquisitor_mail)
+        send_inquisitor_updates()
+        next_inquisitor_mail = world.time + (30 MINUTES)
+
+/**
+ * Sends updates to all living Inquisitors
+ * Returns number of messages successfully sent
+ */
+/datum/controller/subsystem/processing/roguemachine/proc/send_inquisitor_updates()
+    var/messages_sent = 0
+    var/list/living_inquisitors = list()
+
+    // Find all living Inquisitors
+    for(var/mob/living/carbon/human/H in GLOB.player_list)
+        if(H.mind?.assigned_role == "Inquisitor" && H.stat != DEAD)
+            living_inquisitors += H
+
+    if(!living_inquisitors.len)
+        return 0 // No living Inquisitors
+
+    // Generate Order update message
+    var/message = generate_order_message()
+
+    // Send to each Inquisitor
+    for(var/mob/living/carbon/human/I in living_inquisitors)
+        if(send_mail(I.real_name, "The Order", message, /obj/item/paper/scroll))
+            messages_sent++
+
+    return messages_sent
+
+/**
+ * Generates message content for Order updates
+ * Can be expanded to include various types of updates
+ */
+/datum/controller/subsystem/processing/roguemachine/proc/generate_order_message()
+    var/message = "<h2>Order Update</h2>\n"
+    message += "<hr>"
+
+    // Add confession count if system tracks it
+    if(GLOB.confessors)
+        message += "Confessions received: [length(GLOB.confessors)]\n"
+
+    // Add current time context
+    var/time_of_day = "morning"
+    if(prob(50))
+        time_of_day = "evening"
+    message += "\nBe vigilant this [time_of_day], for evil never sleeps.\n"
+
+    // Add random Order wisdom
+    var/list/order_wisdom = list(
+        "The corrupt must be purified.",
+        "Truth is found through pain.",
+        "Faith shields against darkness.",
+        "Mercy is a luxury the wicked do not deserve.",
+        "In darkness we are the light."
+    )
+    message += "\n[pick(order_wisdom)]"
+
+    return message
