@@ -44,14 +44,14 @@
 
 	to_chat(H, span_warning( "<span class='userdanger'>I am a noble storm-hardened warrior in lacquered armor whom lands I own and control. Yet, here I stand in unfamiliar lands no different of my own.</span>"))
 
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/taming, 1, TRUE) //Zamurais does not tame their steed. Their retainer do that.
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/labor/taming, 1, TRUE) //Zamurais does not tame their steed. Their retainer do that.
+	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 	if(findtext(H.real_name, " Clanless")) //You can't be a clanless zamurai.
@@ -79,8 +79,8 @@
 			backr = /obj/item/weapon/sword/long/greatsword/odachi
 			ADD_TRAIT(H, TRAIT_MEDIUMARMOR, TRAIT_GENERIC)
 			if(H.mind)
-				H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE) //4 instead of 5. Abyssariads with 5 are champions only.
-				H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+				H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE) //4 instead of 5. Abyssariads with 5 are champions only.
+				H.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 				H.change_stat(STATKEY_CON, 1)
 				H.change_stat(STATKEY_END, 1)
 				H.change_stat(STATKEY_SPD, 1)
@@ -92,8 +92,8 @@
 			beltl = /obj/item/ammo_holder/quiver/arrows
 			beltr = /obj/item/weapon/sword/uchigatana
 			if(H.mind)
-				H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+				H.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
+				H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
 				H.change_stat(STATKEY_PER, 2)
 				H.change_stat(STATKEY_SPD, 1)
 				H.change_stat(STATKEY_STR, 1)

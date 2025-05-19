@@ -32,16 +32,16 @@
 		if(H.patron != /datum/patron/divine/noc)
 			H.set_patron(/datum/patron/divine/noc)
 
-		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/magic/arcane, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
+		H.adjust_skillrank(/datum/skill/magic/arcane, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/craft/alchemy, 2, TRUE)
 		if(H.age == AGE_OLD)
 			head = /obj/item/clothing/head/wizhat/gen
 			armor = /obj/item/clothing/shirt/robe/plain
 			backl = /obj/item/storage/backpack/backpack
-			H.mind?.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/magic/arcane, 1, TRUE)
 			H.change_stat("intelligence", 1)
 		H.change_stat("strength", -2)
 		H.change_stat("intelligence", 3)

@@ -36,16 +36,12 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.json")
 	set category = "IC"
 	set hidden = 1
 
-#ifdef MATURESERVER
-
 	if(message)
 		if(client)
 			if(GLOB.ooc_allowed)
 				client.ooc(message)
 			else
 				client.lobbyooc(message)
-
-#endif
 
 /mob/dead/new_player/prepare_huds()
 	return
@@ -386,6 +382,9 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.json")
 	GLOB.joined_player_list += character.ckey
 	GLOB.respawncounts[character.ckey] += 1
 
+	if(humanc)
+		try_apply_character_post_equipment(humanc)
+
 	log_manifest(character.mind.key,character.mind,character,latejoin = TRUE)
 
 
@@ -446,9 +445,8 @@ GLOBAL_LIST_INIT(roleplay_readme, world.file2list("strings/rt/Lore_Primer.json")
 					cat_name = "Apprentices"
 				if (YOUNGFOLK)
 					cat_name = "Young Folk"
-				if (SK_OUTSIDERS) // STONEKEEP EDIT
-					cat_name = "Outsiders" // STONEKEEP EDIT
-
+				if (OUTSIDERS)
+					cat_name = "Outsiders"
 			dat += "<fieldset style='width: 185px; border: 2px solid [cat_color]; display: inline'>"
 			dat += "<legend align='center' style='font-weight: bold; color: [cat_color]'>[cat_name]</legend>"
 			//TODO: This also fucking sucks.

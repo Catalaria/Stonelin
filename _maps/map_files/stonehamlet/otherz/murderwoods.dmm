@@ -33,7 +33,7 @@
 /area/rogue/outdoors/river)
 "bG" = (
 /obj/effect/spawner/map_spawner/enemy_fifty/hairy_spider,
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "bP" = (
 /obj/effect/decal/haycorner{
@@ -140,7 +140,7 @@
 /area/rogue/outdoors/woods/stone)
 "eu" = (
 /obj/structure/remains/human,
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "eD" = (
 /turf/closed/wall/mineral/wood,
@@ -176,7 +176,7 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/woods/stone)
 "fT" = (
-/obj/structure/mineral_door/wood/deadbolt,
+/obj/structure/door/weak/bolt,
 /turf/open/floor/ruinedwood,
 /area/rogue/indoors)
 "fY" = (
@@ -231,7 +231,7 @@
 /area/rogue/indoors)
 "hl" = (
 /obj/effect/decal/cleanable/dirt/cobweb,
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "ho" = (
 /obj/structure/bed/shit,
@@ -274,7 +274,7 @@
 /turf/open/floor/dirt,
 /area/rogue/indoors)
 "is" = (
-/obj/structure/mineral_door/wood/deadbolt{
+/obj/structure/door/weak/bolt{
 	dir = 8
 	},
 /turf/open/floor/dirt,
@@ -468,7 +468,7 @@
 /turf/open/floor/grass,
 /area/rogue/outdoors/woods/stone)
 "oO" = (
-/obj/structure/mineral_door/wood/deadbolt,
+/obj/structure/door/weak/bolt,
 /turf/open/floor/dirt,
 /area/rogue/indoors/bandit_lair)
 "oR" = (
@@ -618,7 +618,7 @@
 	},
 /area/rogue/outdoors/river)
 "ua" = (
-/obj/structure/mineral_door/wood/deadbolt{
+/obj/structure/door/weak/bolt{
 	dir = 4
 	},
 /turf/open/floor/ruinedwood,
@@ -672,7 +672,7 @@
 /area/rogue/outdoors/woods/stone)
 "vw" = (
 /obj/effect/decal/remains/bigrat,
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "vz" = (
 /obj/effect/spawner/map_spawner/loot/weapon,
@@ -682,7 +682,7 @@
 /area/rogue/indoors/cave/volf)
 "vB" = (
 /obj/effect/spawner/map_spawner/loot/coin/low,
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "vC" = (
 /turf/closed/wall/mineral/tent{
@@ -741,7 +741,7 @@
 "xl" = (
 /obj/structure/remains/human,
 /obj/effect/spawner/map_spawner/artefact_spidernest,
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "xo" = (
 /obj/structure/fluff/signage,
@@ -796,7 +796,7 @@
 /mob/living/simple_animal/hostile/retaliate/spider/hairy/giant{
 	name = "broodmother"
 	},
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "yP" = (
 /obj/structure/flora/rogueflower/fallenleaves,
@@ -842,7 +842,7 @@
 /area/rogue/outdoors/woods/stone)
 "zQ" = (
 /obj/structure/spider/stickyweb/solo,
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "zR" = (
 /obj/structure/closet/crate/chest/old_crate,
@@ -874,7 +874,7 @@
 "By" = (
 /obj/structure/spider/stickyweb/solo,
 /obj/effect/decal/remains/cabbit,
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "BA" = (
 /obj/structure/flora/tree/neu/brambles_corner{
@@ -918,7 +918,7 @@
 /obj/effect/decal/cleanable/dirt/cobweb{
 	dir = 4
 	},
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "Cy" = (
 /obj/effect/decal/cleanable/blood/tracks,
@@ -1009,7 +1009,7 @@
 /area/rogue/indoors/bandit_lair)
 "Ew" = (
 /obj/effect/decal/remains/cabbit,
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "Ey" = (
 /obj/effect/decal/remains/cabbit,
@@ -1025,7 +1025,7 @@
 /area/rogue/outdoors/woods/stone)
 "EK" = (
 /obj/effect/spawner/map_spawner/loot/armor,
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "EP" = (
 /obj/machinery/anvil/crafted,
@@ -1060,11 +1060,11 @@
 /turf/open/floor/dirt/muddie,
 /area/rogue/outdoors/woods/stone)
 "FK" = (
-/obj/structure/mineral_door/wood/deadbolt{
+/obj/structure/door/weak/bolt{
 	dir = 1;
-	locked = 1;
 	name = "hill fort"
 	},
+/obj/effect/mapping_helpers/door/locker,
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/woods/stone)
 "FL" = (
@@ -1149,7 +1149,7 @@
 /turf/open/floor/naturalstone,
 /area/rogue/indoors/cave/volf)
 "Il" = (
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "Ip" = (
 /turf/open/floor/dirt/road,
@@ -1230,7 +1230,7 @@
 /area/rogue/outdoors/woods/stone)
 "JW" = (
 /obj/structure/spider/stickyweb,
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "Kh" = (
 /obj/effect/decal/remains/cabbit,
@@ -1255,7 +1255,7 @@
 /obj/effect/decal/cleanable/dirt/cobweb{
 	dir = 8
 	},
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "KW" = (
 /obj/effect/landmark/start/sk_mig_forestroad{
@@ -1395,7 +1395,7 @@
 /area/rogue/outdoors/woods/stone)
 "Pq" = (
 /obj/structure/flora/newtree,
-/turf/open/floor/shroud,
+/turf/open/floor,
 /area/rogue/outdoors/woods/stone)
 "Py" = (
 /turf/closed/mineral/bedrock,
@@ -1445,7 +1445,7 @@
 /area/rogue/indoors)
 "QR" = (
 /obj/structure/remains/generic,
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "QX" = (
 /obj/structure/fluff/railing/stonehedge{
@@ -1689,7 +1689,7 @@
 /obj/effect/decal/cleanable/dirt/cobweb{
 	dir = 1
 	},
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "Ym" = (
 /obj/effect/decal/cleanable/blood/old,
@@ -1703,7 +1703,7 @@
 /area/rogue/indoors)
 "Yp" = (
 /obj/structure/flora/rogueflower/fallenleaves,
-/turf/open/floor/shroud,
+/turf/open/floor/grass/leaves,
 /area/rogue/indoors/shelter/woods/spider)
 "Yr" = (
 /obj/structure/remains/human,

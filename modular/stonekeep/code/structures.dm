@@ -156,7 +156,6 @@
 	icon = 'modular/stonekeep/icons/tables.dmi'
 	icon_state = "stonetable_mid"
 	max_integrity = 300
-	smooth = 0
 	climb_offset = 10
 /obj/structure/table/stone/OnCrafted(dirin, user)
 	if(dirin == NORTH)
@@ -175,7 +174,6 @@
 	icon = 'modular/stonekeep/icons/tables.dmi'
 	icon_state = "stonetable_end"
 	max_integrity = 300
-	smooth = 0
 	climb_offset = 10
 /obj/structure/table/stone_end/OnCrafted(dirin, user)
 	if(dirin == NORTH)
@@ -194,7 +192,6 @@
 	icon = 'modular/stonekeep/icons/tables.dmi'
 	icon_state = "longtable"
 	max_integrity = 100
-	smooth = 0
 	climb_offset = 8
 
 /obj/structure/table/stone_small/gravekeeper
@@ -343,7 +340,7 @@
 	. = ..()
 	if(!in_range(src, user))
 		return
-	if(user.mind.get_skill_level(/datum/skill/misc/climbing) <= 4)	// Climb 4 and above can chimney climb
+	if(user.get_skill_level(/datum/skill/misc/climbing) <= 4)	// Climb 4 and above can chimney climb
 		to_chat(user, "<span class='warning'>I would not fit in a chimney, stop thinking foolish things.</span>")
 		return
 	playsound(src, 'sound/foley/ladder.ogg', 100, FALSE)
@@ -355,7 +352,7 @@
 	var/turf/destination = locate(chimney.x, chimney.y, chimney.z)
 	destination = locate(chimney.x, chimney.y, chimney.z - 1)
 	if(isliving(user))
-		mob_move_travel_z_level(user, destination)
+		movable_travel_z_level(user, destination)
 	user.adjustBruteLoss(pick(5,15))		// Climber takes some damage
 	user.AdjustStun(pick(40,50))
 	user.AdjustKnockdown(pick(25,30))
@@ -373,9 +370,9 @@
 	layer = BELOW_OPEN_DOOR_LAYER
 
 
-/obj/structure/mineral_door/swing_door/horizontal
+/obj/structure/door/swing_door/horizontal
 	icon = 'modular/stonekeep/icons/structure.dmi'
-
+	icon_state = "swing"
 
 /obj/structure/fluff/railing/fence/palisade_alt
 	icon_state = "fence_alt"
@@ -839,26 +836,26 @@
 							if(HAS_TRAIT(user, TRAIT_HEAVYARMOR))
 								I = new /obj/item/clothing/head/helmet/heavy/ironplate(user.loc)
 						if(3)
-							if(user.mind.get_skill_level(/datum/skill/magic/arcane) > 2)
+							if(user.get_skill_level(/datum/skill/magic/arcane) > 2)
 								I = new /datum/reagent/medicine/strongmana(user.loc)
 							else
 								I = new /obj/item/reagent_containers/powder/moondust(user.loc)
 						if(4)
-							if(user.mind.get_skill_level(/datum/skill/combat/bows) > 3)
+							if(user.get_skill_level(/datum/skill/combat/bows) > 3)
 								I = new /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/crossbows) > 3)
+							else if(user.get_skill_level(/datum/skill/combat/crossbows) > 3)
 								I = new /obj/item/weapon/knife/dagger/steel(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/axesmaces) > 3)
+							else if(user.get_skill_level(/datum/skill/combat/axesmaces) > 3)
 								I = new /obj/item/weapon/axe/battle(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/polearms) > 3)
+							else if(user.get_skill_level(/datum/skill/combat/polearms) > 3)
 								I = new /obj/item/weapon/polearm/eaglebeak/lucerne(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/shields) > 3)
+							else if(user.get_skill_level(/datum/skill/combat/shields) > 3)
 								I = new /obj/item/weapon/sword/sabre(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/whipsflails) > 3)
+							else if(user.get_skill_level(/datum/skill/combat/whipsflails) > 3)
 								I = new /obj/item/weapon/flail/sflail(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/misc/medicine) > 4)
+							else if(user.get_skill_level(/datum/skill/misc/medicine) > 4)
 								I = new /obj/item/weapon/knife/cleaver/combat(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/magic/arcane) > 2)
+							else if(user.get_skill_level(/datum/skill/magic/arcane) > 2)
 								I = new /obj/item/weapon/polearm/woodstaff/quarterstaff/steel(user.loc)
 						if(5)
 							if(HAS_TRAIT(user, TRAIT_DODGEEXPERT))
@@ -875,9 +872,9 @@
 							if(HAS_TRAIT(user, TRAIT_HEAVYARMOR))
 								I = new /obj/item/clothing/armor/brigandine/coatplates(user.loc)
 						if(7)
-							if(user.mind.get_skill_level(/datum/skill/combat/bows) > 3)
+							if(user.get_skill_level(/datum/skill/combat/bows) > 3)
 								I = new /obj/item/ammo_casing/caseless/arrow/poison/potent(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/crossbows) > 3)
+							else if(user.get_skill_level(/datum/skill/combat/crossbows) > 3)
 								I = new /obj/item/ammo_casing/caseless/bolt/poison/potent(user.loc)
 							else if(HAS_TRAIT(user, TRAIT_HEAVYARMOR))
 								I = new /obj/item/clothing/head/helmet/visored/klappvisier(user.loc)
@@ -928,26 +925,26 @@
 							if(HAS_TRAIT(user, TRAIT_HEAVYARMOR))
 								I = new /obj/item/clothing/head/helmet/heavy/ironplate(user.loc)
 						if(3)
-							if(user.mind.get_skill_level(/datum/skill/magic/arcane) > 2)
+							if(user.get_skill_level(/datum/skill/magic/arcane) > 2)
 								I = new /datum/reagent/medicine/strongmana(user.loc)
 							else
 								I = new /obj/item/reagent_containers/powder/moondust(user.loc)
 						if(4)
-							if(user.mind.get_skill_level(/datum/skill/combat/bows) > 3)
+							if(user.get_skill_level(/datum/skill/combat/bows) > 3)
 								I = new /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/crossbows) > 3)
+							else if(user.get_skill_level(/datum/skill/combat/crossbows) > 3)
 								I = new /obj/item/weapon/knife/dagger/steel(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/axesmaces) > 3)
+							else if(user.get_skill_level(/datum/skill/combat/axesmaces) > 3)
 								I = new /obj/item/weapon/axe/battle(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/polearms) > 3)
+							else if(user.get_skill_level(/datum/skill/combat/polearms) > 3)
 								I = new /obj/item/weapon/polearm/eaglebeak/lucerne(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/shields) > 3)
+							else if(user.get_skill_level(/datum/skill/combat/shields) > 3)
 								I = new /obj/item/weapon/sword/sabre(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/whipsflails) > 3)
+							else if(user.get_skill_level(/datum/skill/combat/whipsflails) > 3)
 								I = new /obj/item/weapon/flail/sflail(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/misc/medicine) > 4)
+							else if(user.get_skill_level(/datum/skill/misc/medicine) > 4)
 								I = new /obj/item/weapon/knife/cleaver/combat(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/magic/arcane) > 2)
+							else if(user.get_skill_level(/datum/skill/magic/arcane) > 2)
 								I = new /obj/item/weapon/polearm/woodstaff/quarterstaff/steel(user.loc)
 						if(5)
 							if(HAS_TRAIT(user, TRAIT_DODGEEXPERT))
@@ -964,9 +961,9 @@
 							if(HAS_TRAIT(user, TRAIT_HEAVYARMOR))
 								I = new /obj/item/clothing/armor/brigandine/coatplates(user.loc)
 						if(7)
-							if(user.mind.get_skill_level(/datum/skill/combat/bows) > 3)
+							if(user.get_skill_level(/datum/skill/combat/bows) > 3)
 								I = new /obj/item/ammo_casing/caseless/arrow/poison/potent(user.loc)
-							else if(user.mind.get_skill_level(/datum/skill/combat/crossbows) > 3)
+							else if(user.get_skill_level(/datum/skill/combat/crossbows) > 3)
 								I = new /obj/item/ammo_casing/caseless/bolt/poison/potent(user.loc)
 							else if(HAS_TRAIT(user, TRAIT_HEAVYARMOR))
 								I = new /obj/item/clothing/head/helmet/visored/klappvisier(user.loc)

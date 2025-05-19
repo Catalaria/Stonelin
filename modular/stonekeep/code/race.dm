@@ -27,7 +27,7 @@
 	specstats = list("strength" = -1, "perception" = -1, "intelligence" = 1, "constitution" = 0, "endurance" = 1, "speed" = 2, "fortune" = 0)
 	specstats_f = list("strength" = 0, "perception" = -1, "intelligence" = 1, "constitution" = 1, "endurance" = 0, "speed" = 1, "fortune" = 0)
 
-#define DELF_SCORPION "B8CEAD"
+#define DELF_SCORPION "5f665b"
 
 /datum/species/elf/dark/get_skin_list()
 	return sortList(list(
@@ -37,8 +37,6 @@
 		"Spider Venom" = SKIN_COLOR_SPIDER_VENOM, // - (Deep grey)
 		"Jackpoison" = SKIN_COLOR_JACKPOISON, // - (Grey-purple)
 		"Homunculus" = SKIN_COLOR_HOMUNCULUS, // - (Grey-blue)
-		"Arachnid Ichor" = SKIN_COLOR_ARACHNID_ICHOR, // - (Black-blue)
-		"Scorpion" = DELF_SCORPION, // - (Pale green)
 	))
 /datum/species/elf/dark/on_species_gain(mob/living/carbon/C, datum/species/old_species, datum/preferences/pref_load)
 	. = ..()
@@ -219,11 +217,7 @@
 	OFFSET_FACE_F = list(0,0), OFFSET_BELT_F = list(0,1), OFFSET_BACK_F = list(0,1), \
 	OFFSET_NECK_F = list(0,1), OFFSET_MOUTH_F = list(0,1), OFFSET_PANTS_F = list(0,0), \
 	OFFSET_SHIRT_F = list(0,1), OFFSET_ARMOR_F = list(0,1), OFFSET_UNDIES_F = list(0,1))
-	customizers = list(
-		/datum/customizer/organ/eyes/humanoid,
-		/datum/customizer/bodypart_feature/hair/head/humanoid,
-		/datum/customizer/bodypart_feature/accessory,
-	)
+
 
 /datum/species/aasimar/get_skin_list()
 	return sortList(list(
@@ -297,22 +291,6 @@
 	specstats_f = list("strength" = -1, "perception" = 2, "intelligence" = 0, "constitution" = -1, "endurance" = 0, "speed" = 1, "fortune" = 0)
 	enflamed_icon = "widefire"
 	use_skintones = 1
-
-	body_markings = list(
-		/datum/body_marking/tonage,
-	)
-	customizers = list(
-		/datum/customizer/organ/ears/elf,
-		/datum/customizer/organ/eyes/humanoid,
-		/datum/customizer/bodypart_feature/hair/head/humanoid,
-		/datum/customizer/bodypart_feature/hair/facial/humanoid,
-		/datum/customizer/bodypart_feature/accessory,
-		/datum/customizer/bodypart_feature/face_detail,
-	)
-	bodypart_features = list(
-		/datum/bodypart_feature/hair/head,
-		/datum/bodypart_feature/hair/facial,
-	)
 	organs = list(
 		ORGAN_SLOT_BRAIN = /obj/item/organ/brain,
 		ORGAN_SLOT_HEART = /obj/item/organ/heart,

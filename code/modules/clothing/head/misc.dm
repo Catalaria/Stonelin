@@ -41,6 +41,7 @@
 	salvage_result = /obj/item/natural/cloth
 
 /obj/item/clothing/head/brimmed
+	name = "brimmed hat"
 	desc = "A simple brimmed hat that provides some relief from the sun."
 	icon_state = "brimmed"
 	salvage_result = /obj/item/natural/cured

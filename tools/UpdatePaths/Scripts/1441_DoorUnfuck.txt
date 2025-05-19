@@ -1,0 +1,12 @@
+/obj/structure/door/wood{icon_state="wcv"} : /obj/structure/door/wood/violet{@OLD;icon_state=@SKIP}
+/obj/structure/door/wood{icon_state="wcr"} : /obj/structure/door/wood/red{@OLD;icon_state=@SKIP}
+/obj/structure/door/@SUBTYPES{locked=1} : /obj/structure/door/@SUBTYPES{@OLD;locked=@SKIP}, /obj/effect/mapping_helpers/door/locker
+/obj/structure/door : /obj/structure/door{@OLD}
+/obj/structure/door/wood/donjon/stone : /obj/structure/door/stone{@OLD}
+/obj/structure/door/bars : /obj/structure/door/iron/bars{@OLD}
+/obj/structure/door/wood/weak/bolt/arcyne/@SUBTYPES : /obj/structure/door/arcyne/bolt/@SUBTYPES{@OLD}
+/obj/structure/door/wood/weak/bolt/@SUBTYPES : /obj/structure/door/weak/bolt/@SUBTYPES{@OLD}
+/obj/structure/door/wood/fancywood : /obj/structure/door/fancy{@OLD}
+/obj/structure/door/swing_door : /obj/structure/door/swing{@OLD}
+/obj/structure/door/wood/donjon : /obj/structure/door/viewport{@OLD}
+/obj/structure/door/wood/@SUBTYPES : /obj/structure/door/@SUBTYPES{@OLD}

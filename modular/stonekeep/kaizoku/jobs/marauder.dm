@@ -16,17 +16,17 @@
 /datum/outfit/job/sk/adventurer/marauder/pre_equip(mob/living/carbon/human/H)
 	..()
 	//average normal skill for all. They are not civilized Undine, so they have skills for survival.
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 4, TRUE) //Tribal Undine lives on the river.
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/fishing, 2, TRUE) //fish is their main course.
-	H.mind.adjust_skillrank(/datum/skill/craft/crafting, 4, TRUE) //crafting is their deal.
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/butchering, 3, TRUE) //butchering is also their deal.
-	H.mind.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE) //Elf-Goblin nature.
+	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/knives, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/swimming, 4, TRUE) //Tribal Undine lives on the river.
+	H.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/labor/fishing, 2, TRUE) //fish is their main course.
+	H.adjust_skillrank(/datum/skill/craft/crafting, 4, TRUE) //crafting is their deal.
+	H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/labor/butchering, 3, TRUE) //butchering is also their deal.
+	H.adjust_skillrank(/datum/skill/misc/sewing, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/stealing, 2, TRUE) //Elf-Goblin nature.
 
 	H.become_blind("TRAIT_GENERIC")
 	var/tribaltype = list("boneclad","bodysnatcher", "skypiercer")
@@ -44,8 +44,8 @@
 			shirt = /obj/item/clothing/shirt/rags/tribal
 			belt = /obj/item/storage/belt/leather/rope
 
-			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/axesmaces, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 
 			to_chat(H, span_warning( "<span class='info'>I am a warrior from Boneclad Clan! Revenge against paupers-folk! No more shall we pity the fool! To be forced to work is only for weaklings and the disgraced!</span>"))
 
@@ -70,8 +70,8 @@
 			shirt = /obj/item/clothing/shirt/rags/tribal
 			belt = /obj/item/storage/belt/leather/rope
 
-			H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
 
 			to_chat(H, span_warning( "<span class='info'>We've suffered under the yoke of humens for ages, and so I hold the banner of my ancestors with all my strength. How long must we suffer war?</span>"))
 
@@ -96,8 +96,8 @@
 			backl = /obj/item/ammo_holder/quiver/arrows
 			belt = /obj/item/storage/belt/leather
 
-			H.mind.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
-			H.mind.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/bows, 3, TRUE)
+			H.adjust_skillrank(/datum/skill/craft/tanning, 2, TRUE)
 			backpack_contents = list(/obj/item/bait = 1, /obj/item/weapon/knife/dagger/kunai = 1)
 
 			ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)

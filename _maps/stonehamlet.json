@@ -2,8 +2,11 @@
     "map_name": "Stone Hamlet",
     "map_path": "map_files/stonehamlet",
     "map_file": "stonehamlet.dmm",
+	"immigrant_origin": "Kingsfield",
+	"monarch_title": "King",
+	"monarch_title_f": "Queen",
 	"traits": [
-		{"Up": true, "Turf Weather Effects": true},
+		{"Up": true, "Turf Weather Effects": true, "Cellar": true},
 		{"Up": true, "Down": true, "Turf Weather Effects": true, "Leylines": true},
 		{"Up": true, "Down": true, "Turf Weather Effects": true, "Leylines": true},
 		{"Up": true, "Down": true, "Turf Weather Effects": true},

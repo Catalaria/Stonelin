@@ -296,10 +296,10 @@
 /turf/open/floor/blocks,
 /area/rogue/under/catacombs/dwarfoutpost)
 "ru" = (
-/obj/structure/mineral_door/wood/donjon/stone{
-	locked = 1;
+/obj/structure/door/stone{
 	lockid = "outpost"
 	},
+/obj/effect/mapping_helpers/door/locker,
 /obj/effect/decal/cleanable/blood_neu/tracks,
 /turf/open/floor/blocks,
 /area/rogue/under/catacombs/dwarfoutpost)
@@ -469,7 +469,7 @@
 	},
 /area/rogue/under/catacombs/dwarfoutpost)
 "xd" = (
-/obj/structure/mineral_door/wood/donjon/stone,
+/obj/structure/door/stone,
 /obj/item/restraints/legcuffs/beartrap/armed/camouflage,
 /turf/open/floor/herringbone,
 /area/rogue/under/catacombs/dwarfoutpost)
@@ -667,9 +667,7 @@
 /area/rogue/under/catacombs/dwarfoutpost)
 "EZ" = (
 /obj/item/clothing/cloak/cape/silk/random,
-/obj/structure/closet/crate/crafted_closet/lord{
-	locked = 0
-	},
+/obj/structure/closet/crate/crafted_closet,
 /obj/effect/spawner/map_spawner/artefact_outpost,
 /turf/open/floor/herringbone,
 /area/rogue/under/catacombs/dwarfoutpost)
@@ -773,11 +771,11 @@
 /turf/open/floor/metal,
 /area/rogue/under/catacombs/dwarfoutpost)
 "KS" = (
-/obj/structure/mineral_door/wood/donjon/stone,
+/obj/structure/door/stone,
 /turf/open/floor/concrete,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Lf" = (
-/obj/structure/mineral_door/wood/donjon/stone,
+/obj/structure/door/stone,
 /turf/open/floor/cobble,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Lg" = (
@@ -1078,7 +1076,7 @@
 /turf/open/water/cleanshallow,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Xd" = (
-/obj/structure/mineral_door/wood/donjon/stone,
+/obj/structure/door/stone,
 /turf/open/floor/blocks,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Xk" = (
@@ -1135,7 +1133,7 @@
 /turf/open/floor/concrete,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Zk" = (
-/obj/structure/mineral_door/wood/donjon/stone,
+/obj/structure/door/stone,
 /turf/open/floor/hexstone,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Zs" = (

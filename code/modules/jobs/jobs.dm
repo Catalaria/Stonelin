@@ -15,7 +15,7 @@ GLOBAL_PROTECT(noble_positions)
 
 GLOBAL_LIST_INIT(garrison_positions, list(
 	/datum/job/captain::title,	// STONEKEEP EDIT moved from noble positions
-	/datum/job/royalguard::title,
+	/datum/job/royalknight::title,
 	/datum/job/veteran::title,
 	/datum/job/guardsman::title,
 	/datum/job/men_at_arms::title,
@@ -37,17 +37,18 @@ GLOBAL_LIST_INIT(church_positions, list(
 	/datum/job/stonekeep/gravekeeper::title,
 	/datum/job/stonekeep/inquisitor::title,
 	/datum/job/stonekeep/templar::title,
+	/datum/job/mastersohei::title,
+	/datum/job/sohei::title,
 	))
 GLOBAL_PROTECT(church_positions)
 
 GLOBAL_LIST_INIT(serf_positions, list(
+	/datum/job/merchant::title,
 	/datum/job/scribe::title,
 	/datum/job/stonekeep/guildmaster::title,
 	/datum/job/stonekeep/blacksmith::title,
-	/datum/job/stonekeep/feldsher::title,
 	/datum/job/stonekeep/nitemaster::title,
 	/datum/job/stonekeep/hammerite::title,
-	/datum/job/merchant::title,
 	/datum/job/innkeep::title,
 	/datum/job/armorsmith::title,
 	/datum/job/weaponsmith::title,
@@ -59,16 +60,15 @@ GLOBAL_LIST_INIT(serf_positions, list(
 	/datum/job/apothecary::title,
 	/datum/job/scribe::title,
 	/datum/job/gaffer::title,
-	/datum/job/butler::title,
+//	/datum/job/butler::title,
 	))
 GLOBAL_PROTECT(serf_positions)
 
 GLOBAL_LIST_INIT(peasant_positions, list(
-	/datum/job/bandit::title,
+	/datum/job/stonekeep/elder::title,
 	/datum/job/stonekeep/nitemaiden::title,
 	/datum/job/stonekeep/weaver::title,
 	/datum/job/stonekeep/woodsman::title,
-	/datum/job/stonekeep/elder::title,
 	/datum/job/farmer::title,
 	/datum/job/miner::title,
 	/datum/job/butcher::title,
@@ -76,7 +76,6 @@ GLOBAL_LIST_INIT(peasant_positions, list(
 	/datum/job/carpenter::title,
 	/datum/job/hunter::title,
 	/datum/job/fisher::title,
-	/datum/job/mercenary::title,
 	/datum/job/bard::title,
 	/datum/job/prisoner::title,
 	/datum/job/vagrant::title,
@@ -101,9 +100,9 @@ GLOBAL_LIST_INIT(youngfolk_positions, list(
 GLOBAL_PROTECT(youngfolk_positions)
 
 GLOBAL_LIST_INIT(company_positions, list(
-	/datum/job/merchant::title,
+//	/datum/job/merchant::title,	STONEKEEP EDIT merchant not meant to be his own faction fully
 	/datum/job/shophand::title,
-	/datum/job/grabber::title,
+//	/datum/job/grabber::title,
 	))
 GLOBAL_PROTECT(company_positions)
 

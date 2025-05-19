@@ -31,24 +31,24 @@ Spawn in the bog area.
 	gloves = /obj/item/clothing/gloves/leather/abyssal/black
 	neck = /obj/item/clothing/neck/roguetown/chaincoif/karuta_zukin
 	beltl = /obj/item/weapon/sword/long/tachi
-	if(H.mind)
-		H.mind?.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
-		H.change_stat(STATKEY_STR, 1)
-		H.change_stat(STATKEY_INT, 3)
-		H.change_stat(STATKEY_END, 2)
-		H.change_stat(STATKEY_PER, 2)
-		H.change_stat(STATKEY_LCK, 2)
+
+	H.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/reading, 4, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+	H.change_stat(STATKEY_STR, 1)
+	H.change_stat(STATKEY_INT, 3)
+	H.change_stat(STATKEY_END, 2)
+	H.change_stat(STATKEY_PER, 2)
+	H.change_stat(STATKEY_LCK, 2)
 	ADD_TRAIT(H, TRAIT_NOBLE, TRAIT_GENERIC)
 	ADD_TRAIT(H, TRAIT_HEAVYARMOR, TRAIT_GENERIC)
 	if(!HAS_TRAIT(H, TRAIT_KAIZOKU))
@@ -79,23 +79,23 @@ Spawn in the bog area.
 
 /datum/outfit/job/sk_migration/heart_shrinemaiden/pre_equip(mob/living/carbon/human/H)
 	..()
-	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, pick(1,1,2), TRUE) // Wood staff
-		H.mind.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, pick(2,2,3), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
 
-		H.change_stat(STATKEY_STR, 1)
-		H.change_stat(STATKEY_PER, -1)
-		H.change_stat(STATKEY_CON, 1)
-		H.change_stat(STATKEY_END, 1)
-		H.change_stat(STATKEY_SPD, 1)
+	H.adjust_skillrank(/datum/skill/misc/reading, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/wrestling, 5, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/polearms, pick(1,1,2), TRUE) // Wood staff
+	H.adjust_skillrank(/datum/skill/misc/sewing, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/climbing, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/athletics, pick(2,2,3), TRUE)
+	H.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/cooking, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/medicine, 1, TRUE)
+
+	H.change_stat(STATKEY_STR, 1)
+	H.change_stat(STATKEY_PER, -1)
+	H.change_stat(STATKEY_CON, 1)
+	H.change_stat(STATKEY_END, 1)
+	H.change_stat(STATKEY_SPD, 1)
 
 	ADD_TRAIT(H, TRAIT_DODGEEXPERT, TRAIT_GENERIC)
 	if(H.patron != /datum/patron/divine/abyssor)
@@ -132,14 +132,14 @@ Spawn in the bog area.
 
 	to_chat(H, span_warning( "<span class='userdanger'>I am a noble storm-hardened warrior in lacquered armor whom lands I own and control. Yet, here I stand in unfamiliar lands no different of my own.</span>"))
 
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/labor/taming, 1, TRUE) //Zamurais does not tame their steed. Their retainer do that.
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/labor/taming, 1, TRUE) //Zamurais does not tame their steed. Their retainer do that.
+	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/unarmed, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
 	if(findtext(H.real_name, " Clanless")) //You can't be a clanless zamurai.
 		to_chat(H, "<span class='info'>As a important member of Fog Islands, of course I have a clan. What the hell you've been thinking?</span>")
 		clanfication(H)
@@ -163,25 +163,25 @@ Spawn in the bog area.
 		if("Odashibushi(Melee)") //Not as sword-specialized as Swordmaster, but have better armor.
 			H.set_blindness(0)
 			backr = /obj/item/weapon/sword/long/greatsword/odachi
-			if(H.mind)
-				H.mind.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE) //4 instead of 5. Abyssariads with 5 are champions only.
-				H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
-				H.change_stat(STATKEY_CON, 1)
-				H.change_stat(STATKEY_END, 1)
-				H.change_stat(STATKEY_SPD, 1)
-				H.change_stat(STATKEY_STR, 1)
+
+			H.adjust_skillrank(/datum/skill/combat/swords, 4, TRUE) //4 instead of 5. Abyssariads with 5 are champions only.
+			H.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+			H.change_stat(STATKEY_CON, 1)
+			H.change_stat(STATKEY_END, 1)
+			H.change_stat(STATKEY_SPD, 1)
+			H.change_stat(STATKEY_STR, 1)
 
 		if("Yumibushi(Ranged)") // Ranged Focus.
 			H.set_blindness(0)
 			backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow/long/yumi
 			beltl = /obj/item/ammo_holder/quiver/arrows
 			beltr = /obj/item/weapon/sword/uchigatana
-			if(H.mind)
-				H.mind.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
-				H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-				H.change_stat(STATKEY_PER, 2)
-				H.change_stat(STATKEY_SPD, 1)
-				H.change_stat(STATKEY_STR, 1)
+
+			H.adjust_skillrank(/datum/skill/combat/bows, 4, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+			H.change_stat(STATKEY_PER, 2)
+			H.change_stat(STATKEY_SPD, 1)
+			H.change_stat(STATKEY_STR, 1)
 
 	H.dna.species.soundpack_m = new /datum/voicepack/male/knight()
 	H.cure_blind("TRAIT_GENERIC")
@@ -192,7 +192,7 @@ Spawn in the bog area.
 	H.cmode_music = 'modular/stonekeep/kaizoku/sound/combat/combat_emperor.ogg'
 	if(H.dna.species.id == "human")	// safeguard if its unlocked for more abyssariads later
 		H.skin_tone = SKIN_COLOR_TROPICALDRY
-	H.set_hair_style(/datum/sprite_accessory/hair/kaizoku)
+	H.set_hair_style(/datum/sprite_accessory/hair/head/kaizoku)
 
 
 

@@ -27,14 +27,14 @@
 	H.real_name = "[honorary] [prev_real_name]"
 	H.name = "[honorary] [prev_name]"
 
-	H.mind?.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/music, rand(1,2), TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/athletics, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/unarmed, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/wrestling, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/music, rand(1,2), TRUE)
+	H.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE)
 	H.change_stat("intelligence", 1)
 	shirt = /obj/item/clothing/shirt/undershirt/random
 	shoes = /obj/item/clothing/shoes/boots
@@ -46,14 +46,14 @@
 	pants = /obj/item/clothing/pants/pantaloons/random
 	backpack_contents = list(/obj/item/reagent_containers/glass/bottle/wine = 1, /obj/item/reagent_containers/glass/cup/silver = 1)
 	if(H.gender == FEMALE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/knives, 1, TRUE)
 		armor = /obj/item/clothing/shirt/dress/silkydress
 		head = /obj/item/clothing/head/hatfur
 		backr = /obj/item/gun/ballistic/revolver/grenadelauncher/bow
 		beltr = /obj/item/weapon/knife/dagger/steel/special
 		beltl = /obj/item/ammo_holder/quiver/arrows
 	if(H.gender == MALE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 		armor = /obj/item/clothing/shirt/tunic/noblecoat
 		head = /obj/item/clothing/head/fancyhat
 		beltr = /obj/item/weapon/sword/rapier

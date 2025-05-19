@@ -90,7 +90,6 @@
 	name = "sturdy chest"
 	icon_state = "chest_neu"
 	base_icon_state = "chest_neu"
-	keylock = FALSE
 	sellprice = 6
 
 /datum/crafting_recipe/roguetown/structure/carpentry/closet
@@ -224,7 +223,7 @@
 
 /datum/crafting_recipe/roguetown/structure/carpentry/door
 	name = "door (wood)"
-	result = /obj/structure/mineral_door/wood/deadbolt
+	result = /obj/structure/door/weak/bolt
 	reqs = list(/obj/item/grown/log/tree/small=2)
 	craftdiff = 2
 

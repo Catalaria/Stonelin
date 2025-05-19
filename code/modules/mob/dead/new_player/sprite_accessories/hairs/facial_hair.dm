@@ -6,13 +6,13 @@
 /datum/sprite_accessory/hair/facial
 	icon = 'icons/roguetown/mob/facial.dmi'
 	gender = MALE
+	specuse = RACES_PLAYER_ALL // STONEKEEP EDIT
 	var/briarhairbuff = FALSE // STONEKEEP EDIT. Does having this hairstyle provide a devotion boon to Briars?
 
 /datum/sprite_accessory/hair/facial/none
 	name = "None"
 	icon_state = ""
 	gender = FEMALE
-	specuse = ALL_RACES_LIST
 
 /datum/sprite_accessory/hair/facial/shaved
 	name = "None"
@@ -64,7 +64,7 @@
 	name = "Fullest Beard"
 	icon_state = "facial_brokenman"
 	gender = MALE
-	specuse = list("human", "dwarf", "elf", "tiefling", "halforc")
+	specuse = list("human", "dwarf", "elf", "halforc")
 	briarhairbuff = TRUE
 
 /datum/sprite_accessory/hair/facial/knightly
@@ -85,7 +85,7 @@
 	name = "Mustache"
 	icon_state = "facial_5oclockmoustache"
 	gender = MALE
-	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "halforc")
+	specuse = list("human", "dwarf", "elf", "tiefling", "halforc")
 
 /datum/sprite_accessory/hair/facial/pick
 	name = "Pick"
@@ -97,13 +97,13 @@
 	name = "Pipesmoker"
 	icon_state = "facial_pipe"
 	gender = MALE
-	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "halforc")
+	specuse = list("human", "dwarf", "elf", "tiefling", "halforc")
 
 /datum/sprite_accessory/hair/facial/viking
 	name = "Raider"
 	icon_state = "facial_viking"
 	gender = MALE
-	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "halforc")
+	specuse = list("human", "dwarf", "elf", "tiefling", "halforc")
 	briarhairbuff = TRUE
 
 /datum/sprite_accessory/hair/facial/ranger
@@ -117,14 +117,14 @@
 	name = "Rumata"
 	icon_state = "facial_vandyke"
 	gender = MALE
-	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "halforc")
+	specuse = list("human", "dwarf", "elf", "tiefling", "halforc")
 	briarhairbuff = TRUE
 
 /datum/sprite_accessory/hair/facial/burns
 	name = "Sideburns"
 	icon_state = "facial_burns"
 	gender = MALE
-	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "halforc")
+	specuse = list("human", "dwarf", "elf", "tiefling", "halforc")
 
 /datum/sprite_accessory/hair/facial/hermit
 	name = "Wise Hermit"

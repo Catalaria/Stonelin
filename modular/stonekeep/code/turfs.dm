@@ -10,7 +10,7 @@
 /*--------------\
 | Better Floors |
 \--------------*/
-
+/*
 /turf/open/floor/wood
 	smooth_icon = 'modular/stonekeep/icons/wood.dmi'
 /turf/open/floor/wood/nosmooth
@@ -20,34 +20,15 @@
 	smooth_icon = 'modular/stonekeep/icons/wood_turned.dmi'
 /turf/open/floor/woodturned/nosmooth/saiga
 	smooth_icon = 'modular/stonekeep/icons/wood_turned.dmi'
-
+*/
 /turf/open/floor/ruinedwood
-	smooth = SMOOTH_MORE
-	canSmoothWith = list(/turf/closed/mineral, /turf/closed/mineral, /turf/closed/wall/mineral/stonebrick, /turf/closed/wall/mineral/wood, /turf/closed/wall/mineral/wooddark, /turf/closed/wall/mineral/decowood, /turf/closed/wall/mineral/decostone, /turf/closed/wall/mineral/stone, /turf/closed/wall/mineral/stone/moss, /turf/open/floor/cobble, /turf/open/floor/dirt, /turf/open/floor/grass)
 
 /turf/open/floor/ruinedwood/spiral
-	canSmoothWith = list(/turf/open/floor/cobble, /turf/open/floor/herringbone)
-
-/turf/open/floor/ruinedwood/spiral/cardinal_smooth(adjacencies)
-	smooth(adjacencies)
 
 /turf/open/floor/ruinedwood/decayed
 	icon = 'modular/stonekeep/icons/turfs.dmi'
 	icon_state = "wood_decayed"
-	canSmoothWith = list(/turf/closed/mineral,
-		/turf/closed/mineral,
-		/turf/closed/wall/mineral/stonebrick,
-		/turf/closed/wall/mineral/wood,
-		/turf/closed/wall/mineral/wooddark,
-		/turf/closed/wall/mineral/decowood,
-		/turf/closed/wall/mineral/decostone,
-		/turf/closed/wall/mineral/stone,
-		/turf/closed/wall/mineral/stone/moss,
-		/turf/open/floor/cobble,
-		/turf/open/floor/cobblerock,
-		/turf/open/floor/grass,
-		/turf/open/floor/dirt
-		)
+
 /turf/open/floor/ruinedwood/decayed/Initialize()
 	. = ..()
 	dir = pick(GLOB.alldirs)
@@ -60,7 +41,6 @@
 	barefootstep = FOOTSTEP_HARD_BAREFOOT
 	clawfootstep = FOOTSTEP_WOOD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-	tiled_dirt = FALSE
 	damage_deflection = 8
 	max_integrity = 800
 	color = "#beb9c5"
@@ -71,14 +51,6 @@
 
 /turf/open/floor/cobble
 	icon = 'modular/stonekeep/icons/turfs.dmi'
-	canSmoothWith = list(/turf/open/floor/dirt,
-						/turf/open/floor/grass,
-						/turf/open/floor/ruinedwood,
-						/turf/open/floor/wood,
-						/turf/open/floor/blocks,
-						/turf/open/floor/cobblerock,
-						/turf/open/floor/ruinedwood/decayed
-						)
 
 /turf/open/floor/herringbone
 	icon = 'modular/stonekeep/icons/turfs.dmi'
@@ -89,18 +61,12 @@
 /turf/open/floor/cobblerock
 	icon = 'modular/stonekeep/icons/turfs.dmi'
 	neighborlay = "cobblerock"
-	smooth = SMOOTH_MORE
-	canSmoothWith = list(/turf/open/floor)
 
-/turf/open/floor/cobblerock/cardinal_smooth(adjacencies)
-	smooth(adjacencies)
 
 /turf/open/floor/cobblerock/alt
 	icon_state = "cobblerock_alt"
 	icon = 'modular/stonekeep/icons/turfs.dmi'
 	neighborlay = "cobblerock_alt"
-	smooth = SMOOTH_MORE
-	canSmoothWith = list(/turf/open/floor)
 
 /turf/open/floor/cobblerock/alt/Initialize()
 	. = ..()
@@ -110,34 +76,12 @@
 	icon = 'modular/stonekeep/icons/turfs.dmi'
 	icon_state = "cobblerock_red"
 	neighborlay = "cobblerock_red"
-	smooth = SMOOTH_MORE
-	canSmoothWith = list(
-						/turf/open/floor/snow,
-						/turf/open/floor/snow/patchy,
-						/turf/open/floor/snow/rough,
-						/turf/open/floor/grass,
-						/turf/open/floor/grass/mixyel,
-						/turf/open/floor/grass/yel,
-						/turf/open/floor/grass/red,
-						/turf/open/floor/grass/transition,
-						/turf/open/floor/dirt/muddie
-						)
 
 /turf/open/floor/cobble/mossy
 	icon = 'modular/stonekeep/icons/turfs.dmi'
 	icon_state = "mossystone1"
 	neighborlay = "mossyedge"
-	smooth = SMOOTH_TRUE
-	canSmoothWith = list(/turf/open/floor/dirt,
-						/turf/open/floor/dirt/road,
-						/turf/open/floor/grass,
-						/turf/open/floor/grass/red,
-						/turf/open/floor/grass/yel,
-						/turf/open/floor/grass/cold,
-						/turf/open/floor/grass,
-						/turf/open/floor/snow,
-						/turf/open/floor/snow/patchy,
-						/turf/open/floor/snow/rough)
+
 /turf/open/floor/cobble/mossy/Initialize()
 	. = ..()
 	dir = pick(GLOB.cardinals)
@@ -153,26 +97,7 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	landsound = 'sound/foley/jumpland/stoneland.wav'
-	smooth = SMOOTH_MORE
-	canSmoothWith = list(/turf/closed/mineral,
-						/turf/open/floor/herringbone,
-						/turf/closed/mineral,
-						/turf/closed/wall/mineral/stonebrick,
-						/turf/closed/wall/mineral/wood,
-						/turf/closed/wall/mineral/wooddark,
-						/turf/closed/wall/mineral/stone,
-						/turf/closed/wall/mineral/stone/moss,
-						/turf/open/floor/cobble,
-						/turf/open/floor/dirt,
-						/turf/open/floor/grass,
-						/turf/open/floor/grass/red,
-						/turf/open/floor/grass/yel,
-						/turf/open/floor/grass/cold,
-						/turf/open/floor/snow,
-						/turf/open/floor/snow/patchy,
-						/turf/open/floor/snow/rough,
-						/turf/open/floor/sandstone,
-						/turf/open/floor/sandstone/temple)
+
 
 /turf/open/floor/sandstone/shaded
 	color = "#e5dfdf"
@@ -186,15 +111,6 @@
 /turf/open/floor/sandstone/old
 	icon_state = "sandstone_old"
 
-/turf/open/floor/church
-	canSmoothWith = list(/turf/closed/mineral,
-						/turf/closed/mineral,
-						/turf/closed/wall/mineral/stonebrick,
-						/turf/closed/wall/mineral/wood,
-						/turf/closed/wall/mineral/wooddark,
-						/turf/closed/wall/mineral/stone,
-						/turf/closed/wall/mineral/stone/moss,)
-
 /turf/open/floor/churchrough
 	icon = 'modular/stonekeep/icons/turfs.dmi'
 
@@ -207,17 +123,12 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	landsound = 'sound/foley/jumpland/stoneland.wav'
 	neighborlay = "cobstonemoss"
-	smooth = SMOOTH_TRUE
-	canSmoothWith = list(/turf/open/floor/dirt, /turf/open/floor/grass)
 	max_integrity = 1200
 
 /turf/open/floor/cobblemoss/turf_destruction(damage_flag)
 	. = ..()
 	ChangeTurf(/turf/open/floor/dirt, flags = CHANGETURF_INHERIT_AIR)
 	new /obj/item/natural/stone(src)
-
-/turf/open/floor/cobblemoss/cardinal_smooth(adjacencies)
-	smooth(adjacencies)
 
 /turf/open/floor/cobblemoss/Initialize()
 	. = ..()
@@ -226,44 +137,21 @@
 /turf/open/floor/blocks/moss
 	icon = 'modular/stonekeep/icons/turfs.dmi'
 	icon_state = "blockmoss"
-	canSmoothWith = list(/turf/open/floor/dirt,
-						/turf/open/floor/grass,
-						/turf/open/floor/herringbone,
-						/turf/open/floor/snow,
-						/turf/open/floor/snow/patchy,
-						/turf/open/floor/snow/rough,
-						)
 
 /turf/open/floor/herringbone
 	icon = 'modular/stonekeep/icons/turfs.dmi'
 	neighborlay = "herringedge"
-	smooth = SMOOTH_MORE
-	canSmoothWith = list(/turf/open/floor/dirt)
 
 /turf/open/floor/tile/masonic
 	icon_state = "masonic"
-	smooth = SMOOTH_TRUE
-	canSmoothWith = list(/turf/open/floor/herringbone,
-						)
 
-/turf/open/floor/tile/masonic/cardinal_smooth(adjacencies)
-	smooth(adjacencies)
+
 
 /*	..................   Grasses   ................... */
 /turf/open/floor/grass
 	desc = "Grass, sodden in mud and bogwater."
 	icon = 'modular/stonekeep/icons/turfs.dmi'
 	neighborlay = "grass"
-	canSmoothWith = list(
-						/turf/open/floor/snow,
-						/turf/open/floor/snow/rough,
-						/turf/open/floor/grass/mixyel,
-						/turf/open/floor/grass/yel,
-						/turf/open/floor/grass/red,
-						/turf/open/floor/naturalstone,
-						/turf/open/floor/grass/transition,
-						/turf/open/floor/dirt/muddie
-						)
 
 /turf/open/floor/grass/Initialize()
 	. = ..()
@@ -280,12 +168,12 @@
 /turf/open/floor/grass/mixyel
 	icon = 'modular/stonekeep/icons/turfs.dmi'
 	neighborlay = "grass_yelmix"
-	smooth = SMOOTH_TRUE
+/*
 	canSmoothWith = list(
 	/turf/open/floor/grass/yel,
 	/turf/open/floor/grass/red,
 	/turf/open/floor/snow)
-
+*/
 /turf/open/floor/grass/mixyel/Initialize()
 	. = ..()
 	dir = pick(GLOB.cardinals)
@@ -298,52 +186,74 @@
 
 /turf/open/floor/grass/yel
 	icon = 'modular/stonekeep/icons/turfs.dmi'
-	smooth = SMOOTH_TRUE
+/*
 	canSmoothWith = list(
 	/turf/open/floor/snow,
 	)
-
+*/
 /turf/open/floor/grass/red
 	name = "red grass"
 	desc = "Grass, ripe with Dendor's blood."
 	icon = 'modular/stonekeep/icons/turfs.dmi'
 	icon_state = "grass_bog"
 	neighborlay = "grass_bog"
-	smooth = SMOOTH_TRUE
-	canSmoothWith = list(
-	/turf/open/floor/snow,
-	)
 
 
 /turf/open/floor/grass/cold
 	icon = 'modular/stonekeep/icons/turfs.dmi'
 	neighborlay = "grass_cold"
+/*
 	canSmoothWith = list(/turf/open/floor/grass,
 						/turf/open/floor/snow,
 						/turf/open/floor/snow/rough)
+*/
+	smoothing_groups = SMOOTH_GROUP_OPEN_FLOOR + SMOOTH_GROUP_FLOOR_SNOW
 	temperature = 250
 
 /turf/open/floor/grass/hell
 	icon = 'icons/turf/floors.dmi'
 
 
+/turf/open/floor/grass/leaves
+	name = "leaves"
+	icon = 'icons/turf/floors.dmi'
+	icon_state = "treetop1"
+/turf/open/floor/grass/leaves/Initialize()
+	dir = pick(GLOB.cardinals)
+	icon_state = pick("treetop1", "treetop2")
+	. = ..()
+
+
 /*	..................   Snow   ................... */
 /turf/open/floor/snow/patchy
 	icon = 'modular/stonekeep/icons/turfs.dmi'
+	smoothing_groups = SMOOTH_GROUP_OPEN_FLOOR + SMOOTH_GROUP_FLOOR_SNOW
+//	smoothing_list = SMOOTH_GROUP_OPEN_FLOOR + SMOOTH_GROUP_FLOOR_SNOW
+/*
 	canSmoothWith = list(
 						/turf/open/floor/snow,
 						/turf/open/floor/grass/cold
 						)
-	neighborlay = "snowpatchy"
+*/
+//	neighborlay = "snowpatchy"
+	neighborlay = ""
 
 /turf/open/floor/snow
 	icon = 'icons/turf/floors.dmi'
+	smoothing_groups = SMOOTH_GROUP_OPEN_FLOOR + SMOOTH_GROUP_FLOOR_SNOW
+	smoothing_list = SMOOTH_GROUP_OPEN_FLOOR + SMOOTH_GROUP_FLOOR_SNOW
+	smoothing_flags = SMOOTH_EDGE
+/*
 	canSmoothWith = list(
 						/turf/open/floor/snow)
+*/
 	temperature = 250
 
 /turf/open/floor/snow/rough
 	icon = 'icons/turf/floors.dmi'
+	smoothing_groups = SMOOTH_GROUP_OPEN_FLOOR + SMOOTH_GROUP_FLOOR_SNOW
+//	smoothing_list = SMOOTH_GROUP_OPEN_FLOOR + SMOOTH_GROUP_FLOOR_SNOW
+	neighborlay = ""
 
 /obj/effect/decal/rockedge
 	name = ""
@@ -359,7 +269,7 @@
 
 /turf/open/floor/dirt
 	icon = 'modular/stonekeep/icons/turfs.dmi'
-	smooth = SMOOTH_MORE
+/*
 	canSmoothWith = list(
 						/turf/open/floor/cobblerock/alt,
 						/turf/open/floor/grass,
@@ -369,6 +279,7 @@
 						/turf/open/floor/snow/patchy,
 						/turf/open/floor/grass/cold,
 						)
+*/
 	spread_chance = 0.1
 
 
@@ -382,14 +293,14 @@
 
 /turf/open/floor/dirt/road
 	icon = 'modular/stonekeep/icons/turfs.dmi'
-	smooth = SMOOTH_TRUE | SMOOTH_BORDER
 	neighborlay = "oldroad"
+/*
 	canSmoothWith = list(/turf/open/floor/grass,
 						/turf/open/floor/snow,
 						/turf/open/floor/dirt/,
 						/turf/open/floor/dirt/muddie,
 						)
-
+*/
 /turf/open/floor/dirt/road/Initialize()
 	. = ..()
 	hidden_truffles = FALSE
@@ -406,7 +317,6 @@
 	footstep = FOOTSTEP_MUD
 	barefootstep = FOOTSTEP_MUD
 	heavyfootstep = FOOTSTEP_MUD
-	canSmoothWith = list()	//ROGTODO test is this correct settings for the mud smooth?
 	spread_chance = 0
 
 /turf/open/floor/dirt/muddie/Initialize()
@@ -424,35 +334,21 @@
 	desc = "Clear water in a muddy pond."
 	icon = 'modular/stonekeep/icons/turfs.dmi'
 	icon_state = "pond"
-	neighborlay_override = "grass_yeledge"
-	smooth = SMOOTH_MORE
+//	neighborlay_override = "grass_yeledge"
+/*
 	canSmoothWith = list(
 						/turf/open/floor/grass/yel,
 						)
+*/
 /turf/open/water/cavepond/Initialize()
 	.  = ..()
 	icon_state = "pond"
-/turf/open/water/cavepond/cardinal_smooth(adjacencies)
-	smooth(adjacencies)
 
 /turf/open/water/bath
 	wash_in = FALSE
 
 /turf/open/floor/naturalstone
-//	smooth = SMOOTH_MORE|SMOOTH_BORDER
-	smooth = SMOOTH_MORE
 	icon = 'modular/stonekeep/icons/turfs.dmi'
-	canSmoothWith = list(
-						/turf/open/floor/cobblerock,
-						/turf/open/floor/grass,
-						/turf/open/floor/snow,
-						/turf/open/floor/dirt,
-						/turf/open/floor/snow/patchy,
-						/turf/open/floor/grass/cold,
-						)
-/turf/open/floor/naturalstone/cardinal_smooth(adjacencies)
-	smooth(adjacencies)
-
 
 /turf/open/floor/naturalstone/rough
 	icon_state = "digstone_rough"
@@ -470,15 +366,8 @@
 	footstep = FOOTSTEP_GRASS
 	barefootstep = FOOTSTEP_SOFT_BAREFOOT
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
-	tiled_dirt = FALSE
 	landsound = 'sound/foley/jumpland/grassland.wav'
 	slowdown = 0
-	smooth = SMOOTH_TRUE
-	neighborlay = "hayedge"
-	canSmoothWith = list(	)
-
-/turf/open/floor/hay/cardinal_smooth(adjacencies)
-	smooth(adjacencies)
 
 /obj/effect/decal/haycorner
 	name = ""
@@ -497,28 +386,6 @@
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	landsound = 'sound/foley/jumpland/dirtland.wav'
 	neighborlay = "sandedges"
-	smooth = SMOOTH_TRUE
-	canSmoothWith = list(
-		/turf/closed/mineral,
-		/turf/closed/mineral,
-		/turf/closed/wall/mineral/stonebrick,
-		/turf/closed/wall/mineral/wood,
-		/turf/closed/wall/mineral/wooddark,
-		/turf/closed/wall/mineral/stone,
-		/turf/closed/wall/mineral/stone/moss,
-		/turf/open/floor/cobble,
-		/turf/open/floor/dirt,
-		/turf/open/floor/grass,
-		/turf/open/floor/grass/red,
-		/turf/open/floor/grass/yel,
-		/turf/open/floor/grass/cold,
-		/turf/open/floor/snow,
-		/turf/open/floor/snow/patchy,
-		/turf/open/floor/snow/rough
-	)
-
-/turf/open/floor/sand/cardinal_smooth(adjacencies)
-	smooth(adjacencies)
 
 /turf/open/floor/sand/Initialize()
 	dir = pick(GLOB.cardinals)
@@ -527,8 +394,6 @@
 
 /turf/open/floor/carpet/hamlet
 	icon = 'modular/stonekeep/icons/carpet_hamlet.dmi'
-	canSmoothWith = list(/turf/open/floor/carpet/hamlet)
-	smooth = SMOOTH_TRUE
 
 
 // more roofing
@@ -559,13 +424,11 @@
 	desc = ""
 	icon = 'icons/turf/walls.dmi'
 	icon_state = "stonebrick"
-	smooth = SMOOTH_MORE
 	blade_dulling = DULLING_BASH
 	max_integrity = 1200
 	sheet_type = /obj/item/natural/stone
 	break_sound = 'sound/combat/hits/onstone/stonedeath.ogg'
 	attacked_sound = list('sound/combat/hits/onstone/wallhit.ogg', 'sound/combat/hits/onstone/wallhit2.ogg', 'sound/combat/hits/onstone/wallhit3.ogg')
-	canSmoothWith = list(/turf/closed/wall/mineral/stone)
 	above_floor = /turf/open/floor/blocks
 	baseturfs = list(/turf/open/floor/blocks)
 	neighborlay = "dirtedge"

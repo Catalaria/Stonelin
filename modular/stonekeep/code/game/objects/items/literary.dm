@@ -44,7 +44,7 @@
 /obj/item/literary/proc/attemptlearn(mob/user)
 	if(user.mind && ishuman(user))
 		var/mob/living/carbon/human/H = user
-		var/userskill = H.mind.get_skill_level(skilltoteach)
+		var/userskill = H.get_skill_level(skilltoteach)
 		var/intbonus = H.STAINT - 10
 		if(userskill < minskill)
 			to_chat(user, "<span class='warning'>This guide is too advanced for me to study!</span>")
@@ -52,7 +52,7 @@
 		if(userskill < maxskill)
 			to_chat(user, "You begin to study the [src.name]!")
 			if(do_after(H, 5 SECONDS))
-				user.mind.adjust_experience(skilltoteach, exppercycle + intbonus)
+				user.adjust_experience(skilltoteach, exppercycle + intbonus)
 				attemptlearn(user)
 		else
 			to_chat(user, "<span class='warning'>This guide is too simple for me to learn any more from!</span>")

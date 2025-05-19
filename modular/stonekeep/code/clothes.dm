@@ -663,16 +663,21 @@
 	icon_state = "leathervest"
 	color = "#ffffff"
 
-//................ Iron breastplate ............... //
-/obj/item/clothing/armor/cuirass/iron
-	icon = 'modular/stonekeep/icons/clothing.dmi'
+//................ Breastplate breaker ............... //
 /obj/item/clothing/armor/cuirass/iron/shadowplate
+	icon = 'icons/roguetown/clothing/armor.dmi'
+/obj/item/clothing/armor/cuirass/grenzelhoft
+	icon = 'icons/roguetown/clothing/armor.dmi'
+/obj/item/clothing/armor/cuirass/copperchest
+	icon = 'icons/roguetown/clothing/armor.dmi'
+/obj/item/clothing/armor/cuirass/elven
+	icon = 'icons/roguetown/clothing/armor.dmi'
+/obj/item/clothing/armor/cuirass/vampire
 	icon = 'icons/roguetown/clothing/armor.dmi'
 
 //................ Steel cuirass ............... //
 /obj/item/clothing/armor/cuirass
-	icon_state = "cuirasse"
-	item_state = "cuirass"
+	icon = 'modular/stonekeep/icons/clothing.dmi'
 
 //................ Silk Jacket ............... //
 /obj/item/clothing/armor/leather/jacket/niteman

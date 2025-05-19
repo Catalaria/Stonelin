@@ -159,10 +159,7 @@
 "cw" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/item/book/granter/spell/magick/fetch,
-/obj/structure/closet/crate/chest/neu_iron{
-	locked = 1;
-	lockid = "zizombiemonastery"
-	},
+/obj/structure/closet/crate/chest/neu_iron,
 /turf/open/floor/cobble,
 /area/rogue/under/lavamonastery)
 "cF" = (
@@ -374,7 +371,7 @@
 /turf/open/floor/grass/cold,
 /area/rogue/outdoors/mountains/decap)
 "gK" = (
-/obj/structure/barricade/rogue,
+/obj/structure/barricade/wooden,
 /turf/open/floor/naturalstone,
 /area/rogue/under/cavelava)
 "gL" = (
@@ -567,10 +564,7 @@
 /area/rogue/under/lavamonastery)
 "ky" = (
 /obj/effect/decal/cleanable/dirt/dust,
-/obj/structure/closet/crate/chest/neu_iron{
-	locked = 1;
-	lockid = "zizombiemonastery"
-	},
+/obj/structure/closet/crate/chest/neu_iron,
 /obj/item/clothing/armor/leather/heavy,
 /turf/open/floor/cobble,
 /area/rogue/under/lavamonastery)
@@ -1192,7 +1186,7 @@
 /turf/open/floor/naturalstone,
 /area/rogue/under/mountains)
 "vz" = (
-/obj/structure/mineral_door{
+/obj/structure/door{
 	lockid = "zizotower";
 	name = "tower of the wise"
 	},
@@ -1920,7 +1914,7 @@
 /turf/open/floor/naturalstone,
 /area/rogue/under/cavelava)
 "Kb" = (
-/obj/structure/mineral_door/wood/donjon/stone{
+/obj/structure/door/stone{
 	lockid = "mansionvampire";
 	name = "lords room"
 	},
@@ -2109,7 +2103,7 @@
 /turf/open/floor/cobble,
 /area/rogue/under/lavamonastery)
 "Nm" = (
-/obj/structure/mineral_door/wood/donjon/stone,
+/obj/structure/door/stone,
 /turf/open/floor/churchbrick,
 /area/rogue/under/mountains/anvil/lower)
 "Nn" = (
@@ -2152,10 +2146,10 @@
 /turf/open/floor/naturalstone,
 /area/rogue/indoors/cave/bear)
 "Ps" = (
-/obj/structure/mineral_door/wood/donjon/stone{
-	locked = 1;
+/obj/structure/door/stone{
 	lockid = "mansionvampire"
 	},
+/obj/effect/mapping_helpers/door/locker,
 /turf/open/floor/hexstone,
 /area/rogue/indoors/vampire_manor)
 "Pv" = (
@@ -2712,7 +2706,7 @@
 /turf/open/floor/naturalstone,
 /area/rogue/under/cavelava)
 "YI" = (
-/obj/structure/mineral_door/wood/green{
+/obj/structure/door/green{
 	lockid = "zizombiemonastery";
 	name = "monastery"
 	},
@@ -59598,8 +59592,8 @@ XX
 XX
 ZF
 ZF
-ZF
-ZF
+XB
+XB
 XX
 XX
 XX
@@ -59726,11 +59720,11 @@ ZF
 ZF
 XX
 XX
-XX
-XX
-ZF
-ZF
-ZF
+XB
+XB
+XB
+XB
+XB
 XX
 XX
 XX
@@ -59856,11 +59850,11 @@ ZF
 ZF
 XX
 XX
-XX
-XX
-XX
-XX
-XX
+XB
+XB
+XB
+XB
+XB
 XX
 XX
 XX
@@ -59987,9 +59981,9 @@ XX
 RN
 XX
 ZF
-ZF
-XX
-XX
+XB
+XB
+XB
 XX
 XX
 XX

@@ -1,6 +1,6 @@
 #define ALL_STONEKEEP_PLAYER_RACES		list("Humen", "Half-Elf", "Dark Elf", "Elf", "Dwarf","Tiefling", "Aasimar", "Half-orc", "Changeling","Skylancer","Ogrun","Undine")	// the normal lineup sans Rakshari who are not generally available
 #define ALL_STONEKEEP_RACES_NORMALSPRITE		list("Humen", "Half-Elf", "Dark Elf", "Elf", "Tiefling", "Aasimar", "Changeling","Skylancer","Ogrun", "Orc", "orc")	// for clothes without dwarf sprites
-#define ALL_RACES_FOR_REAL			list("human", "rakshari", "dwarf", "elf", "tiefling", "aasimar", "halforc", "orc", "zizombie", "kobold",  "abyssariad")
+#define ALL_RACES_FOR_REAL			list("human", "rakshari", "dwarf", "elf", "tiefling", "aasimar", "halforc", "orc", "zizombie", "kobold",  "abyssariad", "harpy")
 #define ALL_RACES_WITH_FACIALHAIR		list("human", "rakshari", "dwarf", "elf", "tiefling", "halforc", "orc", "zizombie", "kobold",  "abyssariad")
 #define ALL_RACES_BY_NAME		list("Humen", "Half-Elf", "Dark Elf", "Elf", "Dwarf","Tiefling", "Aasimar", "Half-orc", "Changeling","Skylancer","Ogrun","Undine", "Rakshari")
 #define NORMAL_TOWNER_RACES 	list("Humen","Elf","Half-Elf","Dwarf")
@@ -137,7 +137,7 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 #define MASON_ORDER			36
 #define NITEMAN_ORDER		38
 
-#define ELDER_ORDER			41
+#define ELDER_ORDER			40
 #define SOILSON_ORDER		43
 #define COOK_ORDER			44
 #define WEAVER_ORDER		45

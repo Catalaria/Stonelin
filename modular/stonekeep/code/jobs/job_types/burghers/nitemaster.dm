@@ -42,24 +42,25 @@
 	H.grant_language(/datum/language/thievescant)
 	to_chat(H, "<span class='info'>I can gesture in thieves' cant with ,t before my speech.</span>")
 	ADD_TRAIT(H, TRAIT_THIEVESGUILD, TRAIT_GENERIC)
-	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/crossbows, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-		H.change_stat("speed", 1)
-		H.change_stat("intelligence", 1)
-		H.change_stat("perception", 2)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/forgery_nitemaiden)
-		H.mind.teach_crafting_recipe(/datum/crafting_recipe/forgery_adventurer)
+
+	H.adjust_skillrank(/datum/skill/combat/knives, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/wrestling, 4, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/unarmed, 4, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/crossbows, 3, TRUE)//a dishonourable noble isn't going to be fighting like a honorable knight
+	H.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/sneaking, 4, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/stealing, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/lockpicking, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+	H.change_stat("speed", 1)
+	H.change_stat("intelligence", 1)
+	H.change_stat("perception", 2)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/forgery_nitemaiden)
+	H.mind.teach_crafting_recipe(/datum/crafting_recipe/forgery_adventurer)
 	if(H.gender == MALE)
 		head = /obj/item/clothing/head/roguehood/brown
 		armor = /obj/item/clothing/armor/leather/jacket/niteman
+		shirt = /obj/item/clothing/armor/gambeson/arming//dark gambeson who only covers the chest + arms
 		pants = /obj/item/clothing/pants/trou/leather
 		shoes = /obj/item/clothing/shoes/nobleboot
 		if(H.dna?.species)

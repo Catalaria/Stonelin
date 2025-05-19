@@ -9,13 +9,15 @@
 /*-----------\
 | Structures |
 \-----------*/
+/datum/slapcraft_recipe/carpentry/structure/donjon
+	steps = null
 /datum/slapcraft_recipe/carpentry/structure/barrel
 	steps = null
 /datum/slapcraft_recipe/carpentry/structure/door
 	steps = null
 /datum/slapcraft_recipe/carpentry/structure/swingdoor
 	steps = null
-/datum/slapcraft_recipe/carpentry/structure/deadbolt
+/datum/slapcraft_recipe/carpentry/structure/weak/bolt
 	steps = null
 /datum/slapcraft_recipe/carpentry/structure/donjon
 	steps = null
@@ -110,6 +112,8 @@
 	starting_atom = null
 
 /datum/repeatable_crafting_recipe/survival/dart
+	starting_atom = null
+/datum/repeatable_crafting_recipe/sewing/linedanklet
 	starting_atom = null
 
 

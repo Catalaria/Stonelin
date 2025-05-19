@@ -212,7 +212,6 @@
 	sheet_type = /obj/item/natural/stone
 	break_sound = 'sound/combat/hits/onstone/stonedeath.ogg'
 	attacked_sound = list('sound/combat/hits/onstone/wallhit.ogg', 'sound/combat/hits/onstone/wallhit2.ogg', 'sound/combat/hits/onstone/wallhit3.ogg')
-	canSmoothWith = list(/turf/closed/wall/mineral/stone/abyssal)
 	above_floor = /turf/open/floor/blocks
 	baseturfs = list(/turf/open/floor/blocks)
 	climbdiff = 1
@@ -242,8 +241,6 @@
 	icon_state = "wood"
 	break_sound = 'sound/combat/hits/onwood/destroywalldoor.ogg'
 	attacked_sound = list('sound/combat/hits/onwood/woodimpact (1).ogg','sound/combat/hits/onwood/woodimpact (2).ogg')
-	canSmoothWith = list(/turf/closed/wall/mineral/wood, /obj/structure/window, /obj/structure/roguetent, /turf/closed/wall/mineral/wooddark)
-//	sheet_type = /obj/item/grown/log/tree/lumber
 	above_floor = /turf/open/floor/woodturned
 	baseturfs = list(/turf/open/floor/woodturned)
 	neighborlay = "dirtedge"
@@ -909,7 +906,6 @@
 	clawfootstep = FOOTSTEP_HARD_CLAW
 	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
 	landsound = 'sound/foley/jumpland/stoneland.wav'
-	smooth = SMOOTH_MORE
 	damage_deflection = 10
 	max_integrity = 2800
 

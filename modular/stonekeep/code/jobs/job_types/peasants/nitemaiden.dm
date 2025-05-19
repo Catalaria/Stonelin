@@ -54,16 +54,16 @@ It´s pretty good. Also extra good mood boost for sex, but still a bit barebones
 			to_chat(H, "<span class='warning'>The waters I once revered now scorn me - the rivers blistering my impure skin. I've failed Abyssor as his champion, and now I've bonded with [H.patron].")
 
 	if(H.mind)
-		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE) // To wrestle people out of the baths
-		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/stealing, pick(2,3,4), TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/music, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE) // To wrestle people out of the baths
+		H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/sneaking, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/stealing, pick(2,3,4), TRUE)
+		H.adjust_skillrank(/datum/skill/misc/riding, 3, TRUE)//we know why
+		H.adjust_skillrank(/datum/skill/misc/music, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/craft/crafting, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/athletics, 1, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/swimming, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 
 	H.change_stat(STATKEY_STR, -1)
 	H.change_stat(STATKEY_LCK, 1)
@@ -88,8 +88,8 @@ Design philosphy:
 	to_chat(H, "<span class='warning'>You need to keep your boss, the Nitemaster, happy, or next stop is beggar.")
 	armor = /obj/item/clothing/shirt/dress/gen/sexy
 	cloak = /obj/item/clothing/cloak/raincloak/red
-	H.mind?.adjust_skillrank(/datum/skill/misc/lockpicking, pick(1,2), TRUE)
-	H.mind?.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/lockpicking, pick(1,2), TRUE)
+	H.adjust_skillrank(/datum/skill/misc/riding, 1, TRUE)
 
 /datum/advclass/stonekeep/nitemaid/servinggirl
 	name = "Serving girl"
@@ -102,7 +102,7 @@ Design philosphy:
 	to_chat(H, "<span class='warning'>The Innkeep is your boss, the Cook your superior, and the Nitemaster your side-income.")
 	armor = /obj/item/clothing/shirt/dress/valorian
 	beltr = /obj/item/storage/keyring/servinggirl
-	H.mind?.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/craft/cooking, 1, TRUE)
 
 
 /obj/item/soap/bath

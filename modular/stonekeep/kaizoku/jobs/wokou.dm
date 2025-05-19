@@ -20,19 +20,19 @@
 
 /datum/outfit/job/sk/adventurer/abyss/wokou/pre_equip(mob/living/carbon/human/H) // Same as Warrior.
 	..()
-	H.mind.adjust_skillrank(/datum/skill/combat/crossbows, pick(1,2), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/bows, pick(1,2), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(1,1,2), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/combat/shields, pick(2,3), TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
-	H.mind.adjust_skillrank(/datum/skill/misc/riding, pick(1,1,2), TRUE)
+	H.adjust_skillrank(/datum/skill/combat/crossbows, pick(1,2), TRUE)
+	H.adjust_skillrank(/datum/skill/combat/whipsflails, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/axesmaces, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/bows, pick(1,2), TRUE)
+	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/swords, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/knives, pick(1,1,2), TRUE)
+	H.adjust_skillrank(/datum/skill/combat/shields, pick(2,3), TRUE)
+	H.adjust_skillrank(/datum/skill/misc/swimming, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/climbing, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/riding, pick(1,1,2), TRUE)
 
 	shoes = /obj/item/clothing/shoes/boots/jikatabi
 	gloves = /obj/item/clothing/gloves/leather
@@ -58,7 +58,7 @@
 				beltl = /obj/item/weapon/sword/scimitar/messer/dao
 			else
 				beltl = /obj/item/weapon/sword/iron/jian
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 			to_chat(H, span_warning( "<span class='info'>Hailing from the tropical edges, I am a 'LinYou', armored in humble, oil-boiled wickerwork and iron, I am trained to perform long-term expeditions and guerrila tactics on any soil.</span>"))
 
 			//same as normal warriors.
@@ -80,7 +80,7 @@
 				beltl = /obj/item/weapon/knife/dagger/kunai //so they HAVE something to use in melee combat.
 			else
 				beltl = /obj/item/weapon/knife/steel/tanto // luckyroll. Now you have a short-short sword.
-			H.mind.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/bows, 1, TRUE)
 
 			//please tell me if this is balanced or not.
 			H.change_stat(STATKEY_STR, 1)
@@ -105,7 +105,7 @@
 				beltl = /obj/item/weapon/sickle/kama
 			else
 				beltl = /obj/item/weapon/axe/iron/changfu // luckyroll. Now you have an axe.
-			H.mind.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/axesmaces, 1, TRUE)
 			to_chat(H, span_warning("<span class='info'>Farmlands shall never struggle under my might, as I came from the Outskirts where the demons once brew, I slaughtered the Grezenholft like pigs - and I can do it again. May the waters fortalify the soil I step on.</span>"))
 
 			//same as normal warriors.
@@ -121,7 +121,7 @@
 			neck = /obj/item/clothing/neck/chaincoif/iron/kusari_zukin
 			shoes = /obj/item/clothing/shoes/boots/armor/light/kusaritabi
 			beltl = /obj/item/weapon/flail/kusarigama/peasant
-			H.mind.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/whipsflails, 1, TRUE)
 			to_chat(H, span_warning("<span class='info'>I am a Muqian, I hail from the towers of civilization, those upheld in sturdy chains alike my body. May the dices of destiny enlight my ways.</span>"))
 
 			//same as normal warriors.
@@ -138,7 +138,7 @@
 			beltl = /obj/item/weapon/sword/scimitar/falchion/yuntoudao
 			backr = /obj/item/weapon/shield/wood
 			beltr = /obj/item/storage/belt/pouch/coins/poor
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 			to_chat(H, span_warning("<span class='info'>I am a son of Kaizoku and I am one with the destroyed Atoll, my life is on the seas. The major empire's supply lines shall crumble against my ways of warfare. May the Abyssal Emperor live FOREVER. </span>"))
 
 			//focused on having more stamina.
@@ -158,7 +158,7 @@
 			pants = /obj/item/clothing/pants/trou/tobi/random
 			beltr = /obj/item/weapon/sword/short/wakizashi
 			beltl = /obj/item/weapon/sword/uchigatana
-			H.mind.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
+			H.adjust_skillrank(/datum/skill/combat/swords, 1, TRUE)
 			to_chat(H, span_warning("<span class='info'>As a minor Zamurai lord, my roots are bound to the sword. I shall protect the weak and the innocent from corruption, as its reach ends where my blade begins. </span>"))
 
 			//Strength and Endurance.

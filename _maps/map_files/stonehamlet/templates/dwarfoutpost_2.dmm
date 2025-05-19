@@ -199,7 +199,7 @@
 /turf/open/floor/hexstone,
 /area/rogue/under/catacombs/dwarfoutpost)
 "nz" = (
-/obj/structure/mineral_door/wood/donjon/stone,
+/obj/structure/door/stone,
 /turf/open/floor/cobble,
 /area/rogue/under/catacombs/dwarfoutpost)
 "nQ" = (
@@ -269,9 +269,7 @@
 /area/rogue/under/catacombs/dwarfoutpost)
 "qs" = (
 /obj/item/clothing/cloak/cape/silk/random,
-/obj/structure/closet/crate/crafted_closet/lord{
-	locked = 0
-	},
+/obj/structure/closet/crate/crafted_closet,
 /obj/effect/spawner/map_spawner/artefact_outpost,
 /turf/open/floor/herringbone,
 /area/rogue/under/catacombs/dwarfoutpost)
@@ -386,7 +384,7 @@
 /turf/open/floor/raisedwood,
 /area/rogue/under/catacombs/dwarfoutpost)
 "xu" = (
-/obj/structure/mineral_door/wood/donjon/stone,
+/obj/structure/door/stone,
 /turf/open/floor/concrete,
 /area/rogue/under/catacombs/dwarfoutpost)
 "xL" = (
@@ -473,7 +471,7 @@
 	},
 /area/rogue/under/catacombs/dwarfoutpost)
 "CZ" = (
-/obj/structure/mineral_door/wood/donjon/stone,
+/obj/structure/door/stone,
 /turf/open/floor/blocks,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Er" = (
@@ -722,7 +720,7 @@
 /turf/open/floor/concrete,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Tq" = (
-/obj/structure/mineral_door/wood/donjon/stone,
+/obj/structure/door/stone,
 /turf/open/floor/herringbone,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Ux" = (
@@ -838,7 +836,7 @@
 /turf/closed/mineral,
 /area/rogue/under/catacombs/dwarfoutpost)
 "YQ" = (
-/obj/structure/mineral_door/wood/donjon/stone,
+/obj/structure/door/stone,
 /turf/open/floor/hexstone,
 /area/rogue/under/catacombs/dwarfoutpost)
 "YV" = (

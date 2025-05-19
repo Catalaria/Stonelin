@@ -1870,7 +1870,7 @@
 			if(user.STAPER > 10)
 				BB.damage *= (user.STAPER / 10)
 		BB.damage *= damfactor
-		BB.bonus_accuracy += (user.mind.get_skill_level(/datum/skill/combat/crossbows) * 3)
+		BB.bonus_accuracy += (user.get_skill_level(/datum/skill/combat/crossbows) * 3)
 
 	..()
 

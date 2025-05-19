@@ -163,7 +163,6 @@ get_accent_list()
 	sheet_type = /obj/item/natural/stone
 	break_sound = 'sound/combat/hits/onstone/stonedeath.ogg'
 	attacked_sound = list('sound/combat/hits/onstone/wallhit.ogg', 'sound/combat/hits/onstone/wallhit2.ogg', 'sound/combat/hits/onstone/wallhit3.ogg')
-	canSmoothWith = list(/turf/closed/wall/mineral/stone/abyssal)
 	above_floor = /turf/open/floor/blocks
 	baseturfs = list(/turf/open/floor/blocks)
 	climbdiff = 1
@@ -193,8 +192,6 @@ get_accent_list()
 	icon_state = "wood"
 	break_sound = 'sound/combat/hits/onwood/destroywalldoor.ogg'
 	attacked_sound = list('sound/combat/hits/onwood/woodimpact (1).ogg','sound/combat/hits/onwood/woodimpact (2).ogg')
-	canSmoothWith = list(/turf/closed/wall/mineral/wood, /obj/structure/window, /obj/structure/roguetent, /turf/closed/wall/mineral/wooddark)
-//	sheet_type = /obj/item/grown/log/tree/lumber
 	above_floor = /turf/open/floor/woodturned
 	baseturfs = list(/turf/open/floor/woodturned)
 	neighborlay = "dirtedge"
@@ -285,37 +282,37 @@ get_accent_list()
 // KAIZOKU SPRITE ACCESSORIES HERE TEMP? ROGTODO
 //Female Kaizoku hair below.
 
-/datum/sprite_accessory/hair/kaizoku/empress
+/datum/sprite_accessory/hair/head/kaizoku/empress
 	name = "Abyssal Empress"
 	icon_state = "empress"
 	gender = FEMALE
 	specuse = list("abyssariad")
 
-/datum/sprite_accessory/hair/kaizoku/onnamusha
+/datum/sprite_accessory/hair/head/kaizoku/onnamusha
 	name = "Onnamusha"
 	icon_state = "warlady"
 	gender = FEMALE
 	specuse = list("abyssariad")
 
-/datum/sprite_accessory/hair/kaizoku/waterfield
+/datum/sprite_accessory/hair/head/kaizoku/waterfield
 	name = "Waterbearer"
 	icon_state = "waterfield"
 	gender = FEMALE
 	specuse = list("abyssariad")
 
-/datum/sprite_accessory/hair/kaizoku/homewaifu
+/datum/sprite_accessory/hair/head/kaizoku/homewaifu
 	name = "Homewife"
 	icon_state = "homewaifu"
 	gender = FEMALE
 	specuse = list("abyssariad")
 
-/datum/sprite_accessory/hair/kaizoku/casual
+/datum/sprite_accessory/hair/head/kaizoku/casual
 	name = "Natural River"
 	icon_state = "casual"
 	gender = FEMALE
 	specuse = list("abyssariad")
 
-/datum/sprite_accessory/hair/kaizoku/martyr
+/datum/sprite_accessory/hair/head/kaizoku/martyr
 	name = "Inhonor of the Fallen"
 	icon_state = "martyr"
 	gender = FEMALE
@@ -323,62 +320,62 @@ get_accent_list()
 
 //Male Kaizoku hair below.
 
-/datum/sprite_accessory/hair/kaizoku
+/datum/sprite_accessory/hair/head/kaizoku
 	name = "Zamurai Manbun"
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
 	icon_state = "samurai"
 	gender = MALE
 	specuse = list("abyssariad")
 
-/datum/sprite_accessory/hair/kaizoku/ronin
+/datum/sprite_accessory/hair/head/kaizoku/ronin
 	name = "Vagabond"
 	icon_state = "ronin"
 	gender = MALE
 	specuse = list("abyssariad")
 
-/datum/sprite_accessory/hair/kaizoku/freespirit
+/datum/sprite_accessory/hair/head/kaizoku/freespirit
 	name = "Free Spirit"
 	icon_state = "freespirit"
 	gender = NEUTER
 	specuse = list("abyssariad")
 
-/datum/sprite_accessory/hair/kaizoku/novice
+/datum/sprite_accessory/hair/head/kaizoku/novice
 	name = "New Rice"
 	icon_state = "novice"
 	gender = MALE
 	specuse = list("abyssariad")
 
-/datum/sprite_accessory/hair/kaizoku/yakuza
+/datum/sprite_accessory/hair/head/kaizoku/yakuza
 	name = "Irezumi Gangster"
 	icon_state = "yakuza"
 	gender = MALE
 	specuse = list("abyssariad")
 
-/datum/sprite_accessory/hair/kaizoku/steppeman
+/datum/sprite_accessory/hair/head/kaizoku/steppeman
 	name = "Aridlands raider"
 	icon_state = "steppeman"
 	gender = MALE
 	specuse = list("abyssariad")
 
-/datum/sprite_accessory/hair/kaizoku/bishonen
+/datum/sprite_accessory/hair/head/kaizoku/bishonen
 	name = "Husband"
 	icon_state = "bishonen"
 	gender = MALE
 	specuse = list("abyssariad")
 
-/datum/sprite_accessory/hair/kaizoku/emperor
+/datum/sprite_accessory/hair/head/kaizoku/emperor
 	name = "Imperial Court"
 	icon_state = "emperor"
 	gender = MALE
 	specuse = list("abyssariad")
 
-/datum/sprite_accessory/hair/kaizoku/protagonist
+/datum/sprite_accessory/hair/head/kaizoku/protagonist
 	name = "Historical Protagonist"
 	icon_state = "hprotagonist"
 	gender = NEUTER
 	specuse = list("abyssariad")
 
-/datum/sprite_accessory/hair/kaizoku/protagonistalt
+/datum/sprite_accessory/hair/head/kaizoku/protagonistalt
 	name = "Longer Protagonist"
 	icon_state = "alsoprotagonist"
 	gender = NEUTER
@@ -636,7 +633,7 @@ get_accent_list()
 	color_key_defaults = list(KEY_SKIN_COLOR)
 
 // END OF KAIZOKU RACES BODYPARTS
-
+/* Issues? ROGTODO
 /datum/sprite_accessory/detail
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "halforc", "abyssariad")
 
@@ -670,7 +667,7 @@ get_accent_list()
 	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
 	name = "Abyss Warrior Irezumi"
 	icon_state = "warrior"
-
+*/
 
 /datum/outfit/job/pre_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	. = ..()

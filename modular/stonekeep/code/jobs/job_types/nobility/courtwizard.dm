@@ -45,13 +45,13 @@
 		if(!(H.patron == /datum/patron/divine/noc || /datum/patron/inhumen/zizo))
 			H.set_patron(/datum/patron/divine/noc)
 
-		H.mind?.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/magic/arcane, pick(6,5), TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
-		H.mind?.adjust_skillrank(/datum/skill/craft/alchemy, 5, TRUE)
+		H.adjust_skillrank(/datum/skill/misc/reading, 6, TRUE)
+		H.adjust_skillrank(/datum/skill/magic/arcane, pick(6,5), TRUE)
+		H.adjust_skillrank(/datum/skill/misc/riding, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/wrestling, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+		H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE)
+		H.adjust_skillrank(/datum/skill/craft/alchemy, 5, TRUE)
 		if(H.age == AGE_OLD)
 			var/prev_real_name = H.real_name
 			var/prev_name = H.name

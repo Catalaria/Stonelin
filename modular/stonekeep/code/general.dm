@@ -375,7 +375,7 @@
 	var/list/offhand_types = typecacheof(list(/obj/item/weapon/hammer, /obj/item/natural/stone, /obj/item/natural/stoneblock))
 	var/item = user.get_inactive_held_item()
 	if(user.used_intent.type == /datum/intent/chisel && is_type_in_typecache(item, offhand_types))
-		var/skill_level = user.mind.get_skill_level(/datum/skill/craft/masonry)
+		var/skill_level = user.get_skill_level(/datum/skill/craft/masonry)
 		var/work_time = (4 SECONDS - (skill_level * 5))
 		if(istype(W, /obj/item/weapon/chisel))
 			var/obj/item/weapon/chisel/chisel = W
@@ -590,14 +590,14 @@
 
 // =============================================================================
 // ========================		MORNING STUBBLE		============================
-
+/* suspected of memory leak by RW
 /datum/sprite_accessory/facial_hair/stubble
 	name = "Stubble"
 	icon = 'modular/stonekeep/icons/facial.dmi'
 	icon_state = "facial_stubble"
 	gender = MALE
 	specuse = list("human", "dwarf", "elf", "tiefling", "halforc")
-/* suspected of memory leak by RW
+
 /mob/living/carbon/human/proc/try_grow_beard()
 
 	if(!(dna?.species))
@@ -694,7 +694,6 @@
 
 
 /obj/item/reagent_containers/food/snacks/fat
-	fried_type = /obj/item/reagent_containers/food/snacks/tallow
 	cooktime = 15 SECONDS
 
 
@@ -860,7 +859,7 @@
 /obj/item/reagent_containers/food/snacks
 	var/hard_distill
 
-/obj/item/reagent_containers/food/snacks/produce/onion
+/obj/item/reagent_containers/food/snacks/produce/vegetable/onion
 	can_distill = FALSE
 	hard_distill = TRUE
 
@@ -1304,3 +1303,202 @@
 /datum/alch_grind_recipe/manabloom
 	valid_input = /obj/item/reagent_containers/food/snacks/produce/manabloom
 	valid_outputs = list(/obj/item/reagent_containers/powder/manabloom = 1)
+
+
+
+
+
+
+
+// ................... Event Ring of loot ....................... (rare treasure, not for purchase no pre spawn)
+
+// ---------------------- RARE RING (STR) ----------------------------
+/obj/item/clothing/ring/gold/goldstrengh
+	name = "ring of strengh"
+	desc = "An old golden ring, inscribed with arcane words. Just being near it imbues you with otherworldly strength."
+	icon_state = "rare_ring_str"
+	detail_tag = "_detail"
+	detail_color = CLOTHING_RED_OCHRE
+
+
+/obj/item/clothing/ring/gold/goldstrengh/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind)
+		if(slot == SLOT_RING && istype(user))
+			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
+			user.apply_status_effect(/datum/status_effect/buff/goldstrengh)
+
+/obj/item/clothing/ring/gold/goldstrengh/proc/item_removed(mob/living/carbon/wearer, obj/item/dropped_item)
+	SIGNAL_HANDLER
+	if(dropped_item != src)
+		return
+	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
+	wearer.remove_status_effect(/datum/status_effect/buff/goldstrengh)
+
+// ---------------------- RARE RING (SPD) ----------------------------
+/obj/item/clothing/ring/gold/goldspeed
+	name = "ring of speed"
+	desc = "An old golden ring, inscribed with arcane words. Just being near it imbues you with otherworldly speed."
+	icon_state = "rare_ring_spd"
+	detail_tag = "_detail"
+	detail_color = CLOTHING_SKY_BLUE
+
+/obj/item/clothing/ring/gold/goldspeed/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind)
+		if(slot == SLOT_RING && istype(user))
+			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
+			user.apply_status_effect(/datum/status_effect/buff/goldspeed)
+
+/obj/item/clothing/ring/gold/goldspeed/proc/item_removed(mob/living/carbon/wearer, obj/item/dropped_item)
+	SIGNAL_HANDLER
+	if(dropped_item != src)
+		return
+	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
+	wearer.remove_status_effect(/datum/status_effect/buff/goldspeed)
+
+// ---------------------- RARE RING (END) ----------------------------
+/obj/item/clothing/ring/gold/goldend
+	name = "ring of endurance"
+	desc = "An old golden ring, inscribed with arcane words. Just being near it imbues you with otherworldly endurance."
+	icon_state = "rare_ring_end"
+	detail_tag = "_detail"
+	detail_color = CLOTHING_YELLOW_OCHRE
+
+/obj/item/clothing/ring/gold/goldend/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind)
+		if(slot == SLOT_RING && istype(user))
+			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
+			user.apply_status_effect(/datum/status_effect/buff/goldend)
+
+/obj/item/clothing/ring/gold/goldend/proc/item_removed(mob/living/carbon/wearer, obj/item/dropped_item)
+	SIGNAL_HANDLER
+	if(dropped_item != src)
+		return
+	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
+	wearer.remove_status_effect(/datum/status_effect/buff/goldend)
+
+// ---------------------- RARE RING (CONSTITUTION) ----------------------------
+/obj/item/clothing/ring/gold/goldconst
+	name = "ring of constitution"
+	desc = "An old golden ring, inscribed with arcane words. Just being near it imbues you with otherworldly constitution."
+	icon_state = "rare_ring_const"
+	detail_tag = "_detail"
+	detail_color = CLOTHING_FOREST_GREEN
+
+/obj/item/clothing/ring/gold/goldconst/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind)
+		if(slot == SLOT_RING && istype(user))
+			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
+			user.apply_status_effect(/datum/status_effect/buff/goldconst)
+
+/obj/item/clothing/ring/gold/goldconst/proc/item_removed(mob/living/carbon/wearer, obj/item/dropped_item)
+	SIGNAL_HANDLER
+	if(dropped_item != src)
+		return
+	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
+	wearer.remove_status_effect(/datum/status_effect/buff/goldconst)
+
+// ---------------------- RARE RING (LUCK) ----------------------------
+/obj/item/clothing/ring/gold/goldluck
+	name = "ring of fortune"
+	desc = "An old golden ring, inscribed with arcane words. Just being near it imbues you with otherworldly fortune."
+	icon_state = "rare_ring_luck"
+	detail_tag = "_detail"
+	detail_color = CLOTHING_PLUM_PURPLE
+
+/obj/item/clothing/ring/gold/goldluck/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind)
+		if(slot == SLOT_RING && istype(user))
+			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
+			user.apply_status_effect(/datum/status_effect/buff/goldluck)
+
+/obj/item/clothing/ring/gold/goldluck/proc/item_removed(mob/living/carbon/wearer, obj/item/dropped_item)
+	SIGNAL_HANDLER
+	if(dropped_item != src)
+		return
+	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
+	wearer.remove_status_effect(/datum/status_effect/buff/goldluck)
+
+// ---------------------- RARE RING (PERCEPTION) ----------------------------
+/obj/item/clothing/ring/gold/goldper
+	name = "ring of perception"
+	desc = "An old golden ring, inscribed with arcane words. Just being near it imbues you with otherworldly vision."
+	icon_state = "rare_ring_per"
+	detail_tag = "_detail"
+	detail_color = CLOTHING_ASH_GREY
+
+
+/obj/item/clothing/ring/gold/goldper/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind)
+		if(slot == SLOT_RING && istype(user))
+			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
+			user.apply_status_effect(/datum/status_effect/buff/goldper)
+
+/obj/item/clothing/ring/gold/goldper/proc/item_removed(mob/living/carbon/wearer, obj/item/dropped_item)
+	SIGNAL_HANDLER
+	if(dropped_item != src)
+		return
+	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
+	wearer.remove_status_effect(/datum/status_effect/buff/goldper)
+
+// ---------------------- RARE RING (INT) ----------------------------
+/obj/item/clothing/ring/gold/goldint
+	name = "ring of intelligence"
+	desc = "An old golden ring, inscribed with arcane words. Just being near it imbues you with otherworldly mental clarity."
+	icon_state = "rare_ring_int"
+	detail_tag = "_detail"
+	detail_color = CLOTHING_SOOT_BLACK
+
+
+/obj/item/clothing/ring/gold/goldint/equipped(mob/living/user, slot)
+	. = ..()
+	if(user.mind)
+		if(slot == SLOT_RING && istype(user))
+			RegisterSignal(user, COMSIG_MOB_UNEQUIPPED_ITEM, PROC_REF(item_removed))
+			user.apply_status_effect(/datum/status_effect/buff/goldint)
+
+/obj/item/clothing/ring/gold/goldint/proc/item_removed(mob/living/carbon/wearer, obj/item/dropped_item)
+	SIGNAL_HANDLER
+	if(dropped_item != src)
+		return
+	UnregisterSignal(wearer, COMSIG_MOB_UNEQUIPPED_ITEM)
+	wearer.remove_status_effect(/datum/status_effect/buff/goldint)
+
+
+
+/datum/container_craft/oven/bakedcat
+	name = "Baked Cat"
+	requirements = list(/obj/item/reagent_containers/food/snacks/flayedcat = 1)
+	output = /obj/item/reagent_containers/food/snacks/friedcat
+
+/datum/container_craft/oven/bakefrog
+	name = "Baked Frog"
+	requirements = list(/obj/item/reagent_containers/food/snacks/fogdart = 1)
+	output = /obj/item/reagent_containers/food/snacks/friedfrog
+
+/datum/container_craft/pan/cat
+	name = "Fried Cat"
+	crafting_time = 20 SECONDS
+	requirements = list(/obj/item/reagent_containers/food/snacks/flayedcat = 1)
+	output = /obj/item/reagent_containers/food/snacks/friedcat
+	cooked_smell = /datum/pollutant/food/fried_meat
+
+/datum/container_craft/pan/froge
+	name = "Fried Froge"
+	crafting_time = 20 SECONDS
+	requirements = list(/obj/item/reagent_containers/food/snacks/fogdart = 1)
+	output = /obj/item/reagent_containers/food/snacks/friedfrog
+	cooked_smell = /datum/pollutant/food/fried_meat
+
+
+/datum/container_craft/pan/tallow
+	name = "Tallow"
+	crafting_time = 20 SECONDS
+	requirements = list(/obj/item/reagent_containers/food/snacks/fat = 1)
+	output = /obj/item/reagent_containers/food/snacks/tallow
+	cooked_smell = /datum/pollutant/food/fried_meat

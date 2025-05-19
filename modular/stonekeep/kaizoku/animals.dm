@@ -54,7 +54,6 @@
 	obj_flags = CAN_BE_HIT
 	var/dead = FALSE
 	eat_effect = /datum/status_effect/debuff/uncookedfood
-	fried_type = /obj/item/reagent_containers/food/snacks/friedfrog
 	max_integrity = 10
 	sellprice = 0
 	rotprocess = null
@@ -248,10 +247,10 @@
 
 	health =  MALE_MOOBEAST_HEALTH
 	maxHealth =  MALE_MOOBEAST_HEALTH
-	food_type = list(/obj/item/reagent_containers/food/snacks/produce/wheat,
-					/obj/item/reagent_containers/food/snacks/produce/oat,
-					/obj/item/reagent_containers/food/snacks/produce/jacksberry,
-					/obj/item/reagent_containers/food/snacks/produce/apple)
+	food_type = list(/obj/item/reagent_containers/food/snacks/produce/grain/wheat,
+					/obj/item/reagent_containers/food/snacks/produce/grain/oat,
+					/obj/item/reagent_containers/food/snacks/produce/fruit/jacksberry,
+					/obj/item/reagent_containers/food/snacks/produce/fruit/apple)
 	tame_chance = 40 // Foglander horses are easier to tame due to centuries of domestication, but you won't see them naturally on Stonekeep.
 	bonus_tame_chance = 15
 	pooptype = /obj/item/natural/poo/horse

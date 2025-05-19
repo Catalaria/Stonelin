@@ -82,24 +82,25 @@
 		if("yari")
 			backr = /obj/item/weapon/polearm/spear/yari //just a simple iron spear.
 
-	if(H.mind)
-		H.mind.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE) //The true focus of this class.
-		H.mind.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE) //I don't think they are deserving of bows, but Soheis irl also used them, soo...
-		H.mind.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/knives, pick(0,1,1), TRUE)
-		H.mind.adjust_skillrank(/datum/skill/combat/swords, pick(0,1,1), TRUE)
-		H.change_stat("strength", 2)
-		H.change_stat("constitution", 1)
-		H.change_stat("endurance", 2)
-		H.change_stat("perception", -2) //(schizophrenia)
-		H.change_stat("speed", -1)
+
+	H.adjust_skillrank(/datum/skill/combat/polearms, 3, TRUE) //The true focus of this class.
+	H.adjust_skillrank(/datum/skill/combat/bows, 2, TRUE) //I don't think they are deserving of bows, but Soheis irl also used them, soo...
+	H.adjust_skillrank(/datum/skill/combat/wrestling, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/unarmed, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/climbing, 1, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/shields, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/athletics, 3, TRUE)
+	H.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/magic/holy, 2, TRUE)
+	H.adjust_skillrank(/datum/skill/combat/knives, pick(0,1,1), TRUE)
+	H.adjust_skillrank(/datum/skill/combat/swords, pick(0,1,1), TRUE)
+
+	H.change_stat("strength", 2)
+	H.change_stat("constitution", 1)
+	H.change_stat("endurance", 2)
+	H.change_stat("perception", -2) //(schizophrenia)
+	H.change_stat("speed", -1)
 
 	var/datum/devotion/cleric_holder/C = new /datum/devotion/cleric_holder(H, H.patron)
 	//Max devotion limit - Sohei are strong for a common role, but cannot pray to gain more abilities beyond t1
