@@ -21,7 +21,6 @@
 	var/list/friends = list()
 	var/mob/living/target
 	var/obj/item/pickupTarget
-	var/mode = AI_OFF
 	var/list/myPath = list()
 	var/list/blacklistItems = list()
 	var/maxStepsTick = 6

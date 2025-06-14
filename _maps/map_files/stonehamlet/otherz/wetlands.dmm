@@ -369,7 +369,7 @@
 	lockid = "tollhouse";
 	name = "old tollhouse"
 	},
-/obj/effect/mapping_helpers/door/locker,
+/obj/effect/mapping_helpers/access/locker,
 /obj/structure/barricade/wooden{
 	layer = 3;
 	plane = -3
@@ -490,7 +490,7 @@
 	lockid = "tollhouse";
 	name = "old tollhouse"
 	},
-/obj/effect/mapping_helpers/door/locker,
+/obj/effect/mapping_helpers/access/locker,
 /obj/structure/barricade/wooden{
 	layer = 3;
 	plane = -3
@@ -619,7 +619,7 @@
 	lockid = "tollhouse";
 	name = "old tollhouse"
 	},
-/obj/effect/mapping_helpers/door/locker,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/cobble,
 /area/rogue/indoors)
 "jF" = (
@@ -712,7 +712,7 @@
 	lockid = "tollhouse";
 	name = "old tollhouse"
 	},
-/obj/effect/mapping_helpers/door/locker,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/cobble,
 /area/rogue/indoors)
 "ld" = (
@@ -786,9 +786,9 @@
 /area/rogue/under/xylix)
 "mg" = (
 /obj/structure/closet/crate/chest/wicker,
-/obj/item/reagent_containers/food/snacks/produce/potato,
-/obj/item/reagent_containers/food/snacks/produce/potato,
-/obj/item/reagent_containers/food/snacks/produce/potato,
+/obj/item/reagent_containers/food/snacks/produce/vegetable/potato,
+/obj/item/reagent_containers/food/snacks/produce/vegetable/potato,
+/obj/item/reagent_containers/food/snacks/produce/vegetable/potato,
 /turf/open/floor/blocks,
 /area/rogue/indoors)
 "mj" = (
@@ -865,9 +865,6 @@
 /obj/structure/barricade/wooden,
 /turf/closed/mineral/bedrock,
 /area/rogue/under/cave/sumpgrotto)
-"nu" = (
-/turf/open/floor/naturalstone,
-/area/rogue/under/cave)
 "nw" = (
 /obj/structure/fluff/railing/border{
 	dir = 8
@@ -16428,7 +16425,7 @@ Js
 Js
 Js
 Js
-nu
+Js
 VO
 VO
 VO

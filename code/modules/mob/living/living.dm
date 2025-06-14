@@ -422,12 +422,10 @@
 	if(CZ)
 		if( !(check_zone(L.zone_selected) in acceptable) )
 			to_chat(L, "<span class='warning'>I can't reach that.</span>")
-			testing("reach2")
 			return FALSE
 	else
 		if( !(L.zone_selected in acceptable) )
 			to_chat(L, "<span class='warning'>I can't reach that.</span>")
-			testing("reach2")
 			return FALSE
 	return TRUE
 
@@ -531,9 +529,6 @@
 
 /mob/living/proc/set_pull_offsets(mob/living/M, grab_state = GRAB_PASSIVE)
 	return //rtd fix not updating because no dirchange
-
-/mob/living
-	var/list/mob_offsets = list()
 
 /mob/living/proc/set_mob_offsets(index, _x = 0, _y = 0)
 	if(index)
@@ -742,7 +737,7 @@
 
 /mob/living/proc/get_up(instant = FALSE)
 	set waitfor = FALSE
-	if(!instant && !do_after(src, 2 SECONDS, src, timed_action_flags = (IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE|IGNORE_HELD_ITEM), extra_checks = CALLBACK(src, TYPE_PROC_REF(/mob/living, rest_checks_callback)), interaction_key = DOAFTER_SOURCE_GETTING_UP))
+	if(!instant && !do_after(src, 2 SECONDS, src, timed_action_flags = (IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE|IGNORE_HELD_ITEM|IGNORE_USER_DIR_CHANGE), extra_checks = CALLBACK(src, TYPE_PROC_REF(/mob/living, rest_checks_callback)), interaction_key = DOAFTER_SOURCE_GETTING_UP))
 		if(body_position == LYING_DOWN) // stay lying down
 			set_resting(TRUE, silent = TRUE)
 		return
@@ -804,7 +799,7 @@
 	. = health
 	health = min(new_value, maxHealth)
 
-/mob/living/proc/updatehealth()
+/mob/living/proc/updatehealth(amount = 0)
 	if(status_flags & GODMODE)
 		return
 	set_health(maxHealth - getOxyLoss() - getToxLoss() - getFireLoss() - getBruteLoss() - getCloneLoss())
@@ -813,7 +808,7 @@
 		if(blood_volume <= 0)
 			set_health(NONE)
 	update_stat()
-	SEND_SIGNAL(src, COMSIG_LIVING_HEALTH_UPDATE)
+	SEND_SIGNAL(src, COMSIG_LIVING_HEALTH_UPDATE, amount)
 
 //Proc used to resuscitate a mob, for full_heal see fully_heal()
 /mob/living/proc/revive(full_heal = FALSE, admin_revive = FALSE)
@@ -1137,6 +1132,9 @@
 /mob/living/resist_grab(moving_resist)
 	. = TRUE
 
+	if(!MOBTIMER_FINISHED(pulledby, MT_RESIST_GRAB, 2 SECONDS))
+		return
+
 	var/wrestling_diff = 0
 	var/resist_chance = BASE_GRAB_RESIST_CHANCE
 	var/mob/living/L = pulledby
@@ -1179,11 +1177,14 @@
 	resist_chance *= combat_modifier
 	resist_chance = clamp(resist_chance, 7, 95)
 
-	// if(moving_resist && client) //we resisted by trying to move
-	client?.move_delay = world.time + 20
-	changeNext_move(CLICK_CD_RESIST)
+	if(moving_resist) //we resisted by trying to move
+		client?.move_delay = world.time + 20
+
 	adjust_stamina(rand(4,9))
 	pulledby.adjust_stamina(rand(2,5))
+
+	MOBTIMER_SET(pulledby, MT_RESIST_GRAB)
+
 	if(prob(resist_chance))
 		visible_message("<span class='warning'>[src] breaks free of [pulledby]'s grip!</span>", \
 						"<span class='notice'>I break free of [pulledby]'s grip!</span>", null, null, pulledby)
@@ -1213,14 +1214,21 @@
 		attackhostage()
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
-		if(HAS_TRAIT(H, TRAIT_NOSEGRAB) && !HAS_TRAIT(src, TRAIT_MISSING_NOSE))
+		if((HAS_TRAIT(H, TRAIT_NOSEGRAB) && !HAS_TRAIT(src, TRAIT_MISSING_NOSE)) || (HAS_TRAIT(H, TRAIT_EARGRAB) && age == AGE_CHILD))
 			var/obj/item/bodypart/head = get_bodypart(BODY_ZONE_HEAD)
 			for(var/obj/item/grabbing/G in grabbedby)
 				if(G.limb_grabbed == head)
 					if(G.grabbee == pulledby)
-						if(G.sublimb_grabbed == BODY_ZONE_PRECISE_NOSE)
+						if(HAS_TRAIT(H, TRAIT_NOSEGRAB) && G.sublimb_grabbed == BODY_ZONE_PRECISE_NOSE)
 							visible_message("<span class='warning'>[src] struggles to break free from [pulledby]'s grip!</span>", \
 											"<span class='warning'>I struggle against [pulledby]'s grip!</span>", null, null, pulledby)
+							to_chat(pulledby, "<span class='warning'>[src] struggles against my grip!</span>")
+							playsound(src.loc, 'sound/combat/grabstruggle.ogg', 50, TRUE, -1)
+							client?.move_delay = world.time + 20
+							return TRUE
+						if(HAS_TRAIT(H, TRAIT_EARGRAB) && G.sublimb_grabbed == BODY_ZONE_PRECISE_EARS)
+							visible_message("<span class='warning'>[src] struggles to break free from [pulledby]'s grip!</span>", \
+												"<span class='warning'>I struggle against [pulledby]'s grip!</span>", null, null, pulledby)
 							to_chat(pulledby, "<span class='warning'>[src] struggles against my grip!</span>")
 							playsound(src.loc, 'sound/combat/grabstruggle.ogg', 50, TRUE, -1)
 							client?.move_delay = world.time + 20
@@ -1412,16 +1420,52 @@
 /mob/living/proc/harvest(mob/living/user) //used for extra objects etc. in butchering
 	return
 
-/mob/living/canUseTopic(atom/movable/M, be_close=FALSE, no_dexterity=FALSE, no_tk=FALSE)
-	if(incapacitated(ignore_grab = TRUE))
-		to_chat(src, "<span class='warning'>I can't do that right now!</span>")
+/mob/living/can_hold_items(obj/item/I)
+	return ..() && usable_hands
+
+/mob/living/can_perform_action(atom/movable/target, action_bitflags)
+	if(!istype(target))
+		CRASH("Missing target arg for can_perform_action")
+
+	// If the MOBILITY_UI bitflag is not set it indicates the mob's hands are cutoff, blocked, or handcuffed
+	// Also if it is not set, the mob could be incapcitated, knocked out, unconscious, asleep, EMP'd, etc.
+	// Honestly this should be a body_position check but that can be done later
+	if(!(mobility_flags & MOBILITY_UI) && !(action_bitflags & ALLOW_RESTING))
+		to_chat(src, span_warning("You can't do that right now!"))
 		return FALSE
-	if(be_close && !in_range(M, src))
-		to_chat(src, "<span class='warning'>I am too far away!</span>")
+
+	// // NEED_HANDS is already checked by MOBILITY_UI for humans so this is for silicons
+	// if((action_bitflags & NEED_HANDS))
+	// 	if(!can_hold_items(isitem(target) ? target : null)) // almost redundant if it weren't for mobs
+	// 		to_chat(src, span_warning("You don't have the physical ability to do this!"))
+	// 		return FALSE
+
+	if(!Adjacent(target) && (target.loc != src))
+		if((action_bitflags & FORBID_TELEKINESIS_REACH))
+			to_chat(src, span_warning("You are too far away!"))
+			return FALSE
+
+		// var/datum/dna/mob_DNA = has_dna()
+		// if(!mob_DNA || !mob_DNA.check_mutation(/datum/mutation/human/telekinesis) || !tkMaxRangeCheck(src, target))
+		to_chat(src, span_warning("You are too far away!"))
 		return FALSE
-	if(!no_dexterity)
-		to_chat(src, "<span class='warning'>I don't have the dexterity to do this!</span>")
+
+	if((action_bitflags & NEED_DEXTERITY) && !IsAdvancedToolUser()) // !ISADVANCEDTOOLUSER(src)
+		to_chat(src, span_warning("You don't have the dexterity to do this!"))
 		return FALSE
+
+	if((action_bitflags & NEED_LITERACY) && !is_literate())
+		to_chat(src, span_warning("You can't comprehend any of this!"))
+		return FALSE
+
+	if((action_bitflags & NEED_LIGHT) && !has_light_nearby() && !has_nightvision())
+		to_chat(src, span_warning("You need more light to do this!"))
+		return FALSE
+
+	if((action_bitflags & NEED_GRAVITY) && !has_gravity())
+		to_chat(src, span_warning("You need gravity to do this!"))
+		return FALSE
+
 	return TRUE
 
 /mob/living/proc/can_use_guns(obj/item/G)//actually used for more than guns!
@@ -1479,7 +1523,6 @@
 	if (HAS_TRAIT(src, TRAIT_NOFIRE))
 		return
 	if((fire_stacks > 0 || divine_fire_stacks > 0) && !on_fire)
-		testing("ignis")
 		on_fire = TRUE
 		src.visible_message("<span class='warning'>[src] catches fire!</span>", \
 						"<span class='danger'>I'm set on fire!</span>")
@@ -1620,13 +1663,6 @@
 						//This isn't a problem for AIs with a client since the client will prevent this from being called anyway.
 						controller.set_ai_status(controller.get_expected_ai_status())
 
-				for (var/I in length(SSidlenpcpool.idle_mobs_by_zlevel[new_z]) to 1 step -1) //Backwards loop because we're removing (guarantees optimal rather than worst-case performance), it's fine to use .len here but doesn't compile on 511
-					var/mob/living/simple_animal/SA = SSidlenpcpool.idle_mobs_by_zlevel[new_z][I]
-					if (SA)
-						SA.toggle_ai(AI_ON) // Guarantees responsiveness for when appearing right next to mobs
-					else
-						SSidlenpcpool.idle_mobs_by_zlevel[new_z] -= SA
-
 			registered_z = new_z
 		else
 			registered_z = null
@@ -1682,7 +1718,7 @@
 
 	if(!istype(over) || !istype(user))
 		return
-	if(!over.Adjacent(src) || (user != src) || !canUseTopic(over))
+	if(!over.Adjacent(src) || (user != src) || !can_perform_action(over))
 		return
 
 /mob/living/MouseDrop_T(atom/dropping, atom/user)
@@ -2278,8 +2314,6 @@
 	for(var/mob/living/simple_animal/hostile/retaliate/A in view(7,src))
 		if(A.owner == user)
 			A.emote("aggro")
-			A.Retaliate()
-			A.GiveTarget(src)
 	return
 
 /mob/proc/shood(mob/user)

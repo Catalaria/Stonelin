@@ -80,6 +80,13 @@
 	swingdelay = 1
 	item_damage_type = "stab"
 
+/// special intent for profane dagger, steals the appearance of another
+/datum/intent/peculate
+	name = "peculate"
+	hitsound = null
+	desc = "Thieve the appearance of another."
+	icon_state = "peculate"
+
 /*------------\
 | Pick intent |	great AP. Not actually used anywhere.
 \------------*/
@@ -170,7 +177,8 @@
 				to_chat(user, span_warning("I ruined some of the materials due to my lack of skill..."))
 				playsound(item, 'sound/foley/cloth_rip.ogg', 50, TRUE)
 				qdel(item)
-				user.mind.add_sleep_experience(/datum/skill/misc/sewing, (user.STAINT)) //Getting exp for failing
+				user.adjust_experience(/datum/skill/misc/sewing, (user.STAINT)) // STONEKEEP EDIT
+				// user.mind.add_sleep_experience(/datum/skill/misc/sewing, (user.STAINT)) //Getting exp for failing
 				return //We are returning early if the skill check fails!
 			item.salvage_amount -= item.torn_sleeve_number
 			for(var/i = 1; i <= item.salvage_amount; i++) // We are spawning salvage result for the salvage amount minus the torn sleves!
@@ -179,7 +187,8 @@
 			user.visible_message(span_notice("[user] salvages [item] into usable materials."))
 			playsound(item, 'sound/items/flint.ogg', 100, TRUE) //In my mind this sound was more fitting for a scissor
 			qdel(item)
-			user.mind.add_sleep_experience(/datum/skill/misc/sewing, (user.STAINT)) //We're getting experience for salvaging!
+			user.adjust_experience(/datum/skill/misc/sewing, (user.STAINT)) // STONEKEEP EDIT
+			// user.mind.add_sleep_experience(/datum/skill/misc/sewing, (user.STAINT)) //We're getting experience for salvaging!
 			return
 	return ..()
 
@@ -301,6 +310,7 @@
 /obj/item/weapon/knife/dagger/steel/profane
 	// name = "profane dagger"
 	// desc = "A profane dagger made of cursed black steel. Whispers emanate from the gem on its hilt."
+	possible_item_intents = list(/datum/intent/dagger/cut, /datum/intent/dagger/thrust, /datum/intent/peculate)
 	sellprice = 250
 	icon_state = "pdagger"
 	melting_material = null
@@ -356,7 +366,47 @@
 	. = ..()
 	if(!ishuman(target))
 		return
-	if(target.stat == DEAD || (target.health < target.crit_threshold)) // Trigger soul steal if the target is either dead or in crit
+	if(target.stat == DEAD || (target.health < target.crit_threshold)) // Trigger soul steal or identity theft if the target is either dead or in crit
+		if(istype(user.used_intent, /datum/intent/peculate))
+			if(!ishuman(user)) // carbons don't have all features of a human
+				to_chat(user, span_danger("You can't do that!"))
+				return
+
+			var/datum/beam/transfer_beam = user.Beam(target, icon_state = "drain_life", time = 6 SECONDS)
+
+			playsound(
+				user,
+				get_sfx("changeling_absorb"), //todo: turn sound keys into defines.
+				100,
+			)
+			to_chat(user, span_danger("I start absorbing [target]'s identity."))
+			if(!do_after(user, 3 SECONDS, target = target))
+				qdel(transfer_beam)
+				return
+
+			playsound( // and anotha one
+				user,
+				get_sfx("changeling_absorb"),
+				100,
+			)
+
+			if(!do_after(user, 3 SECONDS, target = target))
+				qdel(transfer_beam)
+				return
+
+			if(!user.client)
+				qdel(transfer_beam)
+				return
+			qdel(transfer_beam)
+
+			var/mob/living/carbon/human/human_user = user
+
+			human_user.copy_physical_features(target)
+			to_chat(user, span_purple("I take on a new face.."))
+			ADD_TRAIT(target, TRAIT_DISFIGURED, TRAIT_PROFANE)
+
+			return
+
 		if(target.has_flaw(/datum/charflaw/hunted) || HAS_TRAIT(target, TRAIT_ZIZOID_HUNTED)) // The profane dagger only thirsts for those who are hunted, by flaw or by zizoid curse.
 			if(target.client == null) //See if the target's soul has left their body
 				to_chat(user, "<span class='danger'>Your target's soul has already escaped its corpse...you try to call it back!</span>")

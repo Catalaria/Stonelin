@@ -303,7 +303,7 @@ GLOBAL_LIST_INIT(container_craft_to_singleton, init_container_crafts())
 
 		create_item(crafter, initiator, found_optional_requirements, found_optional_wildcards, found_optional_reagents, items_to_delete)
 
-		initiator.mind?.add_sleep_experience(used_skill, initiator.STAINT * 0.5)
+		initiator.adjust_experience(used_skill, initiator.STAINT * 0.5)
 		// Remove all tracked items
 		for(var/obj/item/item_to_delete in items_to_delete)
 			qdel(item_to_delete)
@@ -317,7 +317,7 @@ GLOBAL_LIST_INIT(container_craft_to_singleton, init_container_crafts())
 	var/highest_quality = 0
 
 	// Calculate average freshness and find highest quality ingredient
-	for(var/obj/item/food_item in removing_items)
+	for(var/obj/item/reagent_containers/food_item in removing_items)
 		if(istype(food_item, /obj/item/reagent_containers/food/snacks) || istype(food_item, /obj/item/grown))
 			ingredient_count++
 			// Check warming value for freshness (higher means fresher)

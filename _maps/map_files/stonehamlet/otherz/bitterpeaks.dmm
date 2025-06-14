@@ -190,9 +190,9 @@
 "dj" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/closet/crate/chest/old_crate,
-/obj/item/reagent_containers/food/snacks/produce/potato,
-/obj/item/reagent_containers/food/snacks/produce/potato,
-/obj/item/reagent_containers/food/snacks/produce/potato,
+/obj/item/reagent_containers/food/snacks/produce/vegetable/potato,
+/obj/item/reagent_containers/food/snacks/produce/vegetable/potato,
+/obj/item/reagent_containers/food/snacks/produce/vegetable/potato,
 /turf/open/floor/blocks/moss,
 /area/rogue/under/lavamonastery)
 "dn" = (
@@ -705,9 +705,7 @@
 "mN" = (
 /obj/machinery/light/fueled/firebowl,
 /obj/machinery/light/fueled/cauldron,
-/turf/open/floor/tile{
-	icon_state = "greenstone"
-	},
+/turf/open/floor/greenstone,
 /area/rogue/indoors/towerofwise)
 "mS" = (
 /obj/effect/decal/rockedge{
@@ -1401,9 +1399,7 @@
 /turf/open/floor/carpet/hamlet,
 /area/rogue/indoors/vampire_manor)
 "Ad" = (
-/turf/open/floor/tile{
-	icon_state = "greenstone"
-	},
+/turf/open/floor/greenstone,
 /area/rogue/indoors/towerofwise)
 "Af" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2149,7 +2145,7 @@
 /obj/structure/door/stone{
 	lockid = "mansionvampire"
 	},
-/obj/effect/mapping_helpers/door/locker,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/hexstone,
 /area/rogue/indoors/vampire_manor)
 "Pv" = (
@@ -2366,9 +2362,7 @@
 	pixel_y = 5
 	},
 /obj/item/natural/worms/grub_silk,
-/turf/open/floor/tile{
-	icon_state = "greenstone"
-	},
+/turf/open/floor/greenstone,
 /area/rogue/indoors/towerofwise)
 "Tn" = (
 /obj/effect/decal/cleanable/dirt/dust,
@@ -2650,9 +2644,7 @@
 	dir = 4
 	},
 /obj/item/pestle,
-/turf/open/floor/tile{
-	icon_state = "greenstone"
-	},
+/turf/open/floor/greenstone,
 /area/rogue/indoors/towerofwise)
 "XQ" = (
 /obj/effect/decal/rockedge{
@@ -4742,8 +4734,8 @@ Zy
 Zy
 Zy
 Zy
-Zy
-Zy
+ZZ
+ZZ
 Zy
 Zy
 Zy

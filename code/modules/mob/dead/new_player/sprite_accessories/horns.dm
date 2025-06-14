@@ -194,3 +194,13 @@
 	icon_state = "tiebhornsalt"
 	specuse = list("tiefling")
 	color_key_defaults = list(KEY_SKIN_COLOR)
+
+
+// STONEKEEP CONTENT BELOW
+/datum/sprite_accessory/horns/oni
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
+	name = "Ogrun horn"
+	icon_state = "onihorn"
+	specuse = list("abyssariad", "Ogrun", "ogrun")
+	color_key_defaults = list(KEY_SKIN_COLOR)
+	gender = NEUTER

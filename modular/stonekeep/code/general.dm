@@ -392,7 +392,8 @@
 			sleep()
 			user.visible_message(span_info("There is a faint cry of agony as the statue is demolished. Must be the wind."))
 			qdel(src)
-			user.mind.add_sleep_experience(/datum/skill/craft/masonry, (user.STAINT*0.2))
+			user.adjust_experience(/datum/skill/craft/masonry, (user.STAINT*0.2)) // STONEKEEP EDIT
+			// user.mind.add_sleep_experience(/datum/skill/craft/masonry, (user.STAINT*0.2))
 		return TRUE
 	if(istype(W, /obj/item/stonetofleshpotion))
 		playsound(src, 'sound/foley/waterenter.ogg', 100, FALSE)

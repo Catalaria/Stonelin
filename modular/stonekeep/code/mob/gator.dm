@@ -43,7 +43,6 @@
 	deaggroprob = 0
 	defprob = 35
 	defdrain = 5
-	attack_same = FALSE
 	retreat_health = 0.2
 
 	aggressive = TRUE
@@ -51,8 +50,6 @@
 	body_eater = TRUE
 
 	ai_controller = /datum/ai_controller/big_rat
-	AIStatus = AI_OFF
-	can_have_ai = FALSE
 
 /mob/living/simple_animal/hostile/retaliate/gator/Initialize()
 	. = ..()
@@ -65,15 +62,15 @@
 //	ai_controller.set_blackboard_key(BB_BASIC_FOODS, food_type)
 	//ADD_TRAIT(src, TRAIT_GENERIC) // to-do
 
-/mob/living/simple_animal/hostile/retaliate/gator/find_food()
-	. = ..()
-	if(!.)
-		return eat_bodies()
 
 /mob/living/simple_animal/hostile/retaliate/gator/death(gibbed)
 	..()
 	update_icon()
 
+
+/mob/living/simple_animal/hostile/retaliate/gator/taunted(mob/user)
+	emote("aggro")
+	return
 
 /mob/living/simple_animal/hostile/retaliate/gator/update_icon()
 	cut_overlays()
@@ -94,18 +91,6 @@
 			return pick('modular/stonekeep/sound/vo/mobs/gator/gatordeath.ogg')
 		if("idle")
 			return pick('modular/stonekeep/sound/vo/mobs/gator/gatoridle1.ogg')
-
-/mob/living/simple_animal/hostile/retaliate/gator/taunted(mob/user)
-	emote("aggro")
-	Retaliate()
-	GiveTarget(user)
-	return
-
-/mob/living/simple_animal/hostile/retaliate/gator/Life()
-	..()
-	if(pulledby)
-		Retaliate()
-		GiveTarget(pulledby)
 
 /mob/living/simple_animal/hostile/retaliate/gator/simple_limb_hit(zone)
 	if(!zone)

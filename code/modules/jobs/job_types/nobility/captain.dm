@@ -134,6 +134,9 @@
 	//need a mind
 	if(!recruit.mind)
 		return FALSE
+	//already recruited
+	if(HAS_TRAIT(recruit, TRAIT_RECRUITED))
+		return FALSE
 	//only migrants and peasants
 	if(!(recruit.job in GLOB.peasant_positions) && \
 		!(recruit.job in GLOB.allmig_positions))
@@ -156,10 +159,12 @@
 		return FALSE
 	if(accept_message)
 		recruit.say(accept_message, forced = "[name]")
+		ADD_TRAIT(recruit, TRAIT_RECRUITED, TRAIT_GENERIC)
 	if(new_role)
 		recruit.job = new_role
 		recruit.advjob = new_role
 		recruit.migrant_type = null
+		SEND_SIGNAL(SSdcs, COMSIG_GLOB_ROLE_CONVERTED, recruiter, recruit, new_role)
 	return TRUE
 
 /obj/effect/proc_holder/spell/self/convertrole/guard

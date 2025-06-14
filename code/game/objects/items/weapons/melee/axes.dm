@@ -241,7 +241,6 @@
 	axe_cut = 15 // ...and an Axe!
 	toolspeed = 2
 
-
 //................ Steel Axe ............... //
 /obj/item/weapon/axe/steel
 	name = "steel axe"

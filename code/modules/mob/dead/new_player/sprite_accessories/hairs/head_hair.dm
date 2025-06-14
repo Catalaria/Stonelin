@@ -1117,7 +1117,6 @@
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "halforc")
 */
 
-
 //////////////////////
 // Hair Definitions //
 //////////////////////
@@ -1888,3 +1887,121 @@
 	gender = NEUTER
 	specuse = list("human", "dwarf", "elf", "aasimar", "tiefling", "halforc")
 
+
+
+// KAIZOKU SPRITE ACCESSORIES HERE TEMP? ROGTODO
+//Female Kaizoku hair below.
+
+/datum/sprite_accessory/hair/head/empress
+	name = "Abyssal Empress"
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
+	icon_state = "empress"
+	gender = FEMALE
+	specuse = list("abyssariad")
+
+/datum/sprite_accessory/hair/head/onnamusha
+	name = "Onnamusha"
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
+	icon_state = "warlady"
+	gender = FEMALE
+	specuse = list("abyssariad")
+
+/datum/sprite_accessory/hair/head/waterfield
+	name = "Waterbearer"
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
+	icon_state = "waterfield"
+	gender = FEMALE
+	specuse = list("abyssariad")
+
+/datum/sprite_accessory/hair/head/homewaifu
+	name = "Homewife"
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
+	icon_state = "homewaifu"
+	gender = FEMALE
+	specuse = list("abyssariad")
+
+/datum/sprite_accessory/hair/head/casual
+	name = "Natural River"
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
+	icon_state = "casual"
+	gender = FEMALE
+	specuse = list("abyssariad")
+
+/datum/sprite_accessory/hair/head/martyr
+	name = "Inhonor of the Fallen"
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
+	icon_state = "martyr"
+	gender = FEMALE
+	specuse = list("abyssariad")
+
+//Male Kaizoku hair below.
+
+/datum/sprite_accessory/hair/head/zamurai
+	name = "Zamurai Manbun"
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
+	icon_state = "samurai"
+	gender = MALE
+	specuse = list("abyssariad")
+
+/datum/sprite_accessory/hair/head/ronin
+	name = "Vagabond"
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
+	icon_state = "ronin"
+	gender = MALE
+	specuse = list("abyssariad")
+
+/datum/sprite_accessory/hair/head/freespirit
+	name = "Free Spirit"
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
+	icon_state = "freespirit"
+	gender = NEUTER
+	specuse = list("abyssariad")
+
+/datum/sprite_accessory/hair/head/novice
+	name = "New Rice"
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
+	icon_state = "novice"
+	gender = MALE
+	specuse = list("abyssariad")
+
+/datum/sprite_accessory/hair/head/yakuza
+	name = "Irezumi Gangster"
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
+	icon_state = "yakuza"
+	gender = MALE
+	specuse = list("abyssariad")
+
+/datum/sprite_accessory/hair/head/steppeman
+	name = "Aridlands raider"
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
+	icon_state = "steppeman"
+	gender = MALE
+	specuse = list("abyssariad")
+
+/datum/sprite_accessory/hair/head/bishonen
+	name = "Husband"
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
+	icon_state = "bishonen"
+	gender = MALE
+	specuse = list("abyssariad")
+
+/datum/sprite_accessory/hair/head/emperor
+	name = "Imperial Court"
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
+	icon_state = "emperor"
+	gender = MALE
+	specuse = list("abyssariad")
+
+/datum/sprite_accessory/hair/head/protagonist
+	name = "Historical Protagonist"
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
+	icon_state = "hprotagonist"
+	gender = NEUTER
+	specuse = list("abyssariad")
+
+/datum/sprite_accessory/hair/head/protagonistalt
+	name = "Longer Protagonist"
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/hairstyles.dmi'
+	icon_state = "alsoprotagonist"
+	gender = NEUTER
+	specuse = list("abyssariad")

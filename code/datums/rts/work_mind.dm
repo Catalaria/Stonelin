@@ -1,13 +1,5 @@
-/mob/living
-	var/datum/worker_mind/controller_mind
-
 /mob/living/proc/made_into_controller_mob()
 	QDEL_NULL(ai_controller)
-
-/mob/living/simple_animal/hostile/made_into_controller_mob()
-	. = ..()
-	AIStatus = AI_OFF
-	can_have_ai = FALSE
 
 /datum/worker_mind
 	var/mob/camera/strategy_controller/master

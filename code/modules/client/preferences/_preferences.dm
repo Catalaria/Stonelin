@@ -22,6 +22,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	var/asaycolor = "#ff4500"			//This won't change the color for current admins, only incoming ones.
 	/// the ghost icon this admin ghost will get when becoming an aghost.
 	var/admin_ghost_icon = null
+	var/ui_theme = UI_PREFERENCE_LIGHT_MODE
 	var/triumphs = 0
 	var/enable_tips = TRUE
 	var/tip_delay = 500 //tip delay in milliseconds
@@ -806,7 +807,6 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 				SetChoices(user)
 			if("tutorial")
 				if(href_list["tut"])
-					testing("[href_list["tut"]]")
 					to_chat(user, "<span class='info'>* ----------------------- *</span>")
 					to_chat(user, href_list["tut"])
 					to_chat(user, "<span class='info'>* ----------------------- *</span>")
@@ -1020,7 +1020,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 						to_chat(user, "<font color='purple'>Flawed aspects: [selected_patron.flaws]</font>")
 						to_chat(user, "<font color='purple'>Likely Worshippers: [selected_patron.worshippers]</font>")
 						to_chat(user, "<font color='red'>Considers these to be Sins: [selected_patron.sins]</font>")
-						to_chat(user, "<font color='white'>Blessed with boon(s): [selected_patron.boons]</font>")
+//to_chat(user, "<font color='white'>Blessed with boon(s): [selected_patron.boons]</font>")
 
 				if("voice")
 					var/new_voice = input(user, "SELECT YOUR HERO'S VOICE COLOR", "THE THROAT","#"+voice_color) as color|null
@@ -1029,7 +1029,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 							to_chat(user, "<font color='red'>This voice color is too dark for mortals.</font>")
 							return
 						voice_color = sanitize_hexcolor(new_voice)
-/* STONEKEEP EDIT
+
 				if("headshot")
 					if(!user.client?.patreon?.has_access(ACCESS_ASSISTANT_RANK))
 						to_chat(user, "This is a patreon exclusive feature, your headshot link will be applied but others will only be able to view it if you are a patreon supporter.")
@@ -1047,7 +1047,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 					headshot_link = new_headshot_link
 					to_chat(user, "<span class='notice'>Successfully updated headshot picture</span>")
 					log_game("[user] has set their Headshot image to '[headshot_link]'.")
-*/
+
 				if("species")
 					var/list/crap = list()
 					for(var/A in GLOB.roundstart_races)
@@ -1090,7 +1090,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 						charflaw = C
 						if(charflaw.desc)
 							to_chat(user, "<span class='info'>[charflaw.desc]</span>")
-/* STONEKEEP EDIT
+
 				if("flavortext")
 					to_chat(user, "<span class='notice'>["<span class='bold'>Flavortext should not include nonphysical nonsensory attributes such as backstory or the character's internal thoughts. NSFW descriptions are prohibited.</span>"]</span>")
 					var/new_flavortext = input(user, "Input your character description:", "Flavortext", flavortext) as message|null
@@ -1103,7 +1103,7 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 					flavortext = new_flavortext
 					to_chat(user, "<span class='notice'>Successfully updated flavortext</span>")
 					log_game("[user] has set their flavortext'.")
-*/
+
 				if("s_tone")
 					var/listy = pref_species.get_skin_list()
 					var/new_s_tone = browser_input_list(user, "CHOOSE YOUR HERO'S [uppertext(pref_species.skin_tone_wording)]", "THE SUN", listy)
@@ -1535,6 +1535,60 @@ GLOBAL_LIST_INIT(name_adjustments, list())
 	if(is_misc_banned(parent.ckey, BAN_MISC_RESPAWN))
 		return FALSE
 	return TRUE
+
+/datum/preferences/proc/get_ui_theme_stylesheet()
+	switch(ui_theme)
+
+		if(UI_PREFERENCE_LIGHT_MODE)
+
+			. = {"
+			<html>
+			<head>
+			  <style>
+			    body {
+			      background-color: #ffffff;
+			      color: #000000;
+			    }
+
+			    a {
+			      color: #1a0dab;
+			    }
+
+			    a:visited {
+			      color: #660099;
+			    }
+
+			    hr {
+			      border-top: 1px solid #ccc;
+			    }
+			  </style>
+			</head>
+			</html>
+			"}
+
+		if(UI_PREFERENCE_DARK_MODE)
+
+			. = {"
+			<html>
+			<head>
+			  <style>
+			    body {
+			      background-color: #121212;
+			      color: #e0e0e0;
+			    }
+			    a {
+			      color: #90caf9;
+			    }
+			    a:visited {
+			      color: #ce93d8;
+			    }
+			    hr {
+			      border-top: 1px solid #444;
+			    }
+			  </style>
+			</head>
+			</html>
+			"}
 
 /datum/proc/is_valid_headshot_link(mob/user, value, silent = FALSE)
 	var/static/list/allowed_hosts = list("i.gyazo.com", "a.l3n.co", "b.l3n.co", "c.l3n.co", "images2.imgbox.com", "thumbs2.imgbox.com")

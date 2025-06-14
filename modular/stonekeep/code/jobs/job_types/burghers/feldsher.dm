@@ -9,6 +9,7 @@
 	tutorial = "You have seen countless wounds over your time. Stitched the sores of blades, sealed honey over the bubous of plague. \
 	A thousand deaths stolen from the Carriagemen, yet these people will still call you a charlatan."
 	give_bank_account = 100
+	min_pq = 0
 
 	allowed_races = list(
 		"Humen",

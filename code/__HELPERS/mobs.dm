@@ -53,12 +53,7 @@
 		else
 			return pick(GLOB.undershirt_list)
 
-/// TO BE DELETED
-/proc/random_backpack()
-	return pick(GLOB.backpacklist)
-
-/// TO BE DELETED, INTEGRATE INTO SPECIES DATUM // Additional comment; My recent change fixed issues here for tails and ears
-
+/// TO BE DELETED, INTEGRATE INTO SPECIES DATUM
 /proc/random_features()
 	return MANDATORY_FEATURE_LIST
 

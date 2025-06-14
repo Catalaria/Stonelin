@@ -346,3 +346,62 @@
 	icon_state = "elf"
 	specuse = list("human")
 	color_key_defaults = list(KEY_SKIN_COLOR)
+
+
+
+// STONEKEEP CONTENT BELOW
+// Upright Fox ears
+/datum/sprite_accessory/ears/kitsune_upright
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
+	name = "Upright Fox Ears"
+	icon_state = "ears_upright"
+	specuse = list("abyssariad", "Changeling", "changeling")
+	color_key_defaults = list(KEY_HAIR_COLOR)
+
+// Side fox ears
+/datum/sprite_accessory/ears/kitsune_side
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
+	name = "Sideways Fox Ears"
+	icon_state = "ears_lying"
+	specuse = list("abyssariad", "Changeling", "changeling")
+	color_key_defaults = list(KEY_HAIR_COLOR)
+
+// Thick fox ears
+/datum/sprite_accessory/ears/kitsune_thick
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
+	name = "Thick Fox Ears"
+	icon_state = "ears_thick"
+	specuse = list("abyssariad", "Changeling", "changeling")
+	color_key_defaults = list(KEY_HAIR_COLOR)
+
+// One-down fox ears
+/datum/sprite_accessory/ears/kitsune_onedown
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
+	name = "Curious Fox Ears"
+	icon_state = "ears_stoned"
+	specuse = list("abyssariad", "Changeling", "changeling")
+	color_key_defaults = list(KEY_HAIR_COLOR)
+
+
+/datum/sprite_accessory/ears/oni
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
+	name = "Ogrun"
+	icon_state = "ears_oni"
+	specuse = list("abyssariad", "Ogrun", "ogrun")
+	color_key_defaults = list(KEY_SKIN_COLOR)
+
+
+/datum/sprite_accessory/ears/tengu
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
+	name = "Skylancer ears"
+	icon_state = "ears_tengu"
+	specuse = list("abyssariad", "Tengu", "Skylancer")
+	color_key_defaults = list(KEY_HAIR_COLOR)
+
+
+/datum/sprite_accessory/ears/kappae
+	icon = 'modular/stonekeep/kaizoku/icons/body_details/attachment.dmi'
+	name = "Kappae"
+	icon_state = "kappae"
+	specuse = list("abyssariad", "Kappa", "Undine")
+	color_key_defaults = list(KEY_SKIN_COLOR)

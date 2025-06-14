@@ -6,15 +6,11 @@
 /obj/effect/decal/cleanable/blood_neu/random,
 /obj/item/ammo_casing/caseless/arrow/poison,
 /obj/item/gun/ballistic/revolver/grenadelauncher/bow/recurve,
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "cd" = (
 /obj/machinery/light/fueled/smelter/great,
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "ct" = (
 /obj/structure/fluff/walldeco/fakeshelf,
@@ -52,9 +48,7 @@
 /obj/structure/bars/pipe{
 	dir = 5
 	},
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "dU" = (
 /obj/structure/stairs/stone{
@@ -233,9 +227,7 @@
 	dir = 4;
 	icon_state = "pipe"
 	},
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "oV" = (
 /obj/structure/fluff/psycross/crafted/shrine/malum,
@@ -262,9 +254,7 @@
 /obj/structure/remains/human{
 	name = "orc remains"
 	},
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "qe" = (
 /obj/effect/decal/shadow_floor{
@@ -291,6 +281,16 @@
 /obj/item/bin/water/gross,
 /turf/open/floor/cobble,
 /area/rogue/under/catacombs/dwarfoutpost)
+"rg" = (
+/obj/item/ore/coal,
+/obj/structure/closet/crate/chest/old_crate,
+/obj/item/ore/coal,
+/obj/item/ore/coal,
+/obj/item/ore/coal,
+/obj/item/ore/coal,
+/obj/item/ore/coal,
+/turf/open/floor/concrete,
+/area/rogue/under/catacombs/dwarfoutpost)
 "rj" = (
 /obj/effect/spawner/map_spawner/enemy_fifty/orc_warrior,
 /turf/open/floor/blocks,
@@ -299,7 +299,7 @@
 /obj/structure/door/stone{
 	lockid = "outpost"
 	},
-/obj/effect/mapping_helpers/door/locker,
+/obj/effect/mapping_helpers/access/locker,
 /obj/effect/decal/cleanable/blood_neu/tracks,
 /turf/open/floor/blocks,
 /area/rogue/under/catacombs/dwarfoutpost)
@@ -308,9 +308,7 @@
 	dir = 9;
 	icon_state = "pipe"
 	},
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "rJ" = (
 /turf/closed/wall/mineral/craftstone,
@@ -352,9 +350,7 @@
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 10
 	},
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "sQ" = (
 /obj/structure/toilet,
@@ -396,9 +392,7 @@
 /area/rogue/under/catacombs/dwarfoutpost)
 "ub" = (
 /obj/effect/decal/shadow_floor,
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "uF" = (
 /obj/structure/fermentation_keg/random/beer,
@@ -445,14 +439,12 @@
 /area/rogue/under/catacombs/dwarfoutpost)
 "vX" = (
 /obj/effect/spawner/map_spawner/enemy_fifty/orc_warrior,
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "wn" = (
 /obj/structure/closet/crate/chest/old_crate,
-/obj/item/reagent_containers/food/snacks/produce/potato,
-/obj/item/reagent_containers/food/snacks/produce/potato,
+/obj/item/reagent_containers/food/snacks/produce/vegetable/potato,
+/obj/item/reagent_containers/food/snacks/produce/vegetable/potato,
 /turf/open/floor/cobble,
 /area/rogue/under/catacombs/dwarfoutpost)
 "wN" = (
@@ -464,9 +456,7 @@
 /obj/structure/remains/human{
 	name = "orc remains"
 	},
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "xd" = (
 /obj/structure/door/stone,
@@ -477,9 +467,7 @@
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 1
 	},
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "xp" = (
 /obj/structure/table/wood/reinf_long{
@@ -531,9 +519,7 @@
 	},
 /obj/effect/decal/cleanable/blood_neu/random,
 /obj/effect/decal/shadow_floor,
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "zj" = (
 /obj/structure/remains/human{
@@ -650,9 +636,7 @@
 /obj/effect/decal/cleanable/blood_neu/tracks{
 	dir = 4
 	},
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Ei" = (
 /obj/structure/closet/crate/chest/old_crate,
@@ -703,9 +687,7 @@
 	plane = -3
 	},
 /obj/effect/decal/cleanable/blood_neu/random,
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Gd" = (
 /obj/structure/fermentation_keg/random/water,
@@ -844,9 +826,7 @@
 "Nb" = (
 /obj/structure/table/wood/reinforced_alt,
 /obj/item/weapon/tongs,
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Nu" = (
 /obj/structure/rack,
@@ -894,9 +874,7 @@
 	dir = 8;
 	icon_state = "pipe"
 	},
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Qe" = (
 /obj/structure/fermentation_keg/random/beer,
@@ -970,9 +948,7 @@
 /turf/open/floor/metal,
 /area/rogue/under/catacombs/dwarfoutpost)
 "SX" = (
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Ta" = (
 /obj/structure/remains/human{
@@ -988,9 +964,7 @@
 /area/rogue/under/catacombs/dwarfoutpost)
 "Te" = (
 /obj/structure/table/wood/reinforced_alt,
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "TD" = (
 /obj/machinery/light/fueled/forge,
@@ -1006,9 +980,7 @@
 /area/rogue/under/catacombs/dwarfoutpost)
 "UL" = (
 /obj/effect/decal/cleanable/blood_neu/random,
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "UY" = (
 /turf/open/floor/cobble,
@@ -1115,9 +1087,7 @@
 /area/rogue/under/catacombs/dwarfoutpost)
 "YH" = (
 /obj/machinery/light/fueled/smelter,
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "YR" = (
 /obj/machinery/light/fueled/torchholder/r,
@@ -1506,7 +1476,7 @@ XT
 "}
 (10,1,1) = {"
 XT
-vW
+rg
 Zs
 pd
 SX

@@ -42,8 +42,6 @@
 		/datum/sprite_accessory/horns/angler,
 		/datum/sprite_accessory/horns/guilmon,
 		/datum/sprite_accessory/horns/uni,
-		/datum/sprite_accessory/horns/oni,
-		/datum/sprite_accessory/horns/oni_large,
 		/datum/sprite_accessory/horns/broken,
 		/datum/sprite_accessory/horns/rbroken,
 		/datum/sprite_accessory/horns/lbroken,
@@ -90,8 +88,6 @@
 		/datum/sprite_accessory/horns/ram,
 //		/datum/sprite_accessory/horns/guilmon,				Quality control removal ; Will not be re-added until sprites are improved.
 		/datum/sprite_accessory/horns/uni,
-		/datum/sprite_accessory/horns/oni,
-		/datum/sprite_accessory/horns/oni_large,
 		/datum/sprite_accessory/horns/broken,
 		/datum/sprite_accessory/horns/rbroken,
 		/datum/sprite_accessory/horns/lbroken,
@@ -138,8 +134,6 @@
 		/datum/sprite_accessory/horns/ram,
 		/datum/sprite_accessory/horns/guilmon,
 		/datum/sprite_accessory/horns/uni,
-		/datum/sprite_accessory/horns/oni,
-		/datum/sprite_accessory/horns/oni_large,
 		/datum/sprite_accessory/horns/broken,
 		/datum/sprite_accessory/horns/rbroken,
 		/datum/sprite_accessory/horns/lbroken,
@@ -185,8 +179,6 @@
 		/datum/sprite_accessory/horns/short,
 		/datum/sprite_accessory/horns/curled,
 		/datum/sprite_accessory/horns/ram,
-		/datum/sprite_accessory/horns/oni,
-		/datum/sprite_accessory/horns/oni_large,
 		/datum/sprite_accessory/horns/broken,
 		/datum/sprite_accessory/horns/rbroken,
 		/datum/sprite_accessory/horns/lbroken,
@@ -205,3 +197,22 @@
 		/datum/sprite_accessory/horns/faceguard,
 		/datum/sprite_accessory/horns/doublehorns,
 	)
+
+// ONI PARTS
+// Oni Horns
+/obj/item/organ/horns/oni
+	name = "ogrun horns"
+	accessory_type = /datum/sprite_accessory/horns/oni
+
+/datum/customizer/organ/horns/oni
+	customizer_choices = list(/datum/customizer_choice/organ/horns/oni)
+	allows_disabling = FALSE
+
+/datum/customizer_choice/organ/horns/oni
+	name = "Ogrun Horn"
+	organ_type = /obj/item/organ/horns/oni
+	generic_random_pick = TRUE
+	sprite_accessories = list(
+		/datum/sprite_accessory/horns/oni,
+		/datum/sprite_accessory/horns/oni_large)
+

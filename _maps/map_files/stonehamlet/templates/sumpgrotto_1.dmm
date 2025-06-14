@@ -18,7 +18,7 @@
 /turf/open/floor/naturalstone,
 /area/rogue/under/cave/sumpgrotto)
 "ch" = (
-/obj/structure/barricade/rogue,
+/obj/structure/barricade/wooden,
 /obj/structure/fluff/walldeco/vinez,
 /turf/closed/mineral/bedrock,
 /area/rogue/under/cave/sumpgrotto)
@@ -50,7 +50,7 @@
 /turf/open/floor/naturalstone,
 /area/rogue/under/cave/sumpgrotto)
 "gp" = (
-/obj/structure/barricade/rogue,
+/obj/structure/barricade/wooden,
 /turf/closed/mineral/bedrock,
 /area/rogue/under/cave/sumpgrotto)
 "gM" = (
@@ -99,7 +99,7 @@
 /area/rogue/under/cave/sumpgrotto)
 "mA" = (
 /obj/structure/fluff/walldeco/rags/alt,
-/obj/structure/barricade/rogue,
+/obj/structure/barricade/wooden,
 /turf/closed/mineral/bedrock,
 /area/rogue/under/cave/sumpgrotto)
 "mE" = (
@@ -183,7 +183,7 @@
 /turf/open/floor/naturalstone,
 /area/rogue/under/cave/sumpgrotto)
 "te" = (
-/obj/structure/barricade/rogue,
+/obj/structure/barricade/wooden,
 /turf/open/floor/naturalstone,
 /area/rogue/under/cave/sumpgrotto)
 "tB" = (
@@ -315,7 +315,7 @@
 /area/rogue/under/cave/sumpgrotto)
 "JC" = (
 /obj/structure/fluff/walldeco/rags/skull,
-/obj/structure/barricade/rogue,
+/obj/structure/barricade/wooden,
 /turf/closed/mineral/bedrock,
 /area/rogue/under/cave/sumpgrotto)
 "KM" = (
@@ -342,7 +342,7 @@
 /area/rogue/under/cave)
 "LD" = (
 /obj/structure/fluff/walldeco/rags/alt,
-/obj/structure/barricade/rogue,
+/obj/structure/barricade/wooden,
 /obj/structure/fluff/walldeco/vinez,
 /turf/closed/mineral/bedrock,
 /area/rogue/under/cave/sumpgrotto)
@@ -415,7 +415,7 @@
 /area/rogue/under/cave/sumpgrotto)
 "RD" = (
 /obj/structure/fluff/walldeco/rags,
-/obj/structure/barricade/rogue,
+/obj/structure/barricade/wooden,
 /turf/closed/mineral/bedrock,
 /area/rogue/under/cave/sumpgrotto)
 "RJ" = (
@@ -2538,7 +2538,7 @@ RN
 Jm
 ab
 ri
-ab
+ef
 RN
 ef
 ef

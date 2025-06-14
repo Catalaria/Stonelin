@@ -164,7 +164,6 @@
 	if (born_of_rock)
 		// the rock tomes are a *lot* easier to make, so we make them worse by them reducing your chances by 20%
 		qualityoflearn *= 1.2
-	testing("Quality of learning is [qualityoflearn]")
 	user.visible_message(span_warning("[user] is filled with arcyne energy! You witness [user.p_their()] body convulse and spark brightly."), \
 	span_notice("Noc blesses me. I have been granted knowledge and wisdom beyond my years, this tome's mysteries unveiled one at a time."))
 	qualityoflearn = qualityoflearn / 100
@@ -177,7 +176,8 @@
 	onlearned(user)
 	if(prob(55))
 		to_chat(user, span_notice("Confounded arcyne mysteries, my notes has gone in circles. I must sleep before I can bring myself to open this damned thing again..."))
-		user.mind?.add_sleep_experience(/datum/skill/misc/reading, reader.STAINT*10)
+		user.adjust_experience(/datum/skill/misc/reading, reader.STAINT*10) // STONEKEEP EDIT
+		// user.mind?.add_sleep_experience(/datum/skill/misc/reading, reader.STAINT*10)
 	to_chat(user, span_small("My notes include passages I've read before, but don't understand. I must sleep on their meaning..."))
 
 /obj/item/book/granter/spellbook/onlearned(mob/user)

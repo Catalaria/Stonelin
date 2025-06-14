@@ -10,6 +10,8 @@
 
 #define CTAG_SKMERCENARY 	"CAT_SKMERCENART"  		// Mercenary classes
 #define CTAG_SKGARRISON		"CAT_SKGARRISON"
+#define CTAG_SKMILITIA		"CAT_SKMILITIA"
+#define CTAG_SKGLADIATOR	"CAT_SKGLADIATOR"
 
 #define isgoblin(A) (is_species(A, /datum/species/goblin))
 
@@ -77,6 +79,7 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 #define SK_SHERIFF		(1<<0)
 #define SK_GUARD		(1<<1)
 #define SK_SQUIRE		(1<<2)
+#define SK_SIEGER		(1<<0)
 
 #define SK_PRIEST		(1<<0)
 #define SK_ACOLYTE		(1<<1)
@@ -120,6 +123,7 @@ GLOBAL_LIST_EMPTY(zizo_starts)
 
 #define SHERIFF_ORDER		11
 #define GARRISON_ORDER		13
+#define SIEGER_ORDER		14
 #define SQUIRE_ORDER		15
 
 #define PRIEST_ORDER		21

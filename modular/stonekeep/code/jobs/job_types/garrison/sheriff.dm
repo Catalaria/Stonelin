@@ -160,11 +160,11 @@
 	return TRUE
 
 /obj/effect/proc_holder/spell/self/convertrole/guard
-	name = "Recruit Guardsmen"
-	new_role = "Garrison Recruit"
+	name = "Recruit Militiaman"
+	new_role = "Militia Recruit"
 	overlay_state = "recruit_guard"
 	recruitment_faction = "Garrison"
-	recruitment_message = "Join the Garrison, %RECRUIT!"
+	recruitment_message = "Join the Militia, %RECRUIT!"
 	accept_message = "I swear fealty to the Crown and its garrison!"
 	refuse_message = "I refuse."
 

@@ -416,14 +416,13 @@
 		return FALSE
 	return !density
 
-/obj/structure/chair/pew/CheckExit(atom/movable/mover, turf/target)
-	if(istype(mover, /obj/projectile))
-		return TRUE
-	if(get_dir(target, mover.loc) == dir)
-		return FALSE
-	return !density
-
-
+/obj/structure/chair/pew/proc/on_exit(datum/source, atom/movable/leaving, atom/new_location)
+	SIGNAL_HANDLER
+	if(istype(leaving, /obj/projectile))
+		return
+	if(get_dir(new_location, leaving.loc) == dir)
+		leaving.Bump(src)
+		return COMPONENT_ATOM_BLOCK_EXIT
 // =============================================================================
 // =========================	WALL DECORATIONS	============================
 

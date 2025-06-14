@@ -26,7 +26,7 @@ GLOBAL_LIST_INIT(garrison_positions, list(
 	/datum/job/forestwarden::title,
 	/datum/job/forestguard::title,
 	/datum/job/stonekeep/garrison::title,
-	/datum/job/squire::title,	// STONEKEEP EDIT moved from apprentice positions
+	/datum/job/squire::title,	// STONEKEEP EDIT moved from apprentice positions ; New EDIT: Became the MILITIA now.
 	))
 GLOBAL_PROTECT(garrison_positions)
 
@@ -37,8 +37,8 @@ GLOBAL_LIST_INIT(church_positions, list(
 	/datum/job/stonekeep/gravekeeper::title,
 	/datum/job/stonekeep/inquisitor::title,
 	/datum/job/stonekeep/templar::title,
-	/datum/job/mastersohei::title,
-	/datum/job/sohei::title,
+	/datum/job/stonekeep/mastersohei::title,
+	/datum/job/stonekeep/sohei::title,
 	))
 GLOBAL_PROTECT(church_positions)
 

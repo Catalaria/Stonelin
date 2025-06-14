@@ -391,6 +391,8 @@
 	desc = "I can barely feel my limbs!"
 	icon_state = "chilled"
 
+/*	STONEKEEP EDIT
+
 /datum/status_effect/debuff/vamp_dreams
 	id = "sleepytime"
 	alert_type = /atom/movable/screen/alert/status_effect/debuff/vamp_dreams
@@ -399,6 +401,7 @@
 	name = "Insight"
 	desc = "With some sleep in a coffin I feel like I could become better."
 	icon_state = "sleepy"
+*/
 
 /datum/status_effect/eorapacify
 	id = "eorapacify"

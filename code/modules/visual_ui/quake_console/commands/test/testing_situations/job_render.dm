@@ -42,7 +42,7 @@
 		human.equipOutfit(hair)
 
 		human.skin_tone = "#9d8d6e"
-		human.set_hair_style(/datum/sprite_accessory/hair/head/shaved, FALSE)
+		human.set_hair_style(/datum/sprite_accessory/hair/head/uncombed, FALSE)
 		human.set_hair_color("#FFFFFF", FALSE)
 		human.set_facial_hair_style(/datum/sprite_accessory/hair/facial/none)
 		human.real_name = initial(hair.name)

@@ -26,7 +26,6 @@
 	attack_sound = 'sound/blank.ogg'
 	speak_emote = list("wails")
 	deathmessage = "wails, disintegrating into a pile of ectoplasm!"
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	minbodytemp = 0
 	maxbodytemp = 1500
 	movement_type = FLYING
@@ -83,7 +82,8 @@
 		for(var/i = 1; i <= amount; i++)
 			new /obj/item/natural/silk (get_turf(src))
 		user.visible_message(span_notice("[user] snips [src] up into silk."))
-		user.mind.add_sleep_experience(/datum/skill/misc/sewing, (user.STAINT / 2)) //We're getting experience for harvesting silk!
+		user.adjust_experience(/datum/skill/misc/sewing, (user.STAINT / 2)) // STONEKEEP EDIT
+		// user.mind.add_sleep_experience(/datum/skill/misc/sewing, (user.STAINT / 2)) //We're getting experience for harvesting silk!
 		playsound(src, 'sound/items/flint.ogg', 100, TRUE)
 		qdel(src)
 		return TRUE

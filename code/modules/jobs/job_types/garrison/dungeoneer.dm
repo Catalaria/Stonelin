@@ -31,10 +31,7 @@
 	head = /obj/item/clothing/head/menacing
 	neck = /obj/item/storage/belt/pouch/coins/poor	// Small storage. N.
 	pants = /obj/item/clothing/pants/trou
-	shoes = /obj/item/clothing/shoes/simpleshoes
-	wrists = /obj/item/clothing/wrists/bracers/leather
-	cloak = /obj/item/clothing/cloak/stabard/dungeon
-	belt = /obj/item/storage/belt/leather
+	shoes = /obj/item/clothing/shoes/sandals
 	beltr = /obj/item/weapon/whip/antique
 	beltl = /obj/item/storage/keyring/dungeoneer
 	backr = /obj/item/storage/backpack/satchel	// lack of satchel requires dealing with the merchant to correct, which requires entering town; not ideal. N.

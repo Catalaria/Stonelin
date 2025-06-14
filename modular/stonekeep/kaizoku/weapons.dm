@@ -1,5 +1,7 @@
 // =================================================================
 // ========================		BOMBS	============================
+#define ZATANA_WOOSH			list('modular/stonekeep/kaizoku/sound/woosh/zatana_nimble(1).ogg','modular/stonekeep/kaizoku/sound/woosh/zatana_nimble(2).ogg','modular/stonekeep/kaizoku/sound/woosh/zatana_nimble(3).ogg')
+
 /obj/item/grenade
 	name = "grenade"
 	desc = ""
@@ -62,22 +64,6 @@
 	if(ismob(loc))
 		var/mob/M = loc
 		M.dropItemToGround(src)
-
-/obj/item/grenade/attackby(obj/item/W, mob/user, params)
-	if(!active)
-		if(W.tool_behaviour == TOOL_MULTITOOL)
-			var/newtime = text2num(stripped_input(user, "Please enter a new detonation time", name))
-			if (newtime != null && user.canUseTopic(src, BE_CLOSE))
-				if(change_det_time(newtime))
-					to_chat(user, "<span class='notice'>I modify the time delay. It's set for [DisplayTimeText(det_time)].</span>")
-					if (round(newtime * 10) != det_time)
-						to_chat(user, "<span class='warning'>The new value is out of bounds. The lowest possible time is 3 seconds and highest is 5 seconds. Instant detonations are also possible.</span>")
-			return
-		else if(W.tool_behaviour == TOOL_SCREWDRIVER)
-			if(change_det_time())
-				to_chat(user, "<span class='notice'>I modify the time delay. It's set for [DisplayTimeText(det_time)].</span>")
-	else
-		return ..()
 
 /obj/item/grenade/proc/change_det_time(time) //Time uses real time.
 	. = TRUE
@@ -1235,6 +1221,7 @@
 	desc = "Shorter and simpler than the Tachi, the Uchigatana is the primary sidearm for the Abyssariad and Heartfelt footsoldiers. As a Zatana, the curved blade favor powerfull chopping strikes - but lacks a protective crossguard and the curve makes it less efficient in thrusting."
 	icon = 'modular/stonekeep/kaizoku/icons/weapons/64.dmi'
 	icon_state = "uchigatana"
+	swingsound = ZATANA_WOOSH
 	pixel_y = -16
 	pixel_x = -16
 	inhand_x_dimension = 64
@@ -1269,6 +1256,7 @@
 	icon = 'modular/stonekeep/kaizoku/icons/weapons/64.dmi'
 	icon_state = "tachi"
 	item_state = "tachi"
+	swingsound = ZATANA_WOOSH
 	pixel_y = -16
 	pixel_x = -18
 
@@ -1340,6 +1328,7 @@
 	icon_state = "wakizashi1"
 	icon = 'modular/stonekeep/kaizoku/icons/weapons/32.dmi'
 	possible_item_intents = list(/datum/intent/sword/cut/sorii, /datum/intent/sword/thrust/sorii)
+	swingsound = ZATANA_WOOSH
 
 /obj/item/weapon/sword/short/wakizashi/Initialize()
 	. = ..()
@@ -1642,8 +1631,7 @@
 /obj/structure/kaizoku/crate/fogbeast
 	name = "fogbeast crate"
 	desc = "Something neighs from the inside. The crate is unusually heavy."
-	mob_path = /mob/living/simple_animal/hostile/retaliate/saiga/horse/tame
-
+	mob_path = /mob/living/simple_animal/hostile/retaliate/saiga/horse // until runtiem fixed
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/handcannon
 	name = "huochong handcannon"

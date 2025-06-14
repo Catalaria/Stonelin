@@ -159,7 +159,8 @@
 				new /obj/item/reagent_containers/food/snacks/chocolate_carp(loc)
 				qdel(I)
 				qdel(src)
-				user.mind.add_sleep_experience(/datum/skill/craft/cooking, (user.STAINT*0.5))
+				user.adjust_experience(/datum/skill/craft/cooking, (user.STAINT*0.5)) // STONEKEEP EDIT
+				// user.mind.add_sleep_experience(/datum/skill/craft/cooking, (user.STAINT*0.5))
 
 /obj/item/reagent_containers/food/snacks/chocolate_carp
 	name = "le carp au chocolat"

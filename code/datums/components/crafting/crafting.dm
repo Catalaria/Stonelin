@@ -43,12 +43,10 @@
 					if(!R.subtype_reqs && (B in subtypesof(A)))
 						continue
 					if (R.blacklist.Find(B))
-						testing("foundinblacklist")
 						continue
 					if(contents[B] >= R.reqs[A])
 						continue main_loop
 					else
-						testing("removecontent")
 						needed_amount -= contents[B]
 						if(needed_amount <= 0)
 							continue main_loop
@@ -75,8 +73,6 @@
 				if(AM.flags_1 & HOLOGRAM_1)
 					continue
 				. += AM
-	for(var/slot in list(SLOT_R_STORE, SLOT_L_STORE))
-		. += user.get_item_by_slot(slot)
 
 /obj/item/proc/can_craft_with()
 	return TRUE
@@ -208,7 +204,6 @@
 					return
 				continue
 			if(R.structurecraft && istype(S, R.structurecraft))
-				testing("isstructurecraft")
 				continue
 			if(S.density)
 				to_chat(user, "<span class='warning'>[S] is in the way.</span>")
@@ -292,11 +287,13 @@
 					if(user.mind && R.skillcraft)
 						if(isliving(user))
 							var/mob/living/L = user
-							var/amt2raise = L.STAINT * 2// its different over here
+							var/amt2raise = L.STAINT // STONEKEEP BALANCE EDIT
+							var/boon = L.get_learning_boon(R.skillcraft) // STONEKEEP BALANCE EDIT
 							if(R.craftdiff > 0) //difficult recipe
 								amt2raise += (R.craftdiff * 10)
 							if(amt2raise > 0)
-								user.mind.add_sleep_experience(R.skillcraft, amt2raise, FALSE)
+								user.adjust_experience(R.skillcraft, amt2raise * boon, FALSE) // STONEKEEP EDIT
+								// user.mind.add_sleep_experience(R.skillcraft, amt2raise, FALSE)
 					return
 				return 0
 			return "."
@@ -586,9 +583,6 @@
 	if(!A.can_craft_here())
 		to_chat(user, "<span class='warning'>I can't craft here.</span>")
 		return
-//	if(user != parent)
-//		testing("c2")
-//		return
 	var/list/data = list()
 	var/list/catty = list()
 	var/list/surroundings = get_surroundings(user)
@@ -596,10 +590,6 @@
 		var/datum/crafting_recipe/R = rec
 		if(!R.always_availible && !(R.type in user?.mind?.learned_recipes)) //User doesn't actually know how to make this.
 			continue
-
-//		if((R.category != cur_category) || (R.subcategory != cur_subcategory))
-//			continue
-
 		if(check_contents(R, surroundings))
 			if(R.name)
 				data += R

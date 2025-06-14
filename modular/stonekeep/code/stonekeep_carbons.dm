@@ -378,7 +378,6 @@
 	retreat_distance = 2
 	minimum_distance = 5
 	ranged_cooldown_time = 60
-	check_friendly_fire = 1
 	loot = list(/obj/effect/mob_spawn/human/orc/corpse/savageorc2,
 			/obj/item/gun/ballistic/revolver/grenadelauncher/bow,
 			/obj/item/ammo_casing/caseless/arrow = 3,
@@ -386,8 +385,6 @@
 	maxHealth = 100
 	health = 100
 
-	can_have_ai = FALSE //disable native ai
-	AIStatus = AI_OFF
 	ai_controller = /datum/ai_controller/orc_ranged
 // ===================================================================================
 
@@ -620,15 +617,12 @@
 	dodge_sound = 'sound/combat/dodge.ogg'
 	canparry = FALSE
 	candodge = TRUE
-	dodge_prob = 15
 	d_intent = INTENT_DODGE
 	speak_emote = list("moans")
 	faction = list("Zizo")
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	del_on_death = FALSE
 
-	can_have_ai = FALSE //disable native ai
-	AIStatus = AI_OFF
 	ai_controller = /datum/ai_controller/orc
 
 	remains_type = /obj/structure/remains/human
@@ -674,13 +668,12 @@
 	name = "zizombie monk"
 	icon_state = "zizombie_monk"
 	icon_living = "zizombie_monk"
-	dodge_prob = 40
 
 /mob/living/simple_animal/hostile/zizombie/prior
 	name = "zizombie prior"
 	icon_state = "zizombie_prior"
 	icon_living = "zizombie_prior"
-	dodge_prob = 70
+
 
 
 /mob/living/simple_animal/hostile/Initialize()

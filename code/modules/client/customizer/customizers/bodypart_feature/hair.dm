@@ -245,22 +245,6 @@
 		/datum/sprite_accessory/hair/head/wastrel,
 		/datum/sprite_accessory/hair/head/wilderness,
 		/datum/sprite_accessory/hair/head/witcher,
-		/datum/sprite_accessory/hair/head/kaizoku/empress,
-		/datum/sprite_accessory/hair/head/kaizoku/onnamusha,
-		/datum/sprite_accessory/hair/head/kaizoku/waterfield,
-		/datum/sprite_accessory/hair/head/kaizoku/homewaifu,
-		/datum/sprite_accessory/hair/head/kaizoku/casual,
-		/datum/sprite_accessory/hair/head/kaizoku/martyr,
-		/datum/sprite_accessory/hair/head/kaizoku,
-		/datum/sprite_accessory/hair/head/kaizoku/ronin,
-		/datum/sprite_accessory/hair/head/kaizoku/freespirit,
-		/datum/sprite_accessory/hair/head/kaizoku/novice,
-		/datum/sprite_accessory/hair/head/kaizoku/yakuza,
-		/datum/sprite_accessory/hair/head/kaizoku/steppeman,
-		/datum/sprite_accessory/hair/head/kaizoku/bishonen,
-		/datum/sprite_accessory/hair/head/kaizoku/emperor,
-		/datum/sprite_accessory/hair/head/kaizoku/protagonist,
-		/datum/sprite_accessory/hair/head/kaizoku/protagonistalt,
 	)
 
 /datum/customizer_choice/bodypart_feature/hair/head/humanoid/get_random_accessory(datum/customizer_entry/entry, datum/preferences/prefs)

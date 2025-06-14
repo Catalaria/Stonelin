@@ -431,7 +431,6 @@
 	dodge_sound = 'sound/combat/dodge.ogg'
 	canparry = FALSE
 	candodge = TRUE
-	dodge_prob = 50
 	d_intent = INTENT_DODGE
 	speak_chance = 10
 	speak_emote = list("idle")
@@ -439,8 +438,6 @@
 	footstep_type = FOOTSTEP_MOB_BAREFOOT
 	del_on_death = FALSE
 
-	can_have_ai = FALSE //disable native ai
-	AIStatus = AI_OFF
 	ai_controller = /datum/ai_controller/orc
 
 
@@ -595,6 +592,4 @@
 	dodgetime = 17
 
 	///this mob was updated to new ai
-	AIStatus = AI_OFF
-	can_have_ai = FALSE
 	ai_controller = /datum/ai_controller/spider

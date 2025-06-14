@@ -1,5 +1,5 @@
 
-
+/* STONEKEEP EDIT: DEATH TO SLEEP LEVELLING EDITION REVENGEANCE
 
 /datum/sleep_adv
 	var/sleep_adv_cycle = 0
@@ -526,4 +526,4 @@
 		lies += new antag_type()
 
 	return lies
-
+*/

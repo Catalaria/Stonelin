@@ -93,9 +93,7 @@
 "gl" = (
 /obj/structure/table/wood/reinforced_alt,
 /obj/item/weapon/tongs,
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "gu" = (
 /obj/item/reagent_containers/glass/bottle/beer/voddena,
@@ -190,9 +188,7 @@
 /area/rogue/under/catacombs/dwarfoutpost)
 "ng" = (
 /obj/item/natural/stone,
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "nk" = (
 /obj/structure/table/wood/reinf_long,
@@ -316,9 +312,7 @@
 	dir = 9;
 	icon_state = "pipe"
 	},
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "tz" = (
 /obj/item/bin/water/gross,
@@ -466,9 +460,7 @@
 /area/rogue/under/catacombs/dwarfoutpost)
 "Cu" = (
 /obj/structure/table/wood/reinforced_alt,
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "CZ" = (
 /obj/structure/door/stone,
@@ -543,18 +535,14 @@
 /obj/structure/bars/pipe{
 	dir = 5
 	},
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Le" = (
 /obj/structure/bars/pipe{
 	dir = 4;
 	icon_state = "pipe"
 	},
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Lf" = (
 /obj/effect/decal/shadow_floor,
@@ -584,9 +572,7 @@
 /area/rogue/under/catacombs/dwarfoutpost)
 "Mb" = (
 /obj/machinery/light/fueled/smelter/great,
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "MK" = (
 /obj/effect/decal/shadow_floor{
@@ -648,9 +634,7 @@
 /area/rogue/under/catacombs/dwarfoutpost)
 "PO" = (
 /obj/machinery/light/fueled/smelter,
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "QF" = (
 /obj/structure/bars/pipe{
@@ -697,9 +681,7 @@
 /turf/open/floor/dirt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "SX" = (
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Td" = (
 /obj/item/natural/stone,
@@ -710,9 +692,7 @@
 	dir = 8;
 	icon_state = "pipe"
 	},
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Tm" = (
 /obj/structure/closet/crate/chest/old_crate,
@@ -765,9 +745,7 @@
 /area/rogue/under/catacombs/dwarfoutpost)
 "Wa" = (
 /obj/effect/decal/shadow_floor,
-/turf/open/floor/metal{
-	icon_state = "plating2"
-	},
+/turf/open/floor/metal/alt,
 /area/rogue/under/catacombs/dwarfoutpost)
 "Wk" = (
 /obj/structure/rack,

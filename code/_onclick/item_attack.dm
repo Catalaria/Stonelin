@@ -99,12 +99,6 @@
 	user.changeNext_move(adf)
 	return I.attack(src, user)
 
-/mob/living
-	var/tempatarget = null
-	var/pegleg = 0			//Handles check & slowdown for peglegs. Fuckin' bootleg, literally, but hey it at least works.
-	var/pet_passive = FALSE
-	var/abyssariadraider = FALSE //Code for abyssariad NPCs, solely.
-
 /obj/item/proc/attack(mob/living/M, mob/living/user)
 	if(SEND_SIGNAL(src, COMSIG_ITEM_ATTACK, M, user) & COMPONENT_ITEM_NO_ATTACK)
 		return FALSE
@@ -249,7 +243,6 @@
 		return 0
 	// newforce starts here and is the default amount of damage the item does.
 	var/newforce = I.force
-	testing("startforce [newforce]")
 	// If this weapon has no user and is somehow attacking you just return default.
 	if(!istype(user))
 		return newforce
@@ -296,7 +289,7 @@
 						dullfactor = 0.2
 					else
 						dullfactor = 0.45 + (lumberskill * 0.15)
-						lumberjacker.mind.add_sleep_experience(/datum/skill/labor/lumberjacking, (lumberjacker.STAINT*0.2))
+						lumberjacker.adjust_experience(/datum/skill/labor/lumberjacking, (lumberjacker.STAINT*0.2))
 					cont = TRUE
 				if(BCLASS_CHOP)
 					//Additional damage for axes against trees.
@@ -305,7 +298,6 @@
 						if(R.axe_cut)
 							//Yes i know its cheap to just make it a flat plus.
 							newforce = newforce + R.axe_cut
-							testing("newforcewood+[R.axe_cut]")
 					if(!I.remove_bintegrity(1, user))
 						dullfactor = 0.2
 					else
@@ -394,17 +386,14 @@
 	newforce = round(newforce,1)
 	//This is returning the maximum of the arguments meaning this is to prevent negative values.
 	newforce = max(newforce, 1)
-	testing("endforce [newforce]")
 	return newforce
 
 /obj/attacked_by(obj/item/I, mob/living/user)
 	user.changeNext_move(CLICK_CD_MELEE)
 	var/newforce = get_complex_damage(I, user, blade_dulling)
 	if(!newforce)
-		testing("dam33")
 		return 0
 	if(newforce < damage_deflection)
-		testing("dam44")
 		return 0
 	if(user.used_intent.no_attack)
 		return 0
@@ -427,10 +416,8 @@
 /turf/proc/attacked_by(obj/item/I, mob/living/user)
 	var/newforce = get_complex_damage(I, user, blade_dulling)
 	if(!newforce)
-		testing("attack6")
 		return 0
 	if(newforce < damage_deflection)
-		testing("attack7")
 		return 0
 	if(user.used_intent.no_attack)
 		return 0
@@ -465,7 +452,6 @@
 
 /mob/living/attacked_by(obj/item/I, mob/living/user)
 	var/hitlim = simple_limb_hit(user.zone_selected)
-	testing("[src] attacked_by")
 	I.funny_attack_effects(src, user)
 	if(I.force)
 		var/newforce = get_complex_damage(I, user)

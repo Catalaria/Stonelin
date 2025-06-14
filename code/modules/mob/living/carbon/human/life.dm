@@ -35,11 +35,11 @@
 		Stun(50)
 
 	if(mind)
-		mind.sleep_adv.add_stress_cycle(get_stress_amount())
+		// mind.sleep_adv.add_stress_cycle(get_stress_amount())
 		for(var/datum/antagonist/A in mind.antag_datums)
 			A.on_life(src)
 
-	handle_vamp_dreams()
+	// handle_vamp_dreams()
 	if(IsSleeping())
 		if(health > 0)
 			remove_status_effect(/datum/status_effect/debuff/trainsleep)
@@ -47,7 +47,7 @@
 			if(has_status_effect(/datum/status_effect/debuff/dreamytime))
 				remove_status_effect(/datum/status_effect/debuff/dreamytime)
 				if(mind)
-					mind.sleep_adv.advance_cycle()
+					// mind.sleep_adv.advance_cycle() STONEKEEP EDIT
 					if(!mind.antag_datums || !mind.antag_datums.len)
 						allmig_reward++
 						to_chat(src, span_danger("Nights Survived: \Roman[allmig_reward]"))
@@ -181,7 +181,7 @@
 	. = ..()
 	var/coverhead
 	//add belt slots to this for rusting
-	var/list/body_parts = list(head, wear_mask, wear_wrists, wear_shirt, wear_neck, cloak, wear_armor, wear_pants, backr, backl, gloves, shoes, belt, s_store, ears, wear_ring) //Everything but pockets. Pockets are l_store and r_store. (if pockets were allowed, putting something armored, gloves or hats for example, would double up on the armor)
+	var/list/body_parts = list(head, wear_mask, wear_wrists, wear_shirt, wear_neck, cloak, wear_armor, wear_pants, backr, backl, gloves, shoes, belt, wear_ring)
 	for(var/bp in body_parts)
 		if(!bp)
 			continue
@@ -339,6 +339,8 @@
 	// Tissues die without blood circulation
 	adjustBruteLoss(2)
 
+/*
+
 /mob/living/carbon/human/proc/handle_vamp_dreams()
 	if(!HAS_TRAIT(src, TRAIT_VAMP_DREAMS))
 		return
@@ -356,7 +358,7 @@
 	if(coffin.opened)
 		return
 	remove_status_effect(/datum/status_effect/debuff/vamp_dreams)
-	mind.sleep_adv.advance_cycle()
+	mind.sleep_adv.advance_cycle() */
 
 #undef THERMAL_PROTECTION_HEAD
 #undef THERMAL_PROTECTION_CHEST

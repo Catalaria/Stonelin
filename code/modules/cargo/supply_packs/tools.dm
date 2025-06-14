@@ -121,12 +121,12 @@
 	contains = /obj/item/reagent_containers/glass/bottle
 
 /datum/supply_pack/tools/alch_bottle
-	name = "Alchemy Bottle"
+	name = "Alchemy Vials"
 	cost = 3
 	contains = /obj/item/reagent_containers/glass/alchemical
 
 /datum/supply_pack/tools/alch_bottles
-	name = "Bulk Alchemy Bottles (9)"
+	name = "Bulk Alchemy Vials (9)"
 	cost = 20
 	contains = list(/obj/item/reagent_containers/glass/alchemical,/obj/item/reagent_containers/glass/alchemical,/obj/item/reagent_containers/glass/alchemical,
 	/obj/item/reagent_containers/glass/alchemical,/obj/item/reagent_containers/glass/alchemical,/obj/item/reagent_containers/glass/alchemical,

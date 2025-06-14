@@ -205,18 +205,9 @@
 
 
 
-/mob/living/simple_animal/hostile/retaliate/saiga/horse/update_icon()
-	cut_overlays()
-	..()
-	if(stat != DEAD)
-		if(ssaddle)
-			var/mutable_appearance/saddlet = mutable_appearance(icon, "saddle", 4.3)
-			add_overlay(saddlet)
-		if(has_buckled_mobs())
-			var/mutable_appearance/mounted = mutable_appearance(icon, "horse_mounted", 4.3)
-			add_overlay(mounted)
 
 
+// horses runtime init /tame
 
 /mob/living/simple_animal/hostile/retaliate/saiga/horse
 	icon = 'modular/stonekeep/kaizoku/icons/mobs/horse.dmi'
@@ -227,75 +218,39 @@
 	icon_dead = "horse_dead"
 	icon_gib = "horse_gib"
 	faction = list("saiga")
-	gender = FEMALE
-	footstep_type = FOOTSTEP_MOB_SHOE
+	gender = MALE
 	emote_see = list("grazes on grass.", "whinnies softly.", "stamps a hoof.", "gazes upon the horizon.", "'s tail whips mosquitos away.")
 	move_to_delay = 7
-	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 12,
+	botched_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 2,
 						/obj/item/natural/hide = 1,
 						/obj/item/alch/bone = 1)
 	butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 4,
 						/obj/item/reagent_containers/food/snacks/fat = 2,
 						/obj/item/natural/hide = 3,
-						/obj/item/natural/head/saiga = 1,
 						/obj/item/alch/bone = 2)
 	perfect_butcher_results = list(/obj/item/reagent_containers/food/snacks/meat/steak = 5,
 						/obj/item/reagent_containers/food/snacks/fat = 2,
 						/obj/item/natural/hide = 4,
-						/obj/item/alch/bone = 3,
-						/obj/item/natural/head/saiga = 1)
+						/obj/item/alch/bone = 3)
 
 	health =  MALE_MOOBEAST_HEALTH
 	maxHealth =  MALE_MOOBEAST_HEALTH
-	food_type = list(/obj/item/reagent_containers/food/snacks/produce/grain/wheat,
-					/obj/item/reagent_containers/food/snacks/produce/grain/oat,
-					/obj/item/reagent_containers/food/snacks/produce/fruit/jacksberry,
-					/obj/item/reagent_containers/food/snacks/produce/fruit/apple)
-	tame_chance = 40 // Foglander horses are easier to tame due to centuries of domestication, but you won't see them naturally on Stonekeep.
-	bonus_tame_chance = 15
-	pooptype = /obj/item/natural/poo/horse
 
-	base_intents = list(/datum/intent/simple/headbutt)
-	attack_sound = list('sound/vo/mobs/saiga/attack (1).ogg','sound/vo/mobs/saiga/attack (2).ogg')
-	attack_verb_continuous = "headbutts"
-	attack_verb_simple = "headbutt"
-	melee_damage_lower = 20
-	melee_damage_upper = 30
+	tame_chance = 40 // Foglander horses are easier to tame due to centuries of domestication, but you won't see them naturally on Stonekeep.
+
 	retreat_distance = 10
 	minimum_distance = 10
 	base_constitution = 12
 	base_strength = 10
 	base_speed = 15
-	childtype = /mob/living/simple_animal/hostile/retaliate/saiga/horse/horsekid
-	can_buckle = TRUE
-	buckle_lying = FALSE
-	can_saddle = TRUE
-	aggressive = TRUE
+	childtype = list(/mob/living/simple_animal/hostile/retaliate/saiga/horse/horsekid)
 
-
-/mob/living/simple_animal/hostile/retaliate/saiga/horse/Initialize()
-	. = ..()
-	if(prob(50))
-		gender = MALE
 
 /mob/living/simple_animal/hostile/retaliate/saiga/horse/tamed(mob/user)
 	..()
 	if(can_buckle)
 		AddComponent(/datum/component/riding/fogbeast)
-	deaggroprob = 30
-
-/datum/component/riding/fogbeast/Initialize()
-	. = ..()
-	set_riding_offsets(RIDING_OFFSET_ALL, list(
-			TEXT_NORTH = list(0, 8),
-			TEXT_SOUTH = list(0, 8),
-			TEXT_EAST = list(-2, 8),
-			TEXT_WEST = list(2, 8)))
-	set_vehicle_dir_layer(SOUTH, OBJ_LAYER)
-	set_vehicle_dir_layer(NORTH, OBJ_LAYER)
-	set_vehicle_dir_layer(EAST, OBJ_LAYER)
-	set_vehicle_dir_layer(WEST, OBJ_LAYER)
-
+		deaggroprob = 30
 
 /mob/living/simple_animal/hostile/retaliate/saiga/horse/horsekid
 	icon = 'modular/stonekeep/kaizoku/icons/mobs/horse.dmi'
@@ -331,6 +286,18 @@
 	tame = TRUE
 	can_buckle = FALSE
 	aggressive = FALSE
+	ai_controller = /datum/ai_controller/saiga_kid
+
+/mob/living/simple_animal/hostile/retaliate/saiga/horse/update_icon()
+	cut_overlays()
+	..()
+	if(stat != DEAD)
+		if(ssaddle)
+			var/mutable_appearance/saddlet = mutable_appearance(icon, "saddle", 4.3)
+			add_overlay(saddlet)
+		if(has_buckled_mobs())
+			var/mutable_appearance/mounted = mutable_appearance(icon, "horse_mounted", 4.3)
+			add_overlay(mounted)
 
 /mob/living/simple_animal/hostile/retaliate/saiga/horse/tame
 	tame = TRUE

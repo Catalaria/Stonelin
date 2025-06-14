@@ -33,10 +33,15 @@
 
 /mob/living/carbon/human/species/orc/npc/Initialize()
 	. = ..()
+	AddComponent(/datum/component/ai_aggro_system)
 	AddComponent(/datum/component/combat_noise, list("aggro" = 2))
 
 /mob/living/carbon/human/species/orc/ambush
 	ai_controller = /datum/ai_controller/human_npc
+
+/mob/living/carbon/human/species/orc/ambush/Initialize()
+	. = ..()
+	AddComponent(/datum/component/ai_aggro_system)
 
 /mob/living/carbon/human/species/orc/ambush/after_creation()
 	..()
@@ -170,7 +175,7 @@
 	id = "orc"
 	species_traits = list(NO_UNDERWEAR)
 	inherent_traits = list(TRAIT_RESISTCOLD,TRAIT_RESISTHIGHPRESSURE,TRAIT_RESISTLOWPRESSURE,TRAIT_RADIMMUNE,TRAIT_CRITICAL_WEAKNESS, TRAIT_NASTY_EATER, TRAIT_LEECHIMMUNE, TRAIT_INHUMENCAMP)
-	no_equip = list(SLOT_SHIRT, SLOT_WEAR_MASK, SLOT_GLOVES, SLOT_SHOES, SLOT_PANTS, SLOT_S_STORE)
+	no_equip = list(SLOT_SHIRT, SLOT_WEAR_MASK, SLOT_GLOVES, SLOT_SHOES, SLOT_PANTS)
 	nojumpsuit = 1
 	sexes = 1
 	damage_overlay_type = ""
@@ -315,6 +320,10 @@
 	var/loadout = /datum/outfit/job/npc/orc/tribal
 	ambushable = FALSE
 
+/mob/living/carbon/human/species/orc/tribal/Initialize()
+	. = ..()
+	AddComponent(/datum/component/ai_aggro_system)
+
 /mob/living/carbon/human/species/orc/tribal/after_creation()
 	..()
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
@@ -367,6 +376,7 @@
 
 /mob/living/carbon/human/species/orc/warrior/after_creation()
 	..()
+	AddComponent(/datum/component/ai_aggro_system)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/npc/orc/warrior)
@@ -438,6 +448,7 @@
 
 /mob/living/carbon/human/species/orc/marauder/after_creation()
 	..()
+	AddComponent(/datum/component/ai_aggro_system)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/npc/orc/marauder)
@@ -492,6 +503,7 @@
 
 /mob/living/carbon/human/species/orc/warlord/after_creation()
 	..()
+	AddComponent(/datum/component/ai_aggro_system)
 	ADD_TRAIT(src, TRAIT_NOMOOD, TRAIT_GENERIC)
 	ADD_TRAIT(src, TRAIT_NOHUNGER, TRAIT_GENERIC)
 	equipOutfit(new /datum/outfit/job/npc/orc/warlord)

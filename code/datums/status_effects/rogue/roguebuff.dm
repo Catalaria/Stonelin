@@ -5,7 +5,6 @@
 	var/duration_modification = 0
 
 /datum/status_effect/buff/duration_modification/on_creation(mob/living/new_owner, duration_increase)
-	testing("oncreation")
 	if(new_owner)
 		owner = new_owner
 	if(owner)
@@ -435,6 +434,17 @@
 		C.update_transform()
 		C.AddComponent(/datum/component/footstep, FOOTSTEP_MOB_HUMAN, 1, 2)
 
+// ---------------------- BRIAR'S RAGE ( DENDOR ) ----------------------------
+/datum/status_effect/buff/barbrage/briarrage //barbarian rage but it's permanent and exclusive to the briar
+	id = "briarrage"
+	alert_type = /atom/movable/screen/alert/status_effect/buff/barbrage/briarrage
+	effectedstats = list(STATKEY_STR = 1, STATKEY_END = 2, STATKEY_PER = -2, STATKEY_INT = -2)
+	duration = -1
+
+/atom/movable/screen/alert/status_effect/buff/barbrage/briarrage
+	name = "Dendor's frenzy"
+	desc = span_nicegreen("EMBRACE WILDERNESS")
+	icon_state = "bestialsense"
 
 /*-----------------\
 |   Eora Miracles  |
@@ -836,6 +846,7 @@
 /datum/status_effect/buff/lux_drank/on_apply()
 	. = ..()
 	owner.add_stress(/datum/stressevent/high)
+	SEND_SIGNAL(owner, COMSIG_LUX_TASTED)
 
 /datum/status_effect/buff/lux_drank/on_remove()
 	owner.remove_stress(/datum/stressevent/high)

@@ -1064,7 +1064,7 @@
 	dir = 1;
 	name = "hill fort"
 	},
-/obj/effect/mapping_helpers/door/locker,
+/obj/effect/mapping_helpers/access/locker,
 /turf/open/floor/dirt/road,
 /area/rogue/outdoors/woods/stone)
 "FL" = (

@@ -44,16 +44,13 @@
 	deaggroprob = 0
 	defprob = 20
 	defdrain = 5
-	attack_same = FALSE
 	retreat_health = 0.2
 
 	aggressive = TRUE
 	stat_attack = UNCONSCIOUS
 	body_eater = TRUE
 
-	ai_controller = /datum/ai_controller/volf
-	AIStatus = AI_OFF
-	can_have_ai = FALSE
+	ai_controller = /datum/ai_controller/mole
 
 /mob/living/simple_animal/hostile/retaliate/cavebear/Initialize()
 	. = ..()
@@ -62,15 +59,14 @@
 		gender = FEMALE
 	update_icon()
 
-	AddElement(/datum/element/ai_flee_while_injured, 0.75, retreat_health)
-	ai_controller.set_blackboard_key(BB_BASIC_FOODS, food_type)
+//	AddElement(/datum/element/ai_flee_while_injured, 0.75, retreat_health)
+//	ai_controller.set_blackboard_key(BB_BASIC_FOODS, food_type)
 	//ADD_TRAIT(src, TRAIT_GENERIC) // to-do
 
-/mob/living/simple_animal/hostile/retaliate/cavebear/find_food()
-	. = ..()
-	if(!.)
-		return eat_bodies()
 
+/mob/living/simple_animal/hostile/retaliate/cavebear/taunted(mob/user)
+	emote("aggro")
+	return
 
 /mob/living/simple_animal/hostile/retaliate/cavebear/get_sound(input)
 	switch(input)
@@ -83,17 +79,6 @@
 		if("idle")
 			return pick('modular/stonekeep/sound/vo/mobs/bear/bear_idle.ogg')
 
-/mob/living/simple_animal/hostile/retaliate/cavebear/taunted(mob/user)
-	emote("aggro")
-	Retaliate()
-	GiveTarget(user)
-	return
-
-/mob/living/simple_animal/hostile/retaliate/cavebear/Life()
-	..()
-	if(pulledby)
-		Retaliate()
-		GiveTarget(pulledby)
 
 /mob/living/simple_animal/hostile/retaliate/cavebear/simple_limb_hit(zone)
 	if(!zone)

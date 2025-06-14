@@ -29,5 +29,7 @@
 /proc/adjust_experience(mob/user, skill_type, exp_amount)
 	user.adjust_experience(skill_type, exp_amount)
 
+/* STONEKEEP EDIT: DEATH TO SLEEP LEVELLING EDITION
 /proc/add_sleep_experience(mob/user, skill_type, exp_amount)
 	user.mind.add_sleep_experience(skill_type, exp_amount)
+*/
