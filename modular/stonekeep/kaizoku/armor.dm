@@ -291,21 +291,6 @@
 	prevent_crits = ALL_EXCEPT_BLUNT_AND_STAB
 	sewrepair = TRUE //this armor's utility.
 
-/obj/item/clothing/armor/leather/jacket/haori
-	name = "haori"
-	desc = "a traditional jacket meant to be worn over a kimono."
-	icon_state = "haori"
-	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/armor.dmi'
-	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/armor.dmi'
-	sleeved = 'modular/stonekeep/kaizoku/icons/helpers/sleeves_armor.dmi'
-
-/obj/item/clothing/armor/leather/jacket/haori/random/Initialize()
-	color = pick(GLOB.peasant_dyes)
-	..()
-
-/obj/item/clothing/armor/leather/jacket/haori/dark
-	color = CLOTHING_SOOT_BLACK
-
 //New Rare Heartfelt equipment
 /obj/item/clothing/armor/medium/surcoat/heartfelt/abyssariad
 	name = "abyssariad kikko gusoku"
@@ -2608,7 +2593,7 @@
 	desc = "Infantry skull protection. It goes great with a gorget."
 	icon = 'modular/stonekeep/kaizoku/icons/clothingicon/head.dmi'
 	mob_overlay_icon = 'modular/stonekeep/kaizoku/icons/clothing/head64.dmi'
-	icon_state = "fllcustodian"
+	icon_state = "hfs_kettle"
 	worn_x_dimension = 64
 	worn_y_dimension = 64
 

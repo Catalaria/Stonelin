@@ -110,13 +110,41 @@
 	craftdiff = 1
 	req_imperial = TRUE
 
-
 /datum/crafting_recipe/roguetown/leather/armor/haori
-	name = "armor (haori jacket) {fl}"
-	result = list(/obj/item/clothing/armor/leather/jacket/haori)
+	name = "armor (unruly backcoat) {fl}"
+	result = list(/obj/item/clothing/cloak/eastcloak2)
 	reqs = list(/obj/item/natural/hide = 2)
 	req_islander = TRUE
 
+/datum/crafting_recipe/roguetown/leather/armor/haori
+	name = "armor (curator cloak) {fl}"
+	result = list(/obj/item/clothing/cloak/curator)
+	reqs = list(/obj/item/natural/hide = 2)
+	req_islander = TRUE
+
+/datum/crafting_recipe/roguetown/leather/armor/haori
+	name = "armor (susohiki attire) {fl}"
+	result = list(/obj/item/clothing/armor/leather/jacket/susohiki)
+	reqs = list(/obj/item/natural/hide = 2)
+	req_islander = TRUE
+
+/datum/crafting_recipe/roguetown/leather/armor/haori
+	name = "armor (dobuku robe) {fl}"
+	result = list(/obj/item/clothing/armor/leather/jacket/eastsuit3)
+	reqs = list(/obj/item/natural/hide = 2)
+	req_islander = TRUE
+
+/datum/crafting_recipe/roguetown/leather/armor/haori
+	name = "armor (michiyuki robe) {fl}"
+	result = list(/obj/item/clothing/armor/leather/jacket/eastsuit2)
+	reqs = list(/obj/item/natural/hide = 2)
+	req_islander = TRUE
+
+/datum/crafting_recipe/roguetown/leather/armor/haori
+	name = "armor (haori robe) {fl}"
+	result = list(/obj/item/clothing/armor/leather/jacket/eastsuit1)
+	reqs = list(/obj/item/natural/hide = 2)
+	req_islander = TRUE
 
 /datum/crafting_recipe/roguetown/leather/armor/corset
 	name = "armor (corset)"
