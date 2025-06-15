@@ -49,7 +49,6 @@
 				last_check_time = world.time
 				return
 
-			// Default species checks
 			if(foodtype & H.dna.species.toxic_food)
 				to_chat(H,"<span class='warning'>That was vile!</span>")
 				H.adjust_disgust(25 + 30 * fraction)
