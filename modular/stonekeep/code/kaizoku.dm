@@ -927,7 +927,7 @@ get_accent_list()
 		if(i == 1) src.spawn_mushrooms()
 		new_trunk.build_leafs(i+1)
 
-/obj/structure/flora/hollowtree/build_leafs(var/z_level)
+/obj/structure/flora/hollowtree/build_leafs(z_level)
 	if(z_level < 2)
 		return
 	var/range = (z_level == 2) ? 2 : 3
