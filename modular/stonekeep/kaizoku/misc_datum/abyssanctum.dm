@@ -59,7 +59,7 @@
 	name = "Curator Doctrine"
 	domain = "Abyssor, with faith empowered by natural disasters, the thunderstorms"
 	desc = "The protectors of knowledge, binding wounds and lore to guide the lost across the dying world as the bridge for \
-	 salvation and beyond. Believers that no knowledge must ever be censored."
+	salvation and beyond. Believers that no knowledge must ever be censored."
 	flaws = "Reckless, Stubborn, Destructive - Overtrusting"
 	worshippers = "The common folk, storytellers, ship doctors and educators. The Yamabushi."
 	sins = "Fear, Hubris, Forgetfulness - Intellectual arrogance"
