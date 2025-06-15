@@ -24,15 +24,11 @@ Future plan:
 	desc = "<b>Storm branched Champions</b><br>\
 	Molded by Abyssor's will to battle in Blood Apotheosis to protect Abyssal relics, the changelings are an \
 	honor-bound race wild as the storms, hermetically humble, yet quick tempered. \
-	Their principles are always extreme, such as being the most fierce duelists or martial pacifists, but never in-between. \
+	Their principles are always extreme, such as being the most fierce duelists or pacifists, but rarely in-between. \
 	\n\n\
 	Their mask-like facial bones and fleshbending physiology exposes their predatorial divine making, built to consume \
 	corruption and purify decay, but this leaves them unable to ingest many of the creations of the soil. \
 	Their traditional form is standardized, but some outcasts strays to carve out a distinct physical identity. \
-	\n\n\
-	The Abyssal society was bathed in destruction during the Blood Apotheosis, eternally branding them in fearmongering \
-	against all things graggar. With expeditions coming outwards, many suppress zizoid influence by the sword, or become foreign warriors \
-	known for their extreme loyalty.\
 	\n\n\
 	THIS IS A ESTEEMED BUT DISTRUSTED RACE, SUBJECT TO PUBLIC UNEASE AND HIGHER EXPECTATIONS. <B>PROVE YOUR VALUE AS PURIFIED JEWEL OR DIE IN CORRUPTIVE DISHONOR.</B>"
 

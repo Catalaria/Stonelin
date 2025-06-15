@@ -377,7 +377,7 @@
 							var/purifying = FALSE
 							if(istype(L, /mob/living/carbon/human))
 								var/mob/living/carbon/human/H = L
-								if((islist(H.faction) && ("orcs" in H.faction)) || (H.dna?.species?.id == "tiefling") || (H.mob_biotypes & MOB_UNDEAD))
+								if((islist(H.faction) && (FACTION_ORCS in H.faction)) || (H.dna?.species?.id == "tiefling") || (H.mob_biotypes & MOB_UNDEAD))
 									purifying = TRUE
 
 							if(selected_zone in limb_list)
