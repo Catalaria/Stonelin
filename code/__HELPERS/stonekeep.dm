@@ -92,3 +92,24 @@
 			continue
 		worn_items += item
 	return worn_items
+
+//Hopefully this is the correct, 'stonekeep' place to put global var helpers.
+var/list/preyfood = list(
+	"<span class='warning'>Ergh. Food of prey! Disgusting!</span>",
+	"<span class='warning'>What is this? Cabbit garnish?</span>",
+	"<span class='warning'>Grain mush? I'd rather chew bark.</span>",
+	"<span class='warning'>Food of PREY? Have I fallen so far?</span>",
+	"<span class='warning'>Ugh... It tastes like toxin and fiber.</span>",
+	"<span class='warning'>If it can't run, I don't want it on my mouth.</span>",
+	"<span class='warning'>This ain't food. it's compost. Why I am eating this?</span>",
+	"<span class='warning'>I don't eat what food eats.</span>",
+	"<span class='warning'>This is what they serve in punishment halls, isn't it?</span>",
+	"<span class='warning'>I'm not grazing—I'm suffering.</span>",
+	"<span class='warning'>You know how much parasites exists on vegetables?</span>",
+	"<span class='warning'>I don't chew leaves, mere filthy elven underwear.</span>",
+	"<span class='warning'>If I wanted to taste defeat, I'd order a salad like this.</span>",
+	"<span class='warning'>Where's the flavor? The struggle? The dignity?</span>",
+	"<span class='warning'>I feel my instincts dying just looking at this.</span>",
+	"<span class='warning'>You think I am some sort of activist?</span>",
+	"<span class='warning'>All vegetarian changelings died of hunger. I'd rather not be like them.</span>",
+)
