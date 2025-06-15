@@ -599,7 +599,7 @@ get_accent_list()
 		add_overlay("boxbed_close_in")
 		density = TRUE
 
-	if(!opened && buckled_mobs.len)
+	if(!opened && islist(buckled_mobs) && buckled_mobs.len)
 		var/mutable_appearance/cover = mutable_appearance(icon, "boxbed_close_in")
 		cover.layer = ABOVE_MOB_LAYER
 		add_overlay(cover)

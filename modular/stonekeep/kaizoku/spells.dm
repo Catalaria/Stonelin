@@ -3,7 +3,7 @@
 		return
 
 	var/datum/patron/A = H.patron
-	var/list/spelllist = list(/obj/effect/proc_holder/spell/invoked/gale_palm, A.t0)
+	var/list/spelllist = list(/obj/effect/proc_holder/spell/invoked/gale_palm, A.t0) //Placeholder. Need to change this for a Sohei-only.
 	for(var/spell_type in spelllist)
 		if(!spell_type || H.mind.has_spell(spell_type))
 			continue
@@ -391,6 +391,8 @@
 						L.blur_eyes(10)
 						L.apply_status_effect(/datum/status_effect/debuff/freezingsevere)
 
+	return TRUE
+
 /obj/structure/ice_spike_wall
 	name = "tether"
 	desc = "... The tether that anchor storms, as not all prayers are spoken - many are hurled, tearing through lies as it once did flesh..."
@@ -640,11 +642,27 @@
 		if(target == user)
 			continue
 
+		var/turf/start = get_turf(user)
+		var/turf/end = get_turf(target)
+		if(!start || !end)
+			continue
+
+		// Animate gust traveling tile-by-tile
+		var/turf/current = start
+		spawn()
+			while(current != end)
+				var/obj/effect/windgust/gust = new(current)
+				gust.layer = ABOVE_MOB_LAYER
+				QDEL_IN(gust, 2)
+				current = get_step_towards(current, end)
+				sleep(1)
+
 		var/special = FALSE
 		if(istype(target, /mob/living))
 			var/mob/living/carbon/human/H = target
 			if((islist(H.faction) && (FACTION_ORCS in H.faction)) || (H.mob_biotypes & MOB_UNDEAD))
-				special = TRUE // Normal enemies will be only disarmed. Impure ones will be pushed back. Gave tieflings the pass this time because they are players.
+				special = TRUE
+
 		target.visible_message(span_danger("[target] is struck by the forceful wind!"))
 
 		if(!special)
@@ -669,9 +687,24 @@
 			target.AdjustKnockdown(rand(5, 8))
 			target.visible_message(span_danger("[target] is knocked flat!"))
 
-		target.do_attack_animation(user, ATTACK_EFFECT_SMASH)
-
 	return TRUE
+
+/obj/effect/windgust
+	name = ""
+	desc = ""
+	icon = 'modular/stonekeep/kaizoku/icons/misc/spells.dmi'
+	icon_state = "winds"
+	anchored = TRUE
+	mouse_opacity = 0
+	layer = ABOVE_MOB_LAYER
+	blend_mode = BLEND_DEFAULT
+	pixel_x = 0
+	pixel_y = 0
+
+/obj/effect/windgust/Initialize()
+	. = ..()
+	animate(src, alpha = 0, time = 5) // simple fade out
+	QDEL_IN(src, 6)
 // ====================================================================================================
 // HEAVENLY PILLAR - RAISE PEOPLE FOR FUN, MIGHT MAKE THEM FALL. CAN HELP IN INVADING PLACES - TIER 2
 // ====================================================================================================
@@ -1003,9 +1036,11 @@
 	var/datum/lightning_shield/shield_status //This is necessary for tracking, because qdels suck balls.
 
 /obj/effect/proc_holder/spell/invoked/warkraft
-	name = "veil of thunder"
-	action_icon_state = "waternet"
+	name = "veil of spirits"
 	overlay_state = "waternet"
+	overlay_icon = 'modular/stonekeep/kaizoku/icons/misc/spells.dmi'
+	action_icon_state = "waternet"
+	action_icon = 'modular/stonekeep/kaizoku/icons/misc/spells.dmi'
 	releasedrain = 30
 	chargedrain = 0
 	chargetime = 0
@@ -1053,14 +1088,14 @@
 	if(!owner)
 		return
 	if(!overlay)
-		overlay = mutable_appearance('icons/effects/effects.dmi', "shield")
+		overlay = mutable_appearance('modular/stonekeep/kaizoku/icons/misc/spells.dmi', "littleangels")
 	owner.overlays += overlay
 	owner.shield_status = src
 	spawn(duration)
 		if(owner == M && owner.shield_status == src)
-			src.deactivate() // fixed reference
+			src.deactivate()
 
-/datum/lightning_shield/proc/deactivate() // fixed path
+/datum/lightning_shield/proc/deactivate()
 	if(owner)
 		owner.overlays -= overlay
 		if(owner.shield_status == src)
