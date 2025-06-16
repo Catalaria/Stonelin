@@ -6,14 +6,6 @@
 
 //	( + Hard Bite perk )
 //	( - 'Bite' intention always set a warning state. )
-/*
->>>MAJOR NEED! Please, someone code in a "Felinid"-like system for the changeling, but instead of CRINGE 'CUTESY' BS, I want
-help to portray Changeling's bloodthirsty nature. The 'Eldritch Jaw', which is essentially, "wagging_tail" system
-for the mouth THAT opens with a automatic emote (bite intention).<<<
-Future plan:
--Physical Extension, Kitsune-bi; Immune to fire, put fires on others by touch and need no water, but takes damage from water sources, including water splash from buckets.
--Can only eat meat from all sources. Uncooked or cooked meat, fat, tallows, bones, corpses, gibs. Cannot eat vegetables, cereals, fruits. Exceptions only comes to Sake and Rice.
-*/
 
 /mob/living/carbon/human/species/abyssariad/changeling
 	race = /datum/species/abyssariad/changeling
@@ -40,7 +32,6 @@ Future plan:
 //	default_features = list("mcolor" = "FFF", "ears" = "Upright", "tail_human" = "Onetail")
 	use_skintones = 1
 	possible_ages = list(AGE_IMMORTAL) //Abyssariads are Immortal. However, if they become stray from Abyssor - they suffer severe dementia, and after some decades, become Dais.
-	toxic_food = VEGETABLES|FRUIT|GRAIN
 	disliked_food = NONE
 	liked_food = MEAT
 	changesource_flags = MIRROR_BADMIN | WABBAJACK | MIRROR_MAGIC | MIRROR_PRIDE | RACE_SWAP | SLIME_EXTRACT
